@@ -1,0 +1,101 @@
+# Classics — the knowledge of the "classics" building type, i.e. order buildings of a polis and a forum. An
+# ensemble calls the type through the entry (B.module("classics")): a building program in a frame (center,
+# facade axis, length along the axis, width across). An order is given as proportions in lower column
+# diameters D (Vitruvius IV.3 and temple measurements: Doric 5.2–5.8 D, Ionic 8.5–9.5 D; the gap between
+# columns is in D; the Parthenon 1.26 D). Meters; [a, b] — a spread by seed; color — rgb 0–1.
+
+orders:
+  doric: {column: [5.2, 5.8], capital: 0.42, architrave: 0.62, frieze: 0.68, cornice: 0.3, clearance: [1.2, 1.5], base: false, triglyphs: true, pediment: 13}
+  ionic: {column: [8.5, 9.5], capital: 0.42, architrave: 0.6, frieze: 0.55, cornice: 0.4, clearance: [1.9, 2.3], base: true, volutes: true, pediment: 13}
+  corinthian: {column: [9.6, 10.2], capital: 1.1, architrave: 0.65, frieze: 0.55, cornice: 0.45, clearance: [1.9, 2.3], base: true, pediment: 16}
+  tuscan: {column: [6.5, 7.0], capital: 0.5, architrave: 0.5, frieze: 0.45, cornice: 0.4, clearance: [2.5, 3.2], base: true, pediment: 20}
+
+kinds:
+  peripteros:      # columns all around (Parthenon 8 × 17, Hephaisteion 6 × 13): a three-step crepidoma, a cella with a pronaos and an opisthodomos
+    what: "peripteral temple: columns on all sides (2n + 1 on the flank), a cella, a gable roof, pediments"
+    front: {6: 0.75, 8: 0.25}          # columns on the facade (8 — only if the frame is wide)
+    D: [0.9, 1.9]                      # lower column diameter, m (fitted to the frame)
+    stair_steps: 3
+    order: {doric: 0.8, ionic: 0.2}
+  prostyle:      # columns only in front of the facade (four — tetrastyle)
+    what: "prostyle: a portico of 4 columns in front of the cella"
+    front: {4: 1.0}
+    D: [0.55, 1.1]
+    stair_steps: 3
+    length: [1.7, 2.1]                  # length / width
+    order: {ionic: 0.6, doric: 0.4}
+  amphiprostyle:  # porticoes at the front and back (the Temple of Nike)
+    what: "amphiprostyle: porticoes at the front and back"
+    front: {4: 1.0}
+    D: [0.45, 0.9]
+    stair_steps: 3
+    length: [1.6, 2.0]
+    order: {ionic: 1.0}
+  in_antis:       # two columns between wall projections (the treasuries of Delphi)
+    what: "temple in antis: two columns between the antae"
+    front: {2: 1.0}
+    D: [0.5, 0.9]
+    stair_steps: 2
+    length: [1.5, 1.9]
+    order: {doric: 0.6, ionic: 0.4}
+  podium:        # Roman temple on a podium (Maison Carrée): a stair along the facade, a deep portico, half-columns along the cella
+    what: "Roman temple on a podium: a stair only at the facade, a 6-column portico, half-columns along the cella walls"
+    front: {6: 0.7, 4: 0.3}
+    D: [0.7, 1.3]
+    podium: [2.6, 3.6]
+    length: [1.9, 2.2]
+    order: {corinthian: 0.75, ionic: 0.25}
+  tholos:         # round temple (Delphi, Epidaurus, Tivoli)
+    what: "tholos: a ring of columns around a round cella, a conical roof"
+    n_columns: [10, 20]
+    D: [0.5, 0.9]
+    stair_steps: 3
+    order: {doric: 0.5, corinthian: 0.5}
+  stoa:          # Stoa of Attalos 116 × 20 m, the Sacred Stoa of Priene 116 m: a colonnade toward the square, a blind back wall
+    what: "stoa: a long portico — a colonnade toward the square, a blind back wall with shop doors, a gable roof"
+    depth: [8.0, 13.0]
+    two_naves: 10.5                     # deeper — an inner row of Ionic columns, every other one
+    D: [0.55, 0.85]
+    stair_steps: 2
+    shops: 0.6                         # the share of stoas with doors in the back wall
+    order: {doric: 1.0}
+  bouleuterion:    # council hall (Priene 20 × 21 m, Miletus): a square hall, high windows, a low roof, a portico
+    what: "bouleuterion: a council hall — a 15–25 m square, windows under the roof, a low hip roof, a portico"
+    D: [0.6, 0.9]
+    height: [7.0, 9.0]
+    portico: 0.6
+    order: {ionic: 0.6, doric: 0.4}
+  palaestra:      # Olympia 66 × 66 m, Priene: a court with a colonnade all around, rooms, a roof sloping toward the court
+    what: "palaestra: a court with a peristyle, rooms on the sides, a blind outer wall, an entrance with a portico"
+    rooms: [5.0, 7.0]
+    D: [0.5, 0.7]
+    height: [5.5, 6.8]
+    order: {doric: 1.0}
+  propylon:      # sanctuary gate (the Propylaea, the propylon of Priene): porticoes outside and inside, a transverse wall with passages
+    what: "propylon: a sanctuary gate — porticoes on both sides, a wall with passages, pediments"
+    front: {4: 0.6, 6: 0.4}
+    D: [0.6, 1.2]
+    stair_steps: 3
+    length: [0.75, 1.0]                 # depth / width
+    order: {doric: 0.8, ionic: 0.2}
+  altar:        # altar in front of the temple (east), a monumental one — a platform with steps and a fence (Pergamon, Priene)
+    what: "altar: a platform with steps toward the temple, a sacrificial table, a fence on three sides"
+    height: [1.0, 1.8]
+  theatre:         # Priene (cavea 53 m, orchestra 16 m), Epidaurus (55 rows, 13 stairs): a cavea in the slope, more than a semicircle
+    what: "theatre: a cavea in rows in the slope (more than a semicircle), kerkides stairs, a diazoma, a round orchestra, a skene with a proskenion"
+    row: {rise: 0.38, depth: 0.76}  # cavea slope ~27°
+    mortar: [200, 216]                # cavea angle, degrees
+    orchestra: [8.0, 11.0]              # radius
+    n_stairs: [7, 11]
+    diazoma: 22                        # rows up to the passage
+    skene: {depth: [6.0, 8.0], height: [7.0, 9.0], proskenion: [2.6, 3.2]}
+
+color:
+  stone: [[0.9, 0.88, 0.83], [0.88, 0.85, 0.78], [0.84, 0.79, 0.68]]   # marble, limestone
+  wall: [[0.9, 0.88, 0.83], [0.86, 0.82, 0.74]]
+  roof: [[0.68, 0.38, 0.25], [0.62, 0.34, 0.22], [0.86, 0.84, 0.8]]   # tiles; marble ones — for rich temples
+  painting: [0.16, 0.2, 0.3]                                              # triglyphs — blue-black
+  border: [0.56, 0.22, 0.17]                                              # a red band under the cornice
+  floor: [0.8, 0.76, 0.68]
+  sand: [0.78, 0.7, 0.55]
+  door: [0.3, 0.2, 0.12]

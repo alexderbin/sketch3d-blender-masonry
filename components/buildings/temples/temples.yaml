@@ -1,0 +1,59 @@
+# Temples (temples/temple_plan.py → temples/bl_temple.py): biography, special elements, annexes, condition,
+# canon. The language of forms (families) — style/styles.yaml.
+
+story:                       # building biography (knob history 0–1; by default — from the seed)
+  campaigns: [1, 4]          # campaigns at history 0 → 1
+  start_east: 0.7            # start with the choir — services are needed at once; otherwise with the nave (Amiens — the east end is occupied by the old church)
+  towers_last: true          # facade and towers — in the last campaign
+  unfinished: 0.45           # at history ≥ 0.4 the last campaign is unfinished: one tower is a stump (Cologne, Strasbourg)
+  crane: 0.5                 # a medieval crane on the stump (Cologne, ~400 years)
+  bend: {deg: [6.0, 10.0], p_old: 0.08}   # choir axis: follows the ground (Quimper, marsh) or, rarely, an old foundation
+
+signatures:                  # special landmark element of the silhouette (one per temple): weights by family; why — the reason, recorded in the markup
+  lantern:         {families: {gothic_en: 0.5, gothic_late: 0.3, gothic_early: 0.25, holy: 0.2, elven: 0.25}, needs: crossing,
+                    why: "the crossing tower collapsed or was never raised — an octagon with a lantern spanning the full width (Ely, 1322–1328)"}
+  crossing_dome:   {families: {holy: 0.6, gothic_late: 0.15, hive_gothic: 0.3, gothic_early: 0.1}, needs: crossing,
+                    why: "dome on a drum over the crossing — the sign of a city (Florence)"}
+  great_spire:     {families: {gothic_late: 0.5, hall: 0.6, gothic_en: 0.3, dark: 0.4, holy: 0.3, elven: 0.4, hell: 0.3},
+                    why: "one landmark tower for the whole region (Strasbourg 142 m, Ulm 161.5 m): the money for one"}
+  twin_different:  {families: {gothic_early: 0.6, gothic_fr: 0.45, romanesque: 0.25, gothic_late: 0.3}, needs: towers2,
+                    why: "the towers were built in different centuries — one plainer, the other richer (Chartres: 105 m of the 12th c. and 113 m of the 16th c.)"}
+  pinnacle_forest: {families: {gothic_late: 0.5, holy: 0.45, hive_gothic: 0.5, dark: 0.4, hell: 0.35},
+                    why: "a rich patron — pinnacles on all the piers and ridges (Milan)"}
+  campanile:       {families: {romanesque: 0.35, byzantine: 0.5, orthodox: 0.6, gothic_early: 0.15, holy: 0.2},
+                    why: "bell tower separate from the temple (Pisa, Florence; a Russian tented belfry)"}
+  baptistery:      {families: {romanesque: 0.25, byzantine: 0.35, gothic_early: 0.1, holy: 0.15},
+                    why: "baptistery — a separate domed octagon in front of the facade (Pisa, Florence, Parma)"}
+  westwork:        {families: {romanesque: 0.5, dwarven: 0.5}, needs: towers2,
+                    why: "westwork with a central tower and stair turrets — the imperial gallery (Corvey, Speyer)"}
+  transept_towers: {families: {gothic_en: 0.3, romanesque: 0.3, dark: 0.3, dwarven: 0.3, gothic_early: 0.35, hive_gothic: 0.2},
+                    needs: transept, why: "towers over the transept arms (Exeter; Laon — five towers of seven)"}
+  fortress:        {families: {dwarven: 0.7, dark: 0.3, hive_gothic: 0.4, gothic_fr: 0.08, romanesque: 0.2, hall: 0.15},
+                    why: "fortress cathedral: crenellated parapets, round tower buttresses, windows set high (Albi)"}
+  openwork:        {families: {gothic_late: 0.6, hall: 0.45, elven: 0.4},
+                    why: "openwork spires — a pierced stone lattice (Burgos, Freiburg, Cologne)"}
+
+additions:                   # annexes (0–4, more for the rich): weights by family
+  chapels:       {families: {gothic_fr: 0.5, gothic_late: 0.7, gothic_early: 0.3, hall: 0.3, holy: 0.4, dark: 0.3, hive_gothic: 0.5, elven: 0.3},
+                  needs: flyers, why: "chapels of guilds and families between the nave buttresses (Notre-Dame, 13th c.)"}
+  chapter_house: {families: {gothic_en: 0.85, gothic_early: 0.3, gothic_fr: 0.3, romanesque: 0.3, gothic_late: 0.3, holy: 0.3, dark: 0.3,
+                  elven: 0.3}, why: "chapter house — a polygon with a column in the middle (Wells, Salisbury, Lincoln)"}
+  cloister:      {families: {romanesque: 0.6, gothic_en: 0.6, gothic_early: 0.4, gothic_fr: 0.3, gothic_late: 0.3, dwarven: 0.35, elven: 0.4,
+                  dark: 0.2}, why: "cloister — a court with galleries at the side of the nave (monastery, chapter; Salisbury — the largest in England)"}
+  porch:         {families: {romanesque: 0.3, gothic_en: 0.4, gothic_late: 0.4, hall: 0.35, dwarven: 0.3},
+                  why: "galilee porch in front of the west portal (Durham, Ely)"}
+  sacristy:      {families: {gothic_fr: 0.4, gothic_late: 0.4, gothic_early: 0.4, gothic_en: 0.4, hall: 0.4, romanesque: 0.4, holy: 0.3},
+                  why: "sacristy by the choir"}
+  stair_turrets: {families: {romanesque: 0.6, gothic_early: 0.5, gothic_fr: 0.4, gothic_late: 0.5, hall: 0.4, dark: 0.5, dwarven: 0.4},
+                  why: "stair turrets at the corners of the transept — access to the roofs and galleries"}
+
+states:                      # condition (knob ruin 0–1): a ruin — nave without roof and vaults, the tops of walls and windows crumbled
+  ruin_nave: 0.5             # at ruin ≥ 0.5 — nave without a roof
+  ruin_spire: 0.3            # at ruin ≥ 0.3 — the spire has collapsed
+
+knobs: [history, wealth, ruin, irregular]   # 0–1; explicit values override the family's
+
+canon:                       # a person is 1.8 m: portal and doors no smaller, steps of normal size
+  portal_h: [5.0, 14.0]      # height of the central portal (for mega — × scale^0.5)
+  step: 0.17
+  plinth_steps: 5            # cathedral plinth above the platform — steps at the portals

@@ -1,0 +1,46 @@
+# Influences — the knowledge of the "influences" core part.
+# Three fields on any settlement: power P, trade T, wealth W (0–1 on a plot and at any point). The coefficients are
+# shared by all archetypes, eras and styles: the variety of districts comes from combining the three numbers; there
+# is no per-era code or knowledge.
+
+power:                              # administration and force — points
+  main: {s: 1.0, r: 0.16, kind: {chambers: 0.5, tower: 0.3, court: 0.2}}   # r — a fraction of √(fabric area); if there is a landmark (acropolis, castle), the center is it
+  n_small: {per_ha: 0.14, max: 3}      # small centers = ⌊ha × per_ha + chance⌋ ≤ max (10 ha — 1–2, 3 ha — 0–1)
+  small: {s: [0.6, 0.8], r: 0.08, off_main: 0.3, from_each_other: 0.25, kind: {tower: 0.4, court: 0.35, chambers: 0.25}}
+  core: 0.55                         # share of r: the plots of the core merge into a compound
+  density: 0.6                     # the compound is dense: its area to the convex hull is no less than this (otherwise the plot is not attached)
+  n_plots: 2.0                      # the compound is at least two average plots of the settlement (hive: a block, not a sliver of a block)
+  block: [5.5, 7.5]                 # depth of the buildings along the yard edge, m
+  tower: {side: [7.0, 11.0], above: [4, 8]}   # m; storeys above the central ones
+  chambers: {court: [0.3, 0.42], "off": 400} # chambers at the back of the compound with a ceremonial yard in front of them (fraction of the depth); a compound of 400 m² or more
+trade:                                # trade and production — flow along the streets, and nodes
+  cost: {artery: 0.75, street: 0.9, lane: 1.1, passage: 1.4}   # cost of a meter of path by rank: wide streets are preferred
+  pairs: {entrance_center: 1.0, entrance_entrance: 0.6, center_square: 0.4, residents: 1.0}   # residents — their mass relative to the paths' mass
+  nodes: {area: [1.0, 0.1], entrance: [0.7, 22.0], bridge: [0.6, 18.0], water: [0.45, 16.0]}   # strength, radius (m; for a square — a fraction of √area)
+  field: 12.0                         # raster: a street's trade away from it — × exp(−(d/field)²), d — from the street edge, m
+  rank: {of: [lane], threshold: 0.55, to: street}   # trade raises the rank: a through lane becomes a street (shops, main facade; subdivision and width unchanged)
+wealth: {center: 0.7, place: 0.3, at_power: 0.85, relief_m: 10.0, wind: 270, tier: 0.6}   # wind — where it blows from (270 — west)
+corrections:                            # one formula for all archetypes (W — wealth, T — trade)
+  facade: [0.6, 1.1, -0.3]            # × facade = (a + b·W)·(1 + c·T): poor ~0.7, rich ~1.6
+  depth: [0.7, 0.5, 0.25]          # × depth = a + b·W + c·T·(1 − W): for the poor the yard is left for back houses
+  gardens: [0.6, 0.3]                   # + empty = b·(W − a)/(1 − a)·(1 − T): for the nobility up to a quarter of the plots are gardens
+  shops: [0.12, 1.1]                 # share of shops = a + b·T
+  division: [1.2, 0.3]                # a whole block (castrum): the share halved = the archetype's share + a·(0.5 − W) + b·T; the poor — into 3–4
+  blocks: [3.0, 0.6, -0.6, 0.3]       # hive hub blocks: 2^m parts, m = a·(1 − W) + b·T + c ± d (0–2): the rich — a whole block
+  tone: 0.2                           # walls lighter for the rich, darker for the poor: ± tone·(2W − 1)
+  wood: 0.8                        # cheap features (houses.yaml `cheap`: half-timbering, jetties, galleries…): × (1 + k·(1 − 2W)) — more common among the poor
+  rank: 0.28                         # house kind: weight × exp(−((W − the kind's rank)/σ)²) × (1 + k·T·the kind's trade)
+  trade_view: 1.5
+  palette: 0.15                      # color by wealth (houses.yaml `by_wealth`): the index in the list poor → rich = w·(n − 1) ± palette·n,
+                                     # w = (W − poor)/(nobility − poor) in 0–1 — the poor take the first, the nobility the last
+districts: {power: 0.6, trade: 0.55, trade_W: 0.5, nobility: 0.62, poor: 0.32}   # reading thresholds (map, summary); the poor threshold is also where the block yard
+                                     # gets built up with back houses (strips), the nobility one — where it does not (built_up)
+
+# Settlement knobs 0–1 (0.5 — as computed): the scene's intent (keys of the "building" step: power, trade, wealth,
+# inequality, wind, center) or the archetype's (settlements.yaml, `influences`). A knob changes only its own field;
+# the random draw (seed) stays the same.
+levels:
+  power: {n_centers: 2.0, radius: [0.5, 1.5]}   # small centers and the limit — × (2·p); the radius of the centers — from 0.5 (p = 0) to 1.5 (p = 1)
+  trade: {amplitude: 2.0}                # street flow and nodes × (2·t), capped at 1: t = 0 — no trade, t = 1 — doubled
+  wealth: {shift: 0.6}            # W + (b − 0.5)·shift: the whole town richer or poorer
+  inequality: {amplitude: [0.4, 1.6]}  # the deviation from the mean × from 0.4 (u = 0) to 1.6 (u = 1): smoother or sharper

@@ -1,0 +1,56 @@
+# Covering substance — the "textures" step (bl_cover.py): a layout substance (for roofing, the object property
+# sk_roofing.substance, the names are in roofing/coverings.yaml "substances") → a scan (library/materials/surfaces.yaml)
+# and how to lay it. The tone of a piece is the layout's Col (its decision: substance × tile spread); the scan gives only
+# a pattern normalized to 1, like masonry stone. Tiles, boards, sheets are layout geometry; here is the substance of one
+# piece.
+#   scan     — the scan id;
+#   rot      — free: the piece may be rotated any way (clay, stone); grain: the image grain (y) runs along v of the
+#              unrolling, along the slope or up the wall: rotation 0 or π and jitter ±jitter° (roofing: wood, reed,
+#              streaks on metal); long: the grain runs along the long axis of the piece (a log of a log house lies, a
+#              post stands, a brace is diagonal; a floor board, a half-log);
+#   strength — pattern visibility (×0.75…1.25 per piece); chroma — pattern color: 1 as in the scan, 0 brightness only (a
+#              metal pattern without reddish rust spots);
+#   rough    — roughness [from, to]: the scan map 0…1 → from…to; metal — metallic; bump — relief from a height image.
+# A new layout substance → a row here (checked by covers.py check); no row — the piece stays a flat tone (the step's
+# counter "without_substance"); skip — substances that intentionally need no texture.
+version: 1
+defaults: {rot: free, jitter: 3, strength: 1.0, chroma: 1.0, rough: [0.5, 1.0], metal: 0.0, bump: 0.25}
+substances:
+  terracotta:      {scan: clay_plaster, rough: [0.62, 0.9]}                             # fired clay (clay_floor_001 — trowel swirls)
+  terracotta_old:  {scan: clay_plaster, rough: [0.72, 0.95], strength: 1.1}             # old, faded — rougher
+  slate:           {scan: seaside_rock, rough: [0.4, 0.65], chroma: 0.3, strength: 0.55}   # slate: fine grain, smoother than clay (stronger looks like "granite")
+  limestone_slate: {scan: worn_rock_natural_01, rough: [0.7, 0.95]}                     # limestone slab (Cotswold)
+  wood:            {scan: rough_wood, rot: grain, rough: [0.72, 0.95], chroma: 0.6}     # shingles, boards — weathered wood
+  wood_aspen:      {scan: rough_wood, rot: grain, rough: [0.7, 0.92], chroma: 0.3}      # lemekh: aspen turns silver
+  straw:           {scan: riet_01, rot: grain, rough: [0.85, 1.0], strength: 1.2}       # straw, reed
+  copper:          {scan: rusty_metal_sheet, rot: grain, rough: [0.65, 0.9], chroma: 0.25}   # copper under patina: patina is not metal
+  gold:            {scan: rusty_metal_sheet, rot: grain, rough: [0.22, 0.42], chroma: 0.0, strength: 0.3, metal: 1.0}
+  lead:            {scan: rusty_metal_sheet, rot: grain, rough: [0.5, 0.8], chroma: 0.0, strength: 0.6, metal: 0.25}
+  zinc:            {scan: rusty_metal_sheet, rot: grain, rough: [0.45, 0.75], chroma: 0.0, strength: 0.5, metal: 0.35}
+  iron:            {scan: rusty_metal_sheet, rot: grain, rough: [0.45, 0.85], chroma: 0.6, metal: 0.5}     # iron plates
+  iron_green:      {scan: green_metal_rust, rot: grain, rough: [0.35, 0.7], chroma: 0.6}   # roofing iron, painted
+  iron_red:        {scan: green_metal_rust, rot: grain, rough: [0.35, 0.7], chroma: 0.3}   # the same, red lead: a rust-colored spot on red is weaker
+  mortar:          {scan: grey_plaster_03, rough: [0.85, 1.0]}                         # ridge bed of trough tiles
+  # paving (paving/paving.yaml "substances"): paving stone, brick, tile, wood; bedding and joints
+  granite:         {scan: rock_01, rough: [0.6, 0.9], chroma: 0.6}
+  granite_red:     {scan: rock_boulder_dry, rough: [0.6, 0.9]}
+  basalt:          {scan: seaside_rock, rough: [0.5, 0.8], chroma: 0.5}
+  river_stone:     {scan: rock_01, rough: [0.45, 0.75]}                                # rounded — smoother
+  limestone:       {scan: rock_boulder_dry, rough: [0.65, 0.95], strength: 0.6, chroma: 0.4}   # at full strength it looks like "marble"
+  sandstone:       {scan: worn_rock_natural_01, rough: [0.7, 0.95]}
+  clinker:         {scan: clay_plaster, rough: [0.6, 0.85], strength: 0.9}
+  tile_dark:       {scan: clay_floor_001, rough: [0.2, 0.45], strength: 0.6}           # glaze — smooth
+  tile_light:      {scan: clay_floor_001, rough: [0.2, 0.45], strength: 0.6}
+  oak:             {scan: rough_wood, rot: long, rough: [0.6, 0.9], chroma: 0.5}
+  pine:            {scan: rough_wood, rot: long, rough: [0.6, 0.9], chroma: 0.5}
+  pine_old:        {scan: rough_wood, rot: long, rough: [0.7, 0.95], chroma: 0.4}
+  sand:            {scan: gravelly_sand, rough: [0.85, 1.0]}
+  earth:           {scan: dirt, rough: [0.8, 1.0]}
+  # timber (timber/timber.yaml "substances"): beam, log, board, fachwerk infill
+  oak_dark:        {scan: rough_wood, rot: long, rough: [0.6, 0.9], chroma: 0.4}
+  pine_grey:       {scan: rough_wood, rot: long, rough: [0.7, 0.95], chroma: 0.3}
+  plaster:         {scan: white_plaster_02, rough: [0.8, 1.0], chroma: 0.5, strength: 0.6}   # stronger gives tile blotches across the field
+  plaster_ochre:   {scan: white_plaster_02, rough: [0.8, 1.0], chroma: 0.5, strength: 0.6}
+  daub:            {scan: clay_plaster, rough: [0.85, 1.0]}
+  brick:           {scan: clay_plaster, rough: [0.7, 0.95]}
+skip: [moss]      # moss in the log-house grooves is volume and a states layer (states/bl_moss), not a substance texture

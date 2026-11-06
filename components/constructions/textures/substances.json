@@ -1,0 +1,224 @@
+{
+  "_": "substance by masonry pack — components/constructions/textures/substances.py from ../masonry/packs.yaml",
+  "packs": {
+    "ashlar": {
+      "substance": "stone",
+      "facing": "ashlar",
+      "kind": "courses",
+      "scans": [
+        "rock_surface"
+      ],
+      "stones_varied": false
+    },
+    "ashlar_fine": {
+      "substance": "stone",
+      "facing": "ashlar",
+      "kind": "courses",
+      "scans": [
+        "rock_surface"
+      ],
+      "stones_varied": false
+    },
+    "bossage": {
+      "substance": "stone",
+      "facing": "ashlar",
+      "kind": "courses",
+      "scans": [
+        "rock_surface"
+      ],
+      "stones_varied": false
+    },
+    "rubble": {
+      "substance": "stone",
+      "facing": "rubble",
+      "kind": "courses",
+      "scans": [
+        "rock_surface",
+        "rock_boulder_dry",
+        "rock_01"
+      ],
+      "stones_varied": true
+    },
+    "dry_stone": {
+      "substance": "granite",
+      "facing": "rubble",
+      "kind": "courses",
+      "scans": [
+        "rock_boulder_dry",
+        "rock_01",
+        "rock_surface"
+      ],
+      "stones_varied": true
+    },
+    "megablocks": {
+      "substance": "concrete",
+      "facing": "ashlar",
+      "kind": "courses",
+      "scans": [
+        "concrete"
+      ],
+      "stones_varied": false
+    },
+    "brick_stretcher": {
+      "substance": "brick",
+      "facing": "ashlar",
+      "kind": "brick",
+      "scans": [
+        "clay_plaster"
+      ],
+      "stones_varied": false
+    },
+    "brick_english": {
+      "substance": "brick",
+      "facing": "ashlar",
+      "kind": "brick",
+      "scans": [
+        "clay_plaster"
+      ],
+      "stones_varied": false
+    },
+    "brick_flemish": {
+      "substance": "brick",
+      "facing": "ashlar",
+      "kind": "brick",
+      "scans": [
+        "clay_plaster"
+      ],
+      "stones_varied": false
+    },
+    "brick_monk": {
+      "substance": "brick",
+      "facing": "ashlar",
+      "kind": "brick",
+      "scans": [
+        "clay_plaster"
+      ],
+      "stones_varied": false
+    },
+    "brick_garden": {
+      "substance": "brick",
+      "facing": "ashlar",
+      "kind": "brick",
+      "scans": [
+        "clay_plaster"
+      ],
+      "stones_varied": false
+    },
+    "banded": {
+      "substance": "stone",
+      "facing": "ashlar",
+      "kind": "banded",
+      "scans": [
+        "rock_surface"
+      ],
+      "stones_varied": false
+    },
+    "herringbone": {
+      "substance": "stone",
+      "facing": "ashlar",
+      "kind": "herring",
+      "scans": [
+        "rock_surface"
+      ],
+      "stones_varied": false
+    },
+    "ashlar_broken": {
+      "substance": "stone",
+      "facing": "ashlar",
+      "kind": "skyline",
+      "scans": [
+        "rock_surface"
+      ],
+      "stones_varied": false
+    },
+    "rubble_random": {
+      "substance": "stone",
+      "facing": "rubble",
+      "kind": "cells",
+      "scans": [
+        "rock_surface",
+        "rock_boulder_dry",
+        "rock_01"
+      ],
+      "stones_varied": true
+    },
+    "polygonal": {
+      "substance": "granite",
+      "facing": "ashlar",
+      "kind": "cells",
+      "scans": [
+        "rock_boulder_dry",
+        "rock_01",
+        "rock_surface"
+      ],
+      "stones_varied": true
+    },
+    "cyclopean": {
+      "substance": "granite",
+      "facing": "ashlar",
+      "kind": "cells",
+      "scans": [
+        "rock_boulder_dry",
+        "rock_01",
+        "rock_surface"
+      ],
+      "stones_varied": true
+    },
+    "ishigaki": {
+      "substance": "granite",
+      "facing": "ashlar",
+      "kind": "cells",
+      "scans": [
+        "rock_boulder_dry",
+        "rock_01",
+        "rock_surface"
+      ],
+      "stones_varied": true
+    },
+    "reticulatum": {
+      "substance": "tufa",
+      "facing": "ashlar",
+      "kind": "grid45",
+      "scans": [
+        "rock_pitted_mossy"
+      ],
+      "stones_varied": false
+    },
+    "plinfa": {
+      "substance": "plinfa",
+      "facing": "ashlar",
+      "kind": "brick",
+      "scans": [
+        "rock_surface"
+      ],
+      "stones_varied": false
+    },
+    "flint": {
+      "substance": "flint",
+      "facing": "rubble",
+      "kind": "cells",
+      "scans": [
+        "rock_surface"
+      ],
+      "stones_varied": true
+    },
+    "cobble_wall": {
+      "substance": "river",
+      "facing": "rubble",
+      "kind": "cells",
+      "scans": [
+        "rock_surface"
+      ],
+      "stones_varied": true
+    },
+    "whitestone": {
+      "substance": "whitestone",
+      "facing": "ashlar",
+      "kind": "courses",
+      "scans": [
+        "rock_surface"
+      ],
+      "stones_varied": false
+    }
+  }
+}

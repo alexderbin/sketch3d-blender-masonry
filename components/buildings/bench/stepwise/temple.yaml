@@ -1,0 +1,16 @@
+# Step-by-step build example for a temple (step "building", type "temple"): a catalog place → a cathedral →
+# camera → light → frame.
+# .venv/bin/python -m core.manager.pipeline components/buildings/bench/stepwise/temple.yaml [--out out/dev/runs/…] [--until building]
+# The camera target is explicit (target: the temple center from the step's plan); without it Camera takes the
+# building center from the anchors — anchors.json, temple.centre (written by the "building" step).
+pipeline: temple_stepwise
+scene: bench/scenes/castle_rock
+profile: preview   # sketch stage (stubs and Workbench); here — Eevee with 8 samples, as the references were rendered
+build: stepwise
+steps:
+  - relief: {preset: fortress_hill, seed: 7}
+  - building: {type: temple, style: gothic_fr, seed: 1}
+  - camera: {view: wide, azimuth: 235, elevation: 16, distance: 230, target: "-116.6,-115.1", above: 18, res: 960x540}
+  - light: {time: day}
+outputs:
+  - frames: {video: false, samples: 8}

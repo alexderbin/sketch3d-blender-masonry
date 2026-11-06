@@ -1,0 +1,174 @@
+# Paving knowledge: coverings of horizontal surfaces — street and courtyard pavements, building floors; real-life sizes,
+# in meters. Read by paving.py (the project's Python; in Blender — from the JSON plan).
+# The logic is masonry laid flat: rows with bonding, cells, herringbone; an area is a strip along a path (street, road)
+# or a polygon (courtyard, areas, floor); camera-dependent view: stones up close, bedding with a pattern in the shader
+# far away.
+# Size sources: [f] — museums, standards, excavations; [s] — reference books and classifications; [p] — from memory.
+# A new kind is an entry under "kinds:"; check — bench/bench.py.
+
+version: 1
+
+base:                       # shared by all kinds; a kind overrides it with its own values
+  generator: rows             # rows | herringbone | basketweave | grid | cells | half_logs
+  direction: across        # for a strip: across — rows across the path (stones along the row, across the street); along — rows along the path
+  w: 0.10                     # row width (stone size across the row)
+  L: [0.10, 0.10]             # stone length along the row (from, to); for grid — the tile side, for cells — the stone diameter
+  t: 0.10                     # stone height (the upper part shows above the bedding — see "visible")
+  visible: 0.03                 # how much the stone stands above the bedding (the joint)
+  joint: 0.012                  # joint width
+  bond: staggered        # staggered | randomly (joints of adjacent rows no closer than from_side) | stacked
+  from_side: 0.03
+  top: flat               # flat (chamfer) | dome (cobblestone) | log (half-log of the planks) | plank
+  chamfer: 0.008
+  spread: 0.08               # spread of stone tone
+  liveliness: 1.0                # tilt and sinking of the stone depend on its number
+  substance: granite
+  bedding: sand              # substance of the joint and bedding
+  role: floor                     # face role per the core contract: floor (8) | wood (3)
+
+substances:                     # tone (linear RGB)
+  granite:        [0.36, 0.35, 0.34]   # granite, gray
+  granite_red:    [0.42, 0.30, 0.26]   # granite, reddish
+  basalt:         [0.17, 0.17, 0.18]   # basalt, diabase
+  river_stone:    [0.40, 0.37, 0.32]   # river pebble, boulder
+  limestone:      [0.58, 0.54, 0.46]   # limestone
+  sandstone:      [0.55, 0.42, 0.30]   # sandstone
+  clinker:        [0.40, 0.18, 0.12]   # clinker, fired brick
+  terracotta:     [0.55, 0.26, 0.14]   # fired tile
+  tile_dark:      [0.12, 0.07, 0.05]   # dark glazed tile
+  tile_light:     [0.62, 0.48, 0.28]   # light (yellow) glaze
+  oak:            [0.34, 0.22, 0.12]   # oak
+  pine:           [0.48, 0.34, 0.20]   # pine
+  pine_old:       [0.30, 0.25, 0.20]   # old gray wood
+  sand:           [0.42, 0.37, 0.28]   # bedding sand, joint
+  mortar:         [0.56, 0.53, 0.48]   # mortar
+  earth:          [0.23, 0.19, 0.14]   # earth, mud between the half-logs
+
+kinds:
+  # ── pavements
+  cobble:
+    title: "cobblestone (\"cat heads\")"   # [s] medieval pavements — river pebbles 7–13 cm (Vienna, Freyung; class Katzenkopf)
+    generator: cells
+    L: [0.09, 0.14]
+    t: 0.12
+    visible: 0.05
+    joint: 0.02
+    top: dome
+    substance: river_stone
+    spread: 0.14
+  setts_small:
+    title: "small setts 10 cm"   # [s] Kleinpflaster ≈ 10 cm (OSM sett:length)
+    w: 0.10
+    L: [0.09, 0.12]
+    t: 0.10
+    bond: randomly
+    from_side: 0.025
+    spread: 0.10
+  setts_large:
+    title: "large setts 15 × 25"   # [s] Großpflaster ≈ 15 cm; rows across the street, staggered
+    w: 0.15
+    L: [0.20, 0.28]
+    t: 0.14
+    joint: 0.015
+    bond: randomly
+    from_side: 0.05
+    substance: basalt
+    spread: 0.07
+  flagstone:
+    title: "slabs in rows of different width"   # [p] courtyards, squares, church floors: rows 0.3–0.6, lengths 0.4–0.9
+    direction: along
+    w: [0.30, 0.45, 0.60]
+    L: [0.40, 0.90]
+    t: 0.08
+    visible: 0.012
+    joint: 0.008
+    bond: randomly
+    from_side: 0.10
+    substance: limestone
+    spread: 0.09
+  flagstone_crazy:
+    title: "irregular slabs (rubble)"   # [p] courtyard, path: flat rubble, diameter 0.35–0.7
+    generator: cells
+    L: [0.35, 0.70]
+    t: 0.07
+    visible: 0.012
+    joint: 0.025
+    substance: sandstone
+    spread: 0.10
+    jitter: 0.42                           # cell points are scattered (otherwise a honeycomb)
+    weight: 0.35                             # large and small slabs mixed together
+  brick_herringbone:
+    title: "herringbone brick"             # [p] clinker 0.21 × 0.10 on edge; herringbone at 45° to the axis
+    generator: herringbone
+    w: 0.10
+    L: [0.21, 0.21]
+    t: 0.10
+    visible: 0.008
+    joint: 0.008
+    angle: 45
+    substance: clinker
+    spread: 0.10
+  brick_basket:
+    title: "basketweave brick"
+    generator: basketweave
+    w: 0.10
+    L: [0.20, 0.20]
+    t: 0.10
+    visible: 0.008
+    joint: 0.008
+    substance: clinker
+    spread: 0.10
+  wood_pavement:
+    title: "wooden pavement (half-logs)"   # [f] decking across the street on longitudinal joists (Vologda — joists up to 6 m; Novgorod — up to 28 tiers); [s] half-logs — split logs with the flat side up
+    generator: half_logs
+    w: [0.24, 0.34]                       # half-log width (half a log) along the street
+    t: 0.16
+    visible: 0.10
+    joint: 0.02
+    top: plank                           # flat side up: people walk on the decking; the split edge is a rough chamfer
+    chamfer: 0.03
+    substance: pine_old
+    bedding: earth
+    role: wood
+    spread: 0.10
+  # ── floors
+  planks:
+    title: "plank floor (wide boards)"  # [p] oak 0.25–0.45 × 0.035, lengths 2–5 m staggered
+    direction: along
+    w: [0.25, 0.32, 0.38, 0.45]
+    L: [2.0, 5.0]
+    t: 0.035
+    visible: 0.035
+    joint: 0.004
+    bond: randomly
+    from_side: 0.6
+    top: plank
+    substance: oak
+    bedding: pine_old
+    role: wood
+    spread: 0.08
+    liveliness: 0.3
+  floor_tiles:
+    title: "tile 13 × 13, checkerboard"    # [f] medieval floor tile 10–14 cm, 2–2.5 cm (MFA Boston, Met, Museum Wales)
+    generator: grid
+    L: [0.13, 0.13]
+    t: 0.024
+    visible: 0.006
+    joint: 0.005
+    checker: [terracotta, tile_dark]
+    angle: 0
+    substance: terracotta
+    bedding: mortar
+    spread: 0.06
+  floor_tiles_diag:
+    title: "diagonal tile, checkerboard"
+    generator: grid
+    L: [0.13, 0.13]
+    t: 0.024
+    visible: 0.006
+    joint: 0.005
+    checker: [tile_light, tile_dark]
+    angle: 45
+    substance: tile_light
+    bedding: mortar
+    spread: 0.06

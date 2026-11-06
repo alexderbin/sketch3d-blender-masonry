@@ -1,0 +1,344 @@
+# Castle typology — knowledge as data (castles/castle_plan.py). What is decided by the place, purpose, era,
+# culture, scale and character. The numbers are orders of magnitude from castellology; check and edit them
+# here, without code. Meters. The keys are in Latin letters — the plan writes them (castle: {site, purpose,
+# era, culture, scale, mood}).
+
+scales:                      # main court area (m²), number of courts, multiplier of building heights and sizes
+  watch:  {area: 350,   wards: 1, h: 0.85, size: 0.8}
+  small:  {area: 1400,  wards: 1, h: 0.9,  size: 0.9}
+  medium: {area: 3000,  wards: 2, h: 1.0,  size: 1.0}
+  large:  {area: 6500,  wards: 2, h: 1.1,  size: 1.1}
+  royal:  {area: 14000, wards: 3, h: 1.25, size: 1.25}
+
+eras:                        # siege and construction: tower spacing (m), walls (height, thickness), towers above the walkway, gates, machicolations
+  romanesque: {year: 1150, spacing: 48, wall_h: 8.0,  wall_t: 2.2, tower_up: 5.0, gate: tower, machicolation: false, concentric: false,
+               corners_only: true}
+  gothic:     {year: 1280, spacing: 32, wall_h: 10.0, wall_t: 2.6, tower_up: 6.0, gate: twin,  machicolation: false, concentric: true}
+  late:       {year: 1420, spacing: 28, wall_h: 12.0, wall_t: 3.0, tower_up: 7.0, gate: twin,  machicolation: true,  concentric: true}
+  artillery:  {year: 1650, spacing: 999, wall_h: 9.0, wall_t: 7.0, tower_up: 6.0, gate: tower, machicolation: false, concentric: false,
+               bastions: true, merlon: none}           # bastion fortress (Vauban): bastions instead of towers, a low thick rampart
+  future:     {year: 40000, spacing: 30, wall_h: 14.0, wall_t: 4.5, tower_up: 8.0, gate: twin, machicolation: false, concentric: true}
+
+cultures:                    # dictionary and placement rules
+  german:                    # Germany: a bergfried on the threat side, a shield wall, tall roofs, the palas at a safe edge
+    towers_k: 0.6               # tower density of the culture
+    keep: bergfried          # bergfried | donjon | donjon_round | norman | gatehouse | spire | none
+    keep_at: threat          # threat — toward the approach/neck; highest; centre; corner_threat; view (above a cliff)
+    shield_wall: true
+    tower_plan: {square: 0.55, round: 0.45}
+    tower_roof: {pyramid: 0.45, tent: 0.25, flat: 0.3}
+    merlon: rect
+    batter: 0.05             # base batter: share of the height
+    regular: 0.15            # on a plain: 0 — as the place dictates, 1 — a regular figure
+    roof_pitch: 55
+    plan_shape: [rect, poly]
+    colors: {stone: [0.66, 0.62, 0.56], roof: [0.42, 0.20, 0.16], plaster: [0.85, 0.82, 0.74]}
+  french:                    # France: round towers with steep cones, a round donjon in the corner toward the threat
+    towers_k: 1.0               # tower density of the culture
+    keep: donjon_round
+    keep_at: corner_threat
+    tower_plan: {round: 1.0}
+    tower_roof: {cone: 1.0}
+    roof_pitch: 62
+    merlon: rect
+    batter: 0.1
+    regular: 0.45
+    plan_shape: [rect, poly]
+    colors: {stone: [0.80, 0.77, 0.70], roof: [0.25, 0.27, 0.33], plaster: [0.88, 0.86, 0.80]}
+  english:                   # England and Wales: Edwardian rings, gate-donjons, polygonal and round towers, flat tops
+    towers_k: 1.15               # tower density of the culture
+    keep: gatehouse
+    keep_at: gate
+    tower_plan: {round: 0.4, poly8: 0.35, D: 0.25}
+    tower_roof: {flat: 1.0}
+    roof_pitch: 45
+    merlon: rect
+    batter: 0.08
+    regular: 0.75
+    plan_shape: [rect, poly]
+    colors: {stone: [0.62, 0.60, 0.56], roof: [0.30, 0.30, 0.32], plaster: [0.80, 0.78, 0.72]}
+  crusader:                  # Levant: massive walls with a glacis, square and round towers, flat roofs, a donjon on top
+    towers_k: 1.1               # tower density of the culture
+    keep: donjon
+    keep_at: highest
+    tower_plan: {square: 0.5, round: 0.5}
+    tower_roof: {flat: 1.0}
+    roof_pitch: 0
+    flat_roofs: true
+    merlon: rect
+    batter: 0.35
+    wall_t_k: 1.4
+    regular: 0.6
+    plan_shape: [rect]
+    colors: {stone: [0.82, 0.72, 0.56], roof: [0.70, 0.62, 0.50], plaster: [0.86, 0.80, 0.68]}
+  moorish:                   # Iberia, alcazaba: square towers, stepped merlons, rammed-earth walls, flat roofs
+    towers_k: 1.25               # tower density of the culture
+    keep: homage
+    keep_at: highest
+    tower_plan: {square: 1.0}
+    tower_roof: {flat: 1.0}
+    roof_pitch: 0
+    flat_roofs: true
+    merlon: stepped
+    batter: 0.03
+    regular: 0.35
+    plan_shape: [rect, poly]
+    colors: {stone: [0.76, 0.58, 0.42], roof: [0.66, 0.50, 0.36], plaster: [0.85, 0.74, 0.58]}
+  kremlin:                   # Rus: brick, towers with tent roofs, "swallowtail" merlons, no donjon
+    towers_k: 1.0               # tower density of the culture
+    keep: none
+    keep_at: centre
+    tower_plan: {square: 0.7, round: 0.3}
+    tower_roof: {tent: 1.0}
+    roof_pitch: 70
+    merlon: swallowtail
+    batter: 0.02
+    regular: 0.3
+    plan_shape: [tri, poly]
+    colors: {stone: [0.60, 0.26, 0.20], roof: [0.18, 0.36, 0.26], plaster: [0.90, 0.88, 0.82]}
+  imperial_scifi:               # sci-fi: cast stone, scale ×3, bastions as faceted towers, a command spire, armor-grade thickness
+    towers_k: 1.0               # tower density of the culture
+    keep: spire
+    keep_at: centre
+    scale: 3.0
+    tower_plan: {poly8: 0.45, square: 0.35, round: 0.2}
+    tower_roof: {spire: 0.5, flat: 0.5}
+    roof_pitch: 60
+    merlon: rect
+    batter: 0.18
+    wall_t_k: 1.3
+    regular: 0.8
+    plan_shape: [poly, rect]
+    tower_style: gothic      # imperial Gothic: towers in tiers with spires
+    colors: {stone: [0.50, 0.50, 0.52], roof: [0.22, 0.22, 0.25], plaster: [0.60, 0.60, 0.62]}
+  hell:                      # hell: faceted fang towers, spike merlons, tilt, dark stone, scale ×2
+    towers_k: 0.9               # tower density of the culture
+    keep: spire
+    keep_at: view
+    scale: 2.0
+    tower_plan: {poly6: 0.6, round: 0.4}
+    tower_roof: {spike: 1.0}
+    roof_pitch: 75
+    merlon: jagged
+    batter: 0.2
+    regular: 0.1
+    lean: 4.0                # tower tilt, degrees
+    plan_shape: [poly]
+    tower_style: dark        # fang towers in tiers: horns, crown, spikes
+    colors: {stone: [0.28, 0.20, 0.19], roof: [0.42, 0.10, 0.06], plaster: [0.35, 0.25, 0.22]}
+
+  gothic:                    # soaring fantasy Gothic: light stone, dark slate, towers in tiers with spires
+    towers_k: 1.0
+    keep: donjon
+    keep_at: highest
+    tower_plan: {square: 0.5, round: 0.3, poly8: 0.2}
+    tower_roof: {pyramid: 0.5, cone: 0.3, flat: 0.2}
+    roof_pitch: 64
+    merlon: rect
+    batter: 0.06
+    regular: 0.5
+    plan_shape: [poly, rect]
+    tower_style: gothic      # towers by tiers (tower_styles)
+    tower_up_k: 1.8          # towers above the walkway — this many times taller than usual
+    keep_up_k: 2.4
+    wall_h_k: 1.35
+    colors: {stone: [0.80, 0.78, 0.74], roof: [0.20, 0.23, 0.29], plaster: [0.88, 0.87, 0.84]}
+  vampire:                   # vampire (Stoker, Ravenloft, Bran, Hunyadi): dark stone, steep cones, narrow tall towers
+    towers_k: 0.9
+    keep: donjon_round
+    keep_at: view            # above the deepest cliff — the corner of a huge rock
+    tower_plan: {round: 0.55, square: 0.45}
+    tower_roof: {cone: 0.8, flat: 0.2}
+    roof_pitch: 70
+    merlon: rect
+    batter: 0.08
+    regular: 0.2
+    plan_shape: [poly]
+    tower_style: vampire
+    tower_up_k: 1.6
+    keep_up_k: 2.2
+    wall_h_k: 1.25
+    colors: {stone: [0.40, 0.38, 0.40], roof: [0.17, 0.14, 0.16], plaster: [0.58, 0.55, 0.53]}
+  sorcerer:                  # evil sorcerer (Orthanc, Barad-dur): black stone, faceted pillars, horns, spikes
+    towers_k: 0.5
+    keep: spire
+    keep_at: centre
+    tower_plan: {poly8: 0.6, poly6: 0.4}
+    tower_roof: {flat: 0.8, spike: 0.2}
+    roof_pitch: 70
+    merlon: jagged
+    batter: 0.15
+    regular: 0.7
+    plan_shape: [poly]
+    tower_style: dark
+    tower_up_k: 1.5
+    keep_up_k: 3.0
+    wall_h_k: 1.6
+    colors: {stone: [0.14, 0.14, 0.16], roof: [0.10, 0.08, 0.09], plaster: [0.26, 0.24, 0.25]}
+
+sites:                       # layout by place type (castle_site.py)
+  summit:     {walls: brow, keep_at: highest, ditch: gentle, wards: terraces}
+  ridge:      {walls: brow, ditch: ends, wards: axis}
+  spur:       {walls: brow, keep_at: threat, ditch: neck, wards: axis, shield: neck}
+  hillside:   {walls: brow, keep_at: threat, ditch: uphill, wards: terraces, shield: uphill}
+  rock:       {walls: brow, keep_at: highest, ditch: none, wards: one, tight: true}
+  cliff_edge: {walls: brow, keep_at: threat, ditch: gentle, wards: axis, cliff_wall: low}
+  plain:      {walls: template, ditch: ring, wards: concentric}
+  shore:      {walls: template, ditch: ring_wet, wards: concentric}
+  peninsula:  {walls: brow, ditch: neck_wet, wards: axis}
+  island:     {walls: brow, ditch: none, wards: one}
+  valley:     {walls: template, ditch: ring, wards: one}
+
+purposes:                    # program: buildings in order of importance; keep — whether a main tower is needed
+  lord_seat:       {keep: true,  items: [palas, chapel, kitchen, stable, store, store]}
+  border_fortress: {keep: true,  items: [barracks, barracks, armory, store, chapel, stable, store], towers_k: 1.3, wall_k: 1.15, wards_min: 2}
+  watchtower:      {keep: true,  items: [house], scale: watch, no_towers: true, keep_k: 1.3}   # a tower with a small court
+  order_castle:    {keep: true,  items: [convent, chapel_big, store, stable], regular_k: 1.5}
+  palace:          {keep: false, items: [palas_big, wing, wing, chapel, stable], towers_k: 0.7, wall_k: 0.7, regular_k: 1.4}
+  citadel:         {keep: true,  items: [barracks, arsenal, governor, store, chapel_big], towers_k: 1.2, wall_k: 1.1, tiers: [3, 5]}   # on a mountain — ring tiers (Minas Tirith)
+  lair:            {keep: true,  items: [hall, store], keep_k: 1.6, wall_k: 1.1, tower_up_k: 1.4}
+  prison:          {keep: true,  items: [cells, cells, barracks], wall_k: 1.3, towers_k: 0.9}
+  pass_fort:       {keep: true,  items: [barracks, store, stable, chapel], barrier: true}   # barrier: a wall across a gorge, an outpost on the road
+  mage_tower:      {keep: true,  items: [house, store], scale: small, no_towers: true, wall_k: 0.45, keep_style: mage, keep_h: [45, 95], keep_r: [4.5, 7.0]}   # a mage's tower and a low enclosure
+  sorcerer:        {keep: true,  items: [barracks, barracks, armory, store], scale: royal, culture: sorcerer, keep_style: dark, keep_h: [110, 230], keep_r: [11, 18], towers_k: 0.4, wall_k: 1.3, layout: ring}   # a dark tower in a ring (Isengard)
+  vampire_castle:  {keep: true,  items: [hall, chapel, kitchen, stable, store, house], culture: vampire, mood: grim, keep_style: vampire, keep_h: [45, 75], keep_r: [5.5, 8.0], bridge: true}   # Dracula, Ravenloft
+
+buildings:                   # length × depth (m), floors, at which wall (safe — above a cliff/water, gate — at the gate, any), roof
+  palas:      {L: 28, D: 12, storeys: 3, side: safe, roof: gable}
+  palas_big:  {L: 44, D: 14, storeys: 3, side: safe, roof: gable}
+  wing:       {L: 30, D: 11, storeys: 2, side: any,  roof: gable}
+  hall:       {L: 26, D: 13, storeys: 2, side: safe, roof: gable}
+  chapel:     {L: 16, D: 8,  storeys: 2, side: any,  roof: gable, apse: true, east: true}
+  chapel_big: {L: 30, D: 11, storeys: 3, side: any,  roof: gable, apse: true, east: true}
+  kitchen:    {L: 12, D: 9,  storeys: 1, side: near_palas, roof: gable}
+  stable:     {L: 22, D: 8,  storeys: 1, side: gate, roof: lean}
+  barracks:   {L: 26, D: 9,  storeys: 2, side: gate, roof: lean}
+  armory:     {L: 16, D: 9,  storeys: 2, side: any,  roof: gable}
+  arsenal:    {L: 30, D: 12, storeys: 2, side: any,  roof: gable}
+  governor:   {L: 20, D: 12, storeys: 3, side: safe, roof: hip}
+  store:      {L: 14, D: 8,  storeys: 2, side: any,  roof: lean}
+  house:      {L: 9,  D: 7,  storeys: 2, side: any,  roof: gable}
+  tower_house: {L: 11, D: 10, storeys: 6, side: safe, roof: hip}       # tower house (Eltz) — usually grows as an annex (complex.tower_house)
+  cells:      {L: 20, D: 9,  storeys: 2, side: any,  roof: lean}
+  convent:    {L: 40, D: 11, storeys: 3, side: ring, roof: gable}      # four wings around the court — an Order castle
+
+moods:                       # multipliers: heights, tower slenderness, tower count, roof steepness (°)
+  grim:      {h: 1.05, slender: 0.9,  towers: 1.0, pitch: -3}
+  proud:     {h: 1.2,  slender: 1.15, towers: 1.1, pitch: 3}
+  fairy:     {h: 1.35, slender: 1.4,  towers: 1.35, pitch: 10}
+  austere:   {h: 0.95, slender: 0.95, towers: 0.85, pitch: -5}
+  monstrous: {h: 1.6,  slender: 1.1,  towers: 1.3, pitch: 5, size: 1.4}
+
+canon:                       # scale (a person is 1.8 m): plan checks
+  storey: [3.0, 5.0]
+  gate_w: [2.8, 4.5]
+  gate_h: [3.8, 6.0]
+  walk_min: 1.6
+  merlon_w: [1.2, 2.4]
+  crenel_w: [0.5, 1.0]
+  crenel: {w: 1.7, gap: 0.8, h: 1.2, parapet: 1.1, pt: 0.6}   # merlon, clearance, merlon height, parapet, thickness — the plan and the build use the same values
+  road_slope_max: 0.22
+
+# ---------------------------------------------------------------- complex castles
+knobs:                       # character knobs 0–1; order: here → goal → explicit ones in the intent
+  density: 0.35              # development: the share of the wall frontage occupied by houses from inside (0 — only the program, 1 — a solid ring)
+  vertical: 0.4              # vertical: floors, tower houses, the height of towers and of the main tower
+  rock: 0.5                  # rock: plinths under towers and houses, masonry from the edge, the rocky hill of the main tower, boulders at cliffs
+  age: 0.5                   # age: traces of rebuilds, an old core, bricked-up gates, putlog holes
+  wealth: 0.5                # wealth: tower roofs, residential windows, oriels, tracery, chimneys
+  terraces: 0.5              # court terraces: from what ground drop the court is divided into levels
+  steps: 0.6                 # stairstep walls: the share of walls on a slope that go in ledges
+goals:                       # location goal → knobs; small: false — without small things (loopholes, putlog holes)
+  battle:     {density: 0.15, vertical: 0.3,  rock: 0.35, age: 0.25, wealth: 0.2,  terraces: 0.3, steps: 0.5}   # tactics: courts and walkways are free
+  frame:    {density: 0.45, vertical: 0.8,  rock: 0.85, age: 0.5,  wealth: 0.65, terraces: 0.7, steps: 1.0}   # hero shot: vertical, rock
+  detour:   {density: 0.65, vertical: 0.55, rock: 0.5,  age: 0.6,  wealth: 0.5,  terraces: 1.0, steps: 0.8}   # walk-through: levels, passages, houses
+  background:     {density: 0.3,  vertical: 0.9,  rock: 0.75, age: 0.3,  wealth: 0.45, terraces: 0.4, steps: 0.8, small: false}   # a silhouette in the distance
+  history: {density: 0.55, vertical: 0.55, rock: 0.55, age: 0.95, wealth: 0.55, terraces: 0.6, steps: 0.7}   # grew over centuries
+goal_alias: {battle: battle, shot: frame, walk: detour, backdrop: background, story: history}
+
+complex:                     # mechanisms; [a, b] — the value at knob 0 and 1
+  rock:
+    drop_min: [4.5, 1.2]     # the ground drop under a tower or a house from which the masonry stands on a rock plinth
+    wall_drop_min: [3.5, 1.2]  # the drop at the wall (court − ground at the outer face) from which the wall stands on a rock edge
+    slope_min: 28            # and the ground slope at the foot, ° (rock, not an embankment)
+    skirt: [0.6, 2.6]        # plinth offset beyond the masonry: at the top and at the foot, m
+    knoll: 0.8               # × rock: the probability of a rocky hill under the main tower (the court around it is not leveled)
+    flatten: [0.85, 0.6]     # the share of leveling the court to its mark (the rest is the rock relief)
+    crags: [0, 30]           # boulders at cliffs under the walls
+    color: [0.47, 0.45, 0.42]
+  steps:                     # stairstep wall — the culture's probability (× knob steps); a step is a whole number of merlons
+    cultures: {german: 0.7, french: 0.5, english: 0.45, crusader: 0.75, moorish: 1.0, kremlin: 1.0, imperial_scifi: 0.85, hell: 0.8}
+    grade_min: 0.045         # average wall walkway slope from which it goes in ledges
+    h: [1.1, 2.4]            # desired ledge height (by slope) → merlons per step k = ledge / (slope × merlon pitch)
+    k: [1, 6]                # merlons per step: min, max
+    k_culture: {kremlin: 1, moorish: 2}   # kremlin — each merlon is its own step (a "swallowtail" stairstep)
+    riser_min: 0.3           # a smaller ledge — the steps merge
+    grade_max: 0.7           # walkway slope with ledges (a level walkway — up to 0.35)
+  terraces:
+    range_min: [8.0, 3.2]    # the court ground drop (p5–p95) from which the court is divided into levels
+    level_m: 3.0             # drop per level (2 levels up to 6 m, 3 beyond)
+    levels_max: 4
+    area_min: 260            # terrace area at least, m²
+    t: 1.5                   # retaining wall: thickness; parapet 1.0 m
+  infill:                    # growth by annexes along the walls
+    kinds: {house: 0.4, store: 0.25, wing: 0.15, stable: 0.1, tower_house: 0.1}
+    L: [7.0, 15.0]
+    D: [6.5, 10.0]
+    roof: {lean: 0.45, gable: 0.45, hip: 0.1}
+    as_wall: [0.0, 0.85]     # the share of annexes that become the wall (× tightness: rock, cape, small court)
+    tight_area: 1800         # "houses as a wall" at full strength when the court is tighter
+    free_min: [0.42, 0.15]   # free share of the court (a cramped residential castle — Eltz — ~0.2); no more than 0.35
+  tower_house:               # tower house (Eltz type): 5–8 floors, half-timbering at the top, turrets at the corners
+    L: [9.0, 13.0]
+    D: [9.0, 12.0]
+    storeys: [5, 8]
+    cultures: {german: 1.0, french: 0.5, english: 0.6, crusader: 0.4, moorish: 0.5, kremlin: 0.3, imperial_scifi: 0.9, hell: 0.7}
+
+# ---------------------------------------------------------------- fantasy
+tower_styles:                # tower by tiers: base → tiers → crown → roof; [from, to]; {kind: probability}
+  gothic:                    # soaring Gothic: square → octagon with pinnacles (Freiburg), needle spire, lancets
+    stages: [3, 5]
+    chain: {square: [square, square, poly8], round: [round], poly8: [poly8], D: [round], poly6: [poly6]}
+    taper: [0.82, 0.9]       # each tier is narrower than the one below
+    trans: {setback: 0.45, pinnacles: 0.4, gallery: 0.15}
+    windows: lancet
+    crown: {merlons: 0.65, none: 0.35}
+    spire: {needle: 0.4, pyramid: 0.15, flat: 0.45}   # the main tower always has a spire (a landmark); wall towers — every other one (not "a needle on each")
+    spire_k: {needle: [2.6, 5.0], pyramid: [1.4, 2.4], cone: [1.8, 2.6], tent: [2.0, 3.0], onion: [1.4, 1.8], dome: [0.8, 1.0]}
+    turrets: 0.45
+    slender: 8               # maximum slenderness: masonry height / base width
+    keep_spire: needle       # the main tower gets this roof
+  vampire:                   # vampire: narrow tall towers, steep cones, turrets on corbels
+    stages: [2, 4]
+    chain: {round: [round], square: [square, round], poly8: [poly8, round], D: [round], poly6: [poly6]}
+    taper: [0.88, 0.96]
+    trans: {corbel: 0.3, setback: 0.5, gallery: 0.2}
+    windows: lancet
+    crown: {none: 0.7, merlons: 0.3}
+    spire: {cone: 0.65, needle: 0.15, flat: 0.2}
+    spire_k: {cone: [2.0, 3.6], needle: [3.5, 5.0]}
+    turrets: 0.6
+    slender: 9
+    keep_spire: cone
+  mage:                      # mage's tower: tiers by purpose, balcony galleries, an observatory on top
+    stages: [4, 7]
+    chain: {round: [round], poly8: [poly8, round], square: [square, poly8, round], D: [round], poly6: [poly6]}
+    taper: [0.86, 0.95]
+    trans: {gallery: 0.5, corbel: 0.25, setback: 0.25}
+    windows: arched
+    crown: {none: 0.6, merlons: 0.4}
+    spire: {dome: 0.35, needle: 0.35, cone: 0.2, onion: 0.1}
+    spire_k: {needle: [3.0, 4.5], cone: [2.0, 3.0], onion: [1.4, 1.8], dome: [0.8, 1.0]}
+    turrets: 0.3
+    slender: 12
+  dark:                      # villain's tower (Orthanc, Barad-dur): faceted pillars, horns, a crown, spikes
+    stages: [3, 5]
+    chain: {poly8: [poly8, poly6], poly6: [poly6], square: [square, poly8], round: [poly8], D: [poly8]}
+    taper: [0.76, 0.88]
+    trans: {setback: 0.6, corbel: 0.2, pinnacles: 0.2}
+    windows: slit
+    crown: {horns: 0.45, crown: 0.35, spikes: 0.2}
+    spire: {flat: 0.55, needle: 0.45}
+    spire_k: {needle: [2.5, 4.0]}
+    turrets: 0.0
+    slender: 6

@@ -1,0 +1,12 @@
+# Sources of the state assets. Cracks use our own growth atlas (crack_atlas.py), pitting is our
+# own (shader). CC0. Download: .venv/bin/python -m components.constructions.textures.states.fetch
+# → library/textures/states/<id>/ (images; git keeps meta.json and index.json).
+ambientcg:                      # 1K JPG
+  res: 1K-JPG
+  assets:
+    Moss003:     {kind: moss, what: dense moss}
+    Moss004:     {kind: moss, what: moss-cushion}
+polyhaven:                      # 2K JPG
+  res: 2k
+  assets:
+    brown_mud_02: {kind: mud, what: brown mud with pebbles, maps: [Diffuse, nor_gl, Rough, Displacement]}

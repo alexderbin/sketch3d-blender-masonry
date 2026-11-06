@@ -1,0 +1,192 @@
+# Houses — knowledge for the "house" type; dwellings and shops are the bulk of a settlement. A house kind = an outline
+# on the plot, yard, storeys, roof, openings, shop, jetties, colors. The ensemble picks the kind by archetype
+# (../ensembles/settlements.yaml), the house picks its parameters by the plot's seed; rank (the kind's wealth) and
+# trade (suitability for shops) are for the influences (../influences/): the house kind by the plot's wealth and the
+# street flow; by_wealth — which color lists run from poor to rich (the color follows the plot's wealth, not chance);
+# cheap — features that are more common among the poor (half-timbering, jetties, galleries, balconies; by default
+# half-timbering and jetties).
+# Meters, degrees; [a, b] — a range; color — a list of variants (rgb 0–1).
+
+kinds:
+  court_greek:
+    what: "a house with a yard (Olynthus, Priene; Hoepfner–Schwandner): the main wing on the north, 1–2 storeys, with a pastas portico toward the yard; the side wings, the shops by the street and the yard wall are random; roofs slope toward the yard, toward the street — a tall blank wall, one door"
+    rank: 0.55                         # the kind's wealth 0–1: the poorer the plot, the likelier a kind with a lower rank
+    trade: 0.5                          # suitability for shops 0–1: the busier the street, the likelier
+    outline: plot
+    storey: 3.0
+    makeup: wings
+    wings:
+      main: {depth: [4.6, 6.0], portico: [2.4, 3.0], height: [3.9, 4.3], gable: 0.25}   # height of the first storey; gable — the share of gabled ones
+      flank: {frac: 0.55, depth: [3.0, 4.0], height: [2.7, 3.0]}
+      street: {frac: 0.45, depth: [3.2, 4.2], height: [2.8, 3.2], shops: 0.5}            # by the street — shops and workshops
+      fence: [2.8, 3.3]                                                                      # a yard wall where there is no wing
+      court_min: [4.5, 0.18]                                                                   # the yard is no narrower than 4.5 m and no less than 18 % of the plot
+    roof: {kind: pitch, slope: [15, 19], overhang: 0.4}
+    windows: {rhythm: 3.2, w: [0.7, 0.9], h: [0.9, 1.1], sill: 1.6, kind: rect, street: few}   # toward the street — small windows under the ceiling
+    shop: {frac: 1.0, w: [2.2, 2.8], h: [2.4, 2.7], kind: rect, rhythm: 4.2}
+    door: {w: [1.2, 1.6], h: [2.3, 2.6], kind: rect}
+    wall: 0.5
+    by_wealth: [wall]              # raw ochre → whitewash
+    color: {wall: [[0.76, 0.66, 0.52], [0.82, 0.74, 0.62], [0.86, 0.8, 0.68], [0.9, 0.87, 0.8], [0.92, 0.9, 0.85]], roof: [[0.64, 0.35, 0.23], [0.58, 0.31, 0.21], [0.68, 0.4, 0.27]],
+           plinth: [0.6, 0.56, 0.5], finish: [0.78, 0.74, 0.66], wood: [0.34, 0.24, 0.16]}
+
+  domus:
+    what: "a domus: an atrium by the street and a peristyle at the back, shops (tabernae) along the facade on both sides of the entrance"
+    rank: 0.85
+    trade: 0.4
+    outline: plot
+    storey: 3.6
+    storeys_wing: {main: 1, others: 0}
+    court: {frac: [0.14, 0.2], where: center, wing: [4.0, 6.0], two: true}
+    roof: {kind: inward, slope: [17, 22], overhang: 0.5}
+    windows: {rhythm: 3.6, w: [0.6, 0.8], h: [0.8, 1.0], sill: 2.0, kind: rect, street: few}
+    shop: {frac: 1.0, w: [2.6, 3.2], h: [2.6, 3.0], kind: segment, rhythm: 4.0}
+    door: {w: [1.6, 2.2], h: [3.0, 3.4], kind: round}
+    wall: 0.55
+    by_wealth: [wall]              # red ochre → white plaster
+    color: {wall: [[0.78, 0.5, 0.36], [0.8, 0.62, 0.44], [0.86, 0.7, 0.5], [0.9, 0.84, 0.72]], roof: [[0.6, 0.31, 0.21], [0.55, 0.28, 0.19]],
+           plinth: [0.42, 0.4, 0.38], finish: [0.62, 0.3, 0.24], wood: [0.3, 0.2, 0.13]}
+
+  insula:
+    what: "an insula: a tenement of 3–6 storeys over the whole plot, tabernae in arches below, a row of windows above, a balcony on the second, a yard for the big ones"
+    rank: 0.35
+    trade: 1.0
+    outline: plot
+    storey: 3.1
+    first: 3.8
+    court: {frac: [0.12, 0.2], where: center, wing: [6.0, 8.0], off_squares: 520}
+    roof: {kind: ring, slope: [16, 21], overhang: 0.6}
+    windows: {rhythm: 3.0, w: [0.9, 1.15], h: [1.3, 1.6], sill: 0.9, kind: rect, street: "yes"}
+    shop: {frac: 0.85, w: [2.6, 3.3], h: [2.7, 3.1], kind: segment, rhythm: 3.9}
+    door: {w: [1.3, 1.7], h: [2.6, 3.0], kind: round}
+    balcony: {frac: 0.45, storey: 1, depth: [0.9, 1.2]}
+    wall: 0.55
+    cheap: [balcony]                  # wooden maeniana balconies — an accretion of the poor
+    by_wealth: [wall]              # dark brick → ochre
+    color: {wall: [[0.66, 0.36, 0.26], [0.72, 0.42, 0.3], [0.78, 0.5, 0.34], [0.84, 0.66, 0.46]], roof: [[0.6, 0.31, 0.21], [0.52, 0.27, 0.18]],
+           plinth: [0.5, 0.33, 0.26], finish: [0.86, 0.8, 0.68], wood: [0.3, 0.2, 0.13]}
+
+  burgage:
+    what: "a burgage house: a narrow facade on the street, 2–4 storeys, a steep roof with the gable or the eave toward the street, storey jetties, half-timbering, a shop below, a back yard"
+    rank: 0.55
+    trade: 0.7
+    outline: front
+    depth: [10.0, 15.0]
+    storey: 2.9
+    first: 3.3
+    roof: {kind: gable, slope: [46, 56], overhang: 0.45, gable_to_street: 0.6}
+    windows: {rhythm: 2.4, w: [0.8, 1.0], h: [1.2, 1.45], sill: 0.85, kind: rect, street: "yes"}
+    shop: {frac: 0.55, w: [1.8, 2.4], h: [2.2, 2.5], kind: segment, rhythm: 3.0, streets: [artery, street]}
+    door: {w: [1.0, 1.3], h: [2.2, 2.4], kind: rect}
+    reach: {frac: 0.55, m: [0.3, 0.5]}
+    fachwerk: 0.5
+    pipe: 0.7
+    back: {frac: [0.2, 0.85], depth: [4.0, 8.0], storeys: [1, 2]}   # share: [edge, center] — the yard gets built up toward the center (Conzen: the burgage cycle)
+    wall: 0.45
+    by_wealth: [roof, wall]      # thatch and shingles → tile → slate (for the nobility); walls — darker → lighter
+    color: {wall: [[0.74, 0.62, 0.5], [0.78, 0.7, 0.58], [0.82, 0.76, 0.64], [0.86, 0.82, 0.72], [0.88, 0.86, 0.8]],
+           roof: [[0.5, 0.44, 0.33], [0.44, 0.24, 0.17], [0.5, 0.26, 0.18], [0.56, 0.32, 0.22], [0.3, 0.3, 0.33]], plinth: [0.5, 0.48, 0.45],
+           finish: [0.62, 0.6, 0.56], wood: [[0.26, 0.17, 0.1], [0.32, 0.21, 0.12], [0.2, 0.14, 0.1]]}
+
+  izba:
+    what: "a posad house: a log house or wattle-and-daub set back from the street, gable toward the street, a yard and a shed"
+    rank: 0.35
+    trade: 0.1
+    outline: front
+    offset: [1.5, 4.0]
+    width: [6.0, 9.0]
+    depth: [7.0, 11.0]
+    storey: 2.8
+    roof: {kind: gable, slope: [38, 48], overhang: 0.6, gable_to_street: 0.8}
+    windows: {rhythm: 2.3, w: [0.7, 0.9], h: [0.9, 1.1], sill: 1.0, kind: rect, street: "yes"}
+    door: {w: [0.95, 1.15], h: [1.9, 2.1], kind: rect}
+    pipe: 0.6
+    shed: {frac: 0.5, width: [4.0, 6.0], depth: [5.0, 8.0]}
+    wall: 0.3
+    by_wealth: [roof]             # thatch → shingles → boards
+    color: {wall: [[0.46, 0.34, 0.22], [0.52, 0.4, 0.27], [0.4, 0.3, 0.2], [0.82, 0.78, 0.68]], roof: [[0.5, 0.43, 0.3], [0.36, 0.3, 0.24], [0.3, 0.28, 0.27]],
+           plinth: [0.42, 0.4, 0.37], finish: [0.6, 0.5, 0.36], wood: [0.3, 0.21, 0.13]}
+
+  rural:
+    what: "a rural yard: a house set back from the street and a shed at the back of the yard"
+    rank: 0.5
+    trade: 0.0
+    outline: front
+    offset: [3.0, 7.0]
+    width: [7.0, 10.0]
+    depth: [8.0, 12.0]
+    storey: 2.8
+    roof: {kind: gable, slope: [40, 52], overhang: 0.6, gable_to_street: 0.5}
+    windows: {rhythm: 2.6, w: [0.7, 0.9], h: [0.9, 1.1], sill: 0.95, kind: rect, street: "yes"}
+    door: {w: [1.0, 1.2], h: [2.0, 2.2], kind: rect}
+    pipe: 0.8
+    shed: {frac: 0.85, width: [7.0, 10.0], depth: [10.0, 16.0]}
+    wall: 0.4
+    by_wealth: [roof]             # thatch → shingles → tile
+    color: {wall: [[0.86, 0.82, 0.72], [0.76, 0.68, 0.54], [0.5, 0.38, 0.25]], roof: [[0.55, 0.47, 0.3], [0.36, 0.3, 0.24], [0.44, 0.24, 0.17]],
+           plinth: [0.48, 0.46, 0.42], finish: [0.6, 0.55, 0.45], wood: [0.32, 0.22, 0.14]}
+
+  shack:
+    what: "a shack: one storey, a mono-pitch roof, at the plot facade"
+    rank: 0.05
+    trade: 0.1
+    outline: front
+    offset: [0.0, 1.0]
+    width: [4.0, 6.0]
+    depth: [4.0, 6.5]
+    storey: 2.5
+    storeys: [1, 1]
+    roof: {kind: pitch, slope: [10, 18], overhang: 0.4}
+    windows: {rhythm: 2.6, w: [0.6, 0.7], h: [0.7, 0.9], sill: 1.0, kind: rect, street: "yes"}
+    door: {w: [0.9, 1.0], h: [1.9, 2.0], kind: rect}
+    wall: 0.25
+    color: {wall: [[0.5, 0.42, 0.32], [0.58, 0.5, 0.4], [0.44, 0.38, 0.32]], roof: [[0.36, 0.3, 0.24], [0.42, 0.36, 0.3]],
+           plinth: [0.4, 0.38, 0.35], finish: [0.5, 0.44, 0.36], wood: [0.3, 0.22, 0.15]}
+
+  annex:
+    what: "a lean-to against the curtain wall: over the whole plot by the wall, a mono-pitch roof sloping from the wall toward the street"
+    rank: 0.3
+    trade: 0.3
+    outline: plot
+    storey: 2.9
+    roof: {kind: pitch, slope: [24, 32], overhang: 0.5, high: rear}
+    windows: {rhythm: 2.6, w: [0.7, 0.9], h: [1.0, 1.2], sill: 0.95, kind: rect, street: "yes"}
+    door: {w: [1.0, 1.2], h: [2.1, 2.3], kind: rect}
+    fachwerk: 0.35
+    wall: 0.45
+    by_wealth: [roof, wall]      # tile → slate; walls darker → lighter
+    color: {wall: [[0.7, 0.64, 0.56], [0.76, 0.7, 0.6], [0.82, 0.78, 0.68]], roof: [[0.46, 0.25, 0.18], [0.32, 0.31, 0.33]],
+           plinth: [0.5, 0.48, 0.45], finish: [0.6, 0.58, 0.54], wood: [0.28, 0.19, 0.12]}
+
+  shed:
+    what: "shed, barn: a tall storey, a steep roof, big gates"
+    rank: 0.2
+    trade: 0.0
+    outline: given
+    storey: 4.2
+    storeys: [1, 1]
+    roof: {kind: gable, slope: [42, 52], overhang: 0.5}
+    windows: {rhythm: 5.0, w: [0.6, 0.6], h: [0.6, 0.6], sill: 2.6, kind: rect, street: "yes"}
+    door: {w: [2.6, 3.4], h: [3.0, 3.4], kind: rect}
+    wall: 0.3
+    color: {wall: [[0.42, 0.31, 0.2], [0.48, 0.36, 0.24], [0.36, 0.27, 0.18]], roof: [[0.5, 0.43, 0.3], [0.36, 0.3, 0.24]],
+           plinth: [0.42, 0.4, 0.37], finish: [0.5, 0.42, 0.32], wood: [0.28, 0.2, 0.13]}
+
+  hub:
+    what: "a hive hub block: over the whole plot up to the tier ceiling, a grid of small windows, a flat roof with a parapet, pipes and galleries along the facade"
+    rank: 0.5
+    trade: 0.6
+    outline: plot
+    storey: 3.6
+    first: 4.8
+    roof: {kind: flat, slope: [0, 0], overhang: 0.0, parapet: 1.3}
+    windows: {rhythm: 2.4, w: [1.0, 1.2], h: [1.2, 1.5], sill: 1.0, kind: rect, street: "yes"}
+    shop: {frac: 0.7, w: [3.2, 4.4], h: [3.4, 3.8], kind: rect, rhythm: 6.0}
+    door: {w: [2.4, 3.0], h: [3.2, 3.6], kind: segment}
+    pipes: {step: [9.0, 15.0], r: [0.35, 0.7]}
+    gallery: {every: 3, frac: 0.35, depth: 1.4}
+    wall: 0.8
+    cheap: [gallery]                 # galleries and jetties along the facade — an accretion of the lower tiers
+    by_wealth: [wall]              # rusty and sooty → light (top)
+    color: {wall: [[0.46, 0.4, 0.34], [0.38, 0.37, 0.36], [0.44, 0.43, 0.41], [0.5, 0.48, 0.45]], roof: [[0.3, 0.3, 0.31], [0.26, 0.25, 0.25]],
+           plinth: [0.3, 0.3, 0.31], finish: [0.56, 0.42, 0.24], wood: [0.42, 0.26, 0.16], metal: [[0.24, 0.24, 0.26], [0.4, 0.26, 0.16], [0.3, 0.28, 0.25]]}

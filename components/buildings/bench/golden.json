@@ -1,0 +1,4743 @@
+{
+ "castle|cat_alpine_pass_1|culture=german,purpose=pass_fort": {
+  "plan": "dde14307bde16a1a",
+  "checks": "32/32",
+  "relief": "fd2690e40a2c8db3",
+  "summary": {
+   "n_towers": 17,
+   "n_courts": 1,
+   "like_wall": 0,
+   "n_rooms": 141,
+   "n_buildings": 3,
+   "n_annexes": 0,
+   "checks": "32/32",
+   "space": "9/12",
+   "walls_m": 393,
+   "n_terraces": 0,
+   "n_ledges": 0,
+   "n_plinths": 3,
+   "n_elements": 42
+  }
+ },
+ "castle|cat_crater_battlefield_2|culture=english": {
+  "plan": "c5b4ff037483ba59",
+  "checks": "32/32",
+  "relief": "433c24abc880ff78",
+  "summary": {
+   "n_towers": 19,
+   "n_courts": 2,
+   "like_wall": 0,
+   "n_rooms": 68,
+   "n_buildings": 9,
+   "n_annexes": 3,
+   "checks": "32/32",
+   "space": "11/12",
+   "walls_m": 571,
+   "n_terraces": 0,
+   "n_ledges": 0,
+   "n_plinths": 1,
+   "n_elements": 36
+  }
+ },
+ "castle|cat_crater_battlefield_2|culture=french,era=artillery,scale=large": {
+  "plan": "50557bcc1faf4416",
+  "checks": "16/17",
+  "relief": "b99a94bc51e41d65",
+  "summary": {
+   "n_towers": 0,
+   "n_courts": 1,
+   "like_wall": 0,
+   "n_rooms": 10,
+   "n_buildings": 6,
+   "n_annexes": 0,
+   "checks": "16/17",
+   "space": "10/12",
+   "walls_m": 411,
+   "n_terraces": 0,
+   "n_ledges": 0,
+   "n_plinths": 0,
+   "n_elements": 6
+  }
+ },
+ "castle|cat_crater_battlefield_2|culture=french,era=late,density=0.05": {
+  "plan": "4a324d0eab0b83c3",
+  "checks": "29/29",
+  "relief": "1cc719e0f8bfe037",
+  "summary": {
+   "n_towers": 18,
+   "n_courts": 2,
+   "like_wall": 0,
+   "n_rooms": 60,
+   "n_buildings": 6,
+   "n_annexes": 0,
+   "checks": "29/29",
+   "space": "10/12",
+   "walls_m": 641,
+   "n_terraces": 0,
+   "n_ledges": 0,
+   "n_plinths": 1,
+   "n_elements": 38
+  }
+ },
+ "castle|cat_crater_battlefield_2|goal=detour,culture=french,era=late": {
+  "plan": "ee84824517aa102e",
+  "checks": "31/31",
+  "relief": "1cc719e0f8bfe037",
+  "summary": {
+   "n_towers": 16,
+   "n_courts": 2,
+   "like_wall": 4,
+   "n_rooms": 61,
+   "n_buildings": 17,
+   "n_annexes": 11,
+   "checks": "31/31",
+   "space": "10/12",
+   "walls_m": 576,
+   "n_terraces": 0,
+   "n_ledges": 0,
+   "n_plinths": 1,
+   "n_elements": 31
+  }
+ },
+ "castle|cat_crater_battlefield_2|purpose=sorcerer": {
+  "plan": "05d138b010a59ac2",
+  "checks": "18/18",
+  "relief": "9ddfb0f4f7c0f41b",
+  "summary": {
+   "n_towers": 4,
+   "n_courts": 1,
+   "like_wall": 0,
+   "n_rooms": 22,
+   "n_buildings": 7,
+   "n_annexes": 3,
+   "checks": "18/18",
+   "space": "11/12",
+   "walls_m": 454,
+   "n_terraces": 0,
+   "n_ledges": 0,
+   "n_plinths": 0,
+   "n_elements": 9
+  }
+ },
+ "castle|cat_desert_canyon_2|culture=french": {
+  "plan": "39acabf8418d60ab",
+  "checks": "31/31",
+  "relief": "eaf1ce5604a57528",
+  "summary": {
+   "n_towers": 9,
+   "n_courts": 2,
+   "like_wall": 0,
+   "n_rooms": 61,
+   "n_buildings": 5,
+   "n_annexes": 0,
+   "checks": "31/31",
+   "space": "10/12",
+   "walls_m": 361,
+   "n_terraces": 0,
+   "n_ledges": 10,
+   "n_plinths": 6,
+   "n_elements": 27
+  }
+ },
+ "castle|cat_desert_canyon_2|goal=frame": {
+  "plan": "6e3392c57aba0a76",
+  "checks": "26/26",
+  "relief": "478cd0b2a8c395af",
+  "summary": {
+   "n_towers": 11,
+   "n_courts": 2,
+   "like_wall": 4,
+   "n_rooms": 48,
+   "n_buildings": 6,
+   "n_annexes": 2,
+   "checks": "26/26",
+   "space": "9/12",
+   "walls_m": 361,
+   "n_terraces": 0,
+   "n_ledges": 12,
+   "n_plinths": 8,
+   "n_elements": 29
+  }
+ },
+ "castle|cat_fortress_hill_1|culture=german": {
+  "plan": "e1262d3fbf16b63e",
+  "checks": "21/21",
+  "relief": "aed8399875b3ef6e",
+  "summary": {
+   "n_towers": 5,
+   "n_courts": 1,
+   "like_wall": 0,
+   "n_rooms": 28,
+   "n_buildings": 6,
+   "n_annexes": 0,
+   "checks": "21/21",
+   "space": "12/12",
+   "walls_m": 171,
+   "n_terraces": 0,
+   "n_ledges": 0,
+   "n_plinths": 1,
+   "n_elements": 18
+  }
+ },
+ "castle|cat_fortress_hill_3|purpose=citadel,culture=gothic": {
+  "plan": "8ef1368d3cb0c2e5",
+  "checks": "29/31",
+  "relief": "7be7675544ce29ee",
+  "summary": {
+   "n_towers": 32,
+   "n_courts": 3,
+   "like_wall": 3,
+   "n_rooms": 125,
+   "n_buildings": 19,
+   "n_annexes": 14,
+   "checks": "29/31",
+   "space": "9/12",
+   "walls_m": 1059,
+   "n_terraces": 0,
+   "n_ledges": 0,
+   "n_plinths": 1,
+   "n_elements": 65
+  }
+ },
+ "castle|cat_real_river_crossing_1|culture=german,site=rock": {
+  "plan": "2dcc8210ae913db5",
+  "checks": "28/28",
+  "relief": "d4bddb2281911ac4",
+  "summary": {
+   "n_towers": 8,
+   "n_courts": 2,
+   "like_wall": 2,
+   "n_rooms": 63,
+   "n_buildings": 8,
+   "n_annexes": 2,
+   "checks": "28/28",
+   "space": "11/12",
+   "walls_m": 494,
+   "n_terraces": 0,
+   "n_ledges": 3,
+   "n_plinths": 0,
+   "n_elements": 27
+  }
+ },
+ "castle|cat_real_river_crossing_1|purpose=mage_tower": {
+  "plan": "430746a46cfb6e10",
+  "checks": "18/18",
+  "relief": "42a04703b1fd300a",
+  "summary": {
+   "n_towers": 0,
+   "n_courts": 1,
+   "like_wall": 0,
+   "n_rooms": 11,
+   "n_buildings": 4,
+   "n_annexes": 2,
+   "checks": "18/18",
+   "space": "11/12",
+   "walls_m": 157,
+   "n_terraces": 0,
+   "n_ledges": 0,
+   "n_plinths": 0,
+   "n_elements": 5
+  }
+ },
+ "castle|cat_real_river_crossing_1|purpose=order_castle,goal=history": {
+  "plan": "b91152cba6675ee0",
+  "checks": "29/29",
+  "relief": "46555746ea85fdec",
+  "summary": {
+   "n_towers": 8,
+   "n_courts": 2,
+   "like_wall": 0,
+   "n_rooms": 45,
+   "n_buildings": 8,
+   "n_annexes": 1,
+   "checks": "29/29",
+   "space": "11/12",
+   "walls_m": 494,
+   "n_terraces": 0,
+   "n_ledges": 9,
+   "n_plinths": 0,
+   "n_elements": 25
+  }
+ },
+ "castle|cat_real_river_crossing_1|purpose=vampire_castle": {
+  "plan": "2b6dc4d8a1d91c79",
+  "checks": "27/27",
+  "relief": "d4bddb2281911ac4",
+  "summary": {
+   "n_towers": 12,
+   "n_courts": 2,
+   "like_wall": 1,
+   "n_rooms": 65,
+   "n_buildings": 8,
+   "n_annexes": 2,
+   "checks": "27/27",
+   "space": "11/12",
+   "walls_m": 494,
+   "n_terraces": 0,
+   "n_ledges": 8,
+   "n_plinths": 0,
+   "n_elements": 34
+  }
+ },
+ "castle|cat_real_volcanic_plateau_1|goal=frame,culture=kremlin": {
+  "plan": "4907469c9a85375e",
+  "checks": "25/26",
+  "relief": "21487a499fd74ddc",
+  "summary": {
+   "n_towers": 8,
+   "n_courts": 2,
+   "like_wall": 1,
+   "n_rooms": 77,
+   "n_buildings": 7,
+   "n_annexes": 0,
+   "checks": "25/26",
+   "space": "9/12",
+   "walls_m": 317,
+   "n_terraces": 3,
+   "n_ledges": 67,
+   "n_plinths": 0,
+   "n_elements": 18
+  }
+ },
+ "castle|cat_real_volcanic_plateau_1|goal=detour": {
+  "plan": "e828f826742a71e1",
+  "checks": "24/25",
+  "relief": "8881aa196b00c70b",
+  "summary": {
+   "n_towers": 7,
+   "n_courts": 2,
+   "like_wall": 1,
+   "n_rooms": 57,
+   "n_buildings": 6,
+   "n_annexes": 0,
+   "checks": "24/25",
+   "space": "9/12",
+   "walls_m": 317,
+   "n_terraces": 3,
+   "n_ledges": 23,
+   "n_plinths": 0,
+   "n_elements": 14
+  }
+ },
+ "classics|all|cat_river_crossing_1|1": {
+  "plan": "312b0b35cdd0a27b",
+  "checks": "0/0",
+  "relief": "eeabbfc88e0ad259",
+  "summary": {
+   "n_buildings": 11
+  }
+ },
+ "classics|all|cat_river_crossing_1|2": {
+  "plan": "83c6b7df3581c4b7",
+  "checks": "0/0",
+  "relief": "eeabbfc88e0ad259",
+  "summary": {
+   "n_buildings": 11
+  }
+ },
+ "model|castle|cat_fortress_hill_1|culture=german": {
+  "vertices": "45a139330c468f53",
+  "n_faces": 250525,
+  "n_objects": 8,
+  "roles": "da39a3ee5e6b4b0d",
+  "topology": "f698eff160e15270",
+  "color": "fa2531a93391bdcf",
+  "cells": "ee895f913b412522"
+ },
+ "model|castle|cat_real_river_crossing_1|purpose=mage_tower": {
+  "vertices": "0cd9561c61471085",
+  "n_faces": 258981,
+  "n_objects": 7,
+  "roles": "da39a3ee5e6b4b0d",
+  "topology": "cca52be66a8edf4d",
+  "color": "fd4fa39db6360074",
+  "cells": "473209a90bcd3728"
+ },
+ "model|castle|cat_real_river_crossing_1|purpose=order_castle,goal=history": {
+  "vertices": "11044e4eeb917d99",
+  "n_faces": 374858,
+  "n_objects": 9,
+  "roles": "da39a3ee5e6b4b0d",
+  "topology": "3d198fe872581033",
+  "color": "e3cfa14dbced7511",
+  "cells": "590e51f56b08b5eb"
+ },
+ "model|edifice|domed|byzantine|cat_fortress_hill_1|2": {
+  "vertices": "7775fb7aeccdcb9a",
+  "n_faces": 39468,
+  "n_objects": 5,
+  "roles": "5bde82983ace81f7",
+  "topology": "03a2c0bed4bf39d5",
+  "color": "493f4ce50ba11916",
+  "cells": "b168a554767c9992"
+ },
+ "model|edifice|temple_mountain|khmer|cat_crater_battlefield_2|1": {
+  "vertices": "fcf9dc12588f727e",
+  "n_faces": 60646,
+  "n_objects": 8,
+  "roles": "0f0ef5de52781313",
+  "topology": "dc9300e85403b0b3",
+  "color": "999ede4992ebf624",
+  "cells": "79423765ec4198a9"
+ },
+ "model|edifice|ziggurat|mesopotamian|cat_crater_battlefield_2|1": {
+  "vertices": "ca4f99e72fcf6187",
+  "n_faces": 74255,
+  "n_objects": 6,
+  "roles": "3d14cbf205f01d9f",
+  "topology": "fba1718fdbb24de6",
+  "color": "bf653591232a2f6f",
+  "cells": "43027234852624e4"
+ },
+ "model|temple|cat_crater_battlefield_2|gothic_fr|1": {
+  "vertices": "218f50c5ac442f66",
+  "n_faces": 132930,
+  "n_objects": 11,
+  "roles": "333467dd3d2686f0",
+  "topology": "829c5b67110d34fd",
+  "color": "a58d78df25cb1ad6",
+  "cells": "a55564b042c4c655"
+ },
+ "model|temple|cat_fortress_hill_1|hive_gothic|1": {
+  "vertices": "302dde4a41be6789",
+  "n_faces": 187935,
+  "n_objects": 11,
+  "roles": "3eebb67d66fd1864",
+  "topology": "2f1576dcac31100c",
+  "color": "e9f8b4f6f2df256c",
+  "cells": "32d294ed9f3d1cd8"
+ },
+ "model|temple|cat_mountain_lake_1|romanesque|2": {
+  "vertices": "33f2bd1b947b0228",
+  "n_faces": 108267,
+  "n_objects": 11,
+  "roles": "8a00835fc068e692",
+  "topology": "84e291461bf83d22",
+  "color": "89ac14289994c44b",
+  "cells": "f85d08155e565a84"
+ },
+ "settlement|town|cat_river_crossing_2|1": {
+  "plan": "b5dd808c842d3edc",
+  "checks": "10/10",
+  "relief": "1adb64d45e234314",
+  "summary": {
+   "FSI": 0.96,
+   "GSI": 0.33,
+   "archetype": "town",
+   "kinds": {
+    "burgage": 362,
+    "back": 100,
+    "shack": 42
+   },
+   "power": [
+    "tower",
+    "tower",
+    "tower"
+   ],
+   "n_gates": 3,
+   "highest_m": 31.48,
+   "frac_streets": 0.17,
+   "n_houses": 504,
+   "roads_m": 37.84,
+   "n_city_blocks": 46,
+   "n_stairs": 79,
+   "n_squares": 1,
+   "area_ha": 9.23,
+   "districts": {
+    "poor": 98,
+    "power": 14,
+    "nobility": 85,
+    "craft": 64,
+    "middle": 160,
+    "trade": 83
+   },
+   "streets_m": {
+    "artery": 546.48,
+    "lane": 820.88,
+    "passage": 401.67,
+    "street": 2377.26
+   },
+   "n_plots": 470,
+   "storeys": {
+    "max": 11,
+    "min": 1
+   }
+  }
+ },
+ "settlement|village|cat_river_crossing_3|1": {
+  "plan": "0c8d8add415cf4bc",
+  "checks": "8/8",
+  "relief": "186c252b27e9a9ca",
+  "summary": {
+   "FSI": 0.24,
+   "GSI": 0.18,
+   "archetype": "village",
+   "kinds": {
+    "shack": 2,
+    "shed": 16,
+    "rural": 56
+   },
+   "power": [
+    "tower",
+    "court"
+   ],
+   "n_gates": 0,
+   "highest_m": 20.16,
+   "frac_streets": 0.16,
+   "n_houses": 74,
+   "roads_m": 0.0,
+   "n_city_blocks": 12,
+   "n_stairs": 11,
+   "n_squares": 0,
+   "area_ha": 3.09,
+   "districts": {
+    "poor": 6,
+    "power": 24,
+    "nobility": 9,
+    "craft": 10,
+    "middle": 15,
+    "trade": 10
+   },
+   "streets_m": {
+    "artery": 0.0,
+    "lane": 760.86,
+    "passage": 0.0,
+    "street": 497.25
+   },
+   "n_plots": 48,
+   "storeys": {
+    "max": 6,
+    "min": 1
+   }
+  }
+ },
+ "settlement|castle_inside|cat_fortress_hill_3|1": {
+  "plan": "cf8bbc4ad0c4f1f0",
+  "checks": "9/9",
+  "relief": "e5182a747c3ed866",
+  "summary": {
+   "FSI": 1.06,
+   "GSI": 0.46,
+   "archetype": "castle_inside",
+   "kinds": {
+    "burgage": 41,
+    "back": 2,
+    "annex": 33
+   },
+   "power": [
+    "castle"
+   ],
+   "n_gates": 0,
+   "highest_m": 15.05,
+   "frac_streets": 0.22,
+   "n_houses": 76,
+   "roads_m": 0.0,
+   "n_city_blocks": 7,
+   "n_stairs": 5,
+   "n_squares": 0,
+   "area_ha": 0.63,
+   "districts": {
+    "poor": 8,
+    "power": 5,
+    "nobility": 30,
+    "craft": 4,
+    "middle": 22,
+    "trade": 7
+   },
+   "streets_m": {
+    "artery": 0.0,
+    "lane": 334.02,
+    "passage": 0.0,
+    "street": 144.0
+   },
+   "n_plots": 83,
+   "storeys": {
+    "max": 3,
+    "min": 1
+   }
+  }
+ },
+ "settlement|colony|cat_river_crossing_1|1": {
+  "plan": "b11b31663bd6baec",
+  "checks": "10/10",
+  "relief": "b13e237c676d6b4c",
+  "summary": {
+   "FSI": 1.09,
+   "GSI": 0.48,
+   "archetype": "colony",
+   "kinds": {
+    "domus": 58,
+    "insula": 46
+   },
+   "power": [
+    "chambers"
+   ],
+   "n_gates": 4,
+   "highest_m": 13.49,
+   "frac_streets": 0.41,
+   "n_houses": 104,
+   "roads_m": 211.3,
+   "n_city_blocks": 80,
+   "n_stairs": 48,
+   "n_squares": 1,
+   "area_ha": 6.04,
+   "districts": {
+    "poor": 8,
+    "power": 1,
+    "nobility": 25,
+    "craft": 1,
+    "middle": 33,
+    "trade": 36
+   },
+   "streets_m": {
+    "artery": 440.15,
+    "lane": 0.0,
+    "passage": 0.0,
+    "street": 4696.94
+   },
+   "n_plots": 104,
+   "storeys": {
+    "max": 3,
+    "min": 1
+   }
+  }
+ },
+ "settlement|polis|cat_fortress_hill_1|1": {
+  "plan": "c57a284ab1d85bc2",
+  "checks": "12/12",
+  "relief": "fa515558e0fbf044",
+  "summary": {
+   "FSI": 0.78,
+   "GSI": 0.52,
+   "archetype": "polis",
+   "kinds": {
+    "court_greek": 194
+   },
+   "power": [
+    "acropolis",
+    "tower"
+   ],
+   "n_gates": 2,
+   "highest_m": 30.18,
+   "frac_streets": 0.17,
+   "n_houses": 194,
+   "roads_m": 43.33,
+   "n_city_blocks": 28,
+   "n_stairs": 2,
+   "landmarks": {
+    "altar": 1,
+    "bouleuterion": 1,
+    "palaestra": 1,
+    "peripteros": 1,
+    "propylon": 1,
+    "prostyle": 2,
+    "stoa": 3,
+    "theatre": 1
+   },
+   "n_squares": 1,
+   "area_ha": 7.52,
+   "districts": {
+    "poor": 71,
+    "power": 4,
+    "nobility": 38,
+    "craft": 11,
+    "middle": 45,
+    "trade": 25
+   },
+   "streets_m": {
+    "artery": 212.17,
+    "lane": 0.0,
+    "passage": 0.0,
+    "street": 2363.45
+   },
+   "n_plots": 192,
+   "storeys": {
+    "max": 10,
+    "min": 1
+   }
+  }
+ },
+ "settlement|posad|cat_fortress_hill_2|1": {
+  "plan": "0254e1a871e9e288",
+  "checks": "9/9",
+  "relief": "d42b83601b0e5122",
+  "summary": {
+   "FSI": 0.56,
+   "GSI": 0.31,
+   "archetype": "posad",
+   "kinds": {
+    "burgage": 85,
+    "back": 8,
+    "izba": 58,
+    "shack": 6,
+    "shed": 14
+   },
+   "power": [
+    "castle",
+    "tower"
+   ],
+   "n_gates": 1,
+   "highest_m": 9.59,
+   "frac_streets": 0.2,
+   "n_houses": 171,
+   "roads_m": 0.0,
+   "n_city_blocks": 39,
+   "n_stairs": 1,
+   "n_squares": 1,
+   "area_ha": 3.31,
+   "districts": {
+    "poor": 32,
+    "power": 1,
+    "nobility": 60,
+    "middle": 56,
+    "trade": 22
+   },
+   "streets_m": {
+    "artery": 168.45,
+    "lane": 1646.25,
+    "passage": 0.0,
+    "street": 286.46
+   },
+   "n_plots": 174,
+   "storeys": {
+    "max": 3,
+    "min": 1
+   }
+  }
+ },
+ "settlement|subura|cat_jungle_valley_1|1": {
+  "plan": "c539999b288f0a84",
+  "checks": "10/10",
+  "relief": "8c0ad57052643f3c",
+  "summary": {
+   "FSI": 2.19,
+   "GSI": 0.48,
+   "archetype": "subura",
+   "kinds": {
+    "domus": 16,
+    "insula": 390,
+    "shack": 9
+   },
+   "power": [
+    "tower",
+    "tower"
+   ],
+   "n_gates": 4,
+   "highest_m": 58.62,
+   "frac_streets": 0.17,
+   "n_houses": 415,
+   "roads_m": 0.0,
+   "n_city_blocks": 56,
+   "n_stairs": 194,
+   "n_squares": 0,
+   "area_ha": 7.12,
+   "districts": {
+    "poor": 96,
+    "power": 20,
+    "nobility": 51,
+    "craft": 63,
+    "middle": 134,
+    "trade": 51
+   },
+   "streets_m": {
+    "artery": 692.61,
+    "lane": 318.55,
+    "passage": 932.5,
+    "street": 2475.4
+   },
+   "n_plots": 499,
+   "storeys": {
+    "max": 12,
+    "min": 1
+   }
+  }
+ },
+ "settlement|hive|cat_river_crossing_3|1": {
+  "plan": "2c1e494eb55ad669",
+  "checks": "10/10",
+  "relief": "5f4067e25a4f7a65",
+  "summary": {
+   "FSI": 14.35,
+   "GSI": 0.47,
+   "archetype": "hive",
+   "kinds": {
+    "hub": 251
+   },
+   "power": [
+    "chambers",
+    "court",
+    "chambers",
+    "chambers"
+   ],
+   "n_gates": 4,
+   "highest_m": 203.2,
+   "frac_streets": 0.45,
+   "n_houses": 251,
+   "roads_m": 0.0,
+   "n_city_blocks": 32,
+   "n_stairs": 0,
+   "n_squares": 1,
+   "area_ha": 7.15,
+   "districts": {
+    "poor": 61,
+    "power": 20,
+    "nobility": 42,
+    "craft": 39,
+    "middle": 55,
+    "trade": 34
+   },
+   "streets_m": {
+    "artery": 643.02,
+    "lane": 0.0,
+    "passage": 1908.89,
+    "street": 2028.39
+   },
+   "n_plots": 60,
+   "storeys": {
+    "max": 25,
+    "min": 6
+   }
+  }
+ },
+ "edifice|axial_temple|egyptian|cat_crater_battlefield_2|1": {
+  "plan": "9a55a355c17f8a83",
+  "checks": "15/15",
+  "relief": "92bafc43009fa574",
+  "summary": {
+   "n_entrances": 5,
+   "highest_m": 35.0,
+   "length_m": 310.4,
+   "n_flights": 0,
+   "n_rooms": 7,
+   "checks": "15/15",
+   "style": "egyptian",
+   "type": "temple-axis",
+   "n_parts": 42,
+   "width_m": 86.9
+  }
+ },
+ "edifice|axial_temple|egyptian|cat_crater_battlefield_2|2": {
+  "plan": "5c05a712f6589410",
+  "checks": "15/15",
+  "relief": "22fe15af9b87823b",
+  "summary": {
+   "n_entrances": 5,
+   "highest_m": 25.9,
+   "length_m": 240.9,
+   "n_flights": 0,
+   "n_rooms": 7,
+   "checks": "15/15",
+   "style": "egyptian",
+   "type": "temple-axis",
+   "n_parts": 26,
+   "width_m": 76.1
+  }
+ },
+ "edifice|axial_temple|egyptian|cat_fortress_hill_1|1": {
+  "plan": "e4f4ab3702181957",
+  "checks": "15/15",
+  "relief": "6bbcadce2e5e7bce",
+  "summary": {
+   "n_entrances": 5,
+   "highest_m": 35.0,
+   "length_m": 310.4,
+   "n_flights": 0,
+   "n_rooms": 7,
+   "checks": "15/15",
+   "style": "egyptian",
+   "type": "temple-axis",
+   "n_parts": 42,
+   "width_m": 86.9
+  }
+ },
+ "edifice|axial_temple|egyptian|cat_fortress_hill_1|2": {
+  "plan": "219b56ca8fca818f",
+  "checks": "15/15",
+  "relief": "37efabc4766b477a",
+  "summary": {
+   "n_entrances": 5,
+   "highest_m": 25.9,
+   "length_m": 240.9,
+   "n_flights": 0,
+   "n_rooms": 7,
+   "checks": "15/15",
+   "style": "egyptian",
+   "type": "temple-axis",
+   "n_parts": 26,
+   "width_m": 76.1
+  }
+ },
+ "edifice|dark_citadel|dark|cat_crater_battlefield_2|1": {
+  "plan": "135560c6034deca1",
+  "checks": "16/16",
+  "relief": "0634db178b67d132",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 262.9,
+   "length_m": 185.5,
+   "n_flights": 1,
+   "n_rooms": 4,
+   "checks": "16/16",
+   "style": "dark",
+   "type": "dark citadel",
+   "n_parts": 100,
+   "width_m": 134.3
+  }
+ },
+ "edifice|dark_citadel|dark|cat_crater_battlefield_2|2": {
+  "plan": "7baa27f578b1404f",
+  "checks": "16/16",
+  "relief": "860de00025b55e1f",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 159.0,
+   "length_m": 138.2,
+   "n_flights": 1,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "dark",
+   "type": "dark citadel",
+   "n_parts": 102,
+   "width_m": 93.4
+  }
+ },
+ "edifice|dark_citadel|dark|cat_fortress_hill_1|1": {
+  "plan": "85af8856f2def0a9",
+  "checks": "16/16",
+  "relief": "ae5af1ee45e4ec8b",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 262.9,
+   "length_m": 185.5,
+   "n_flights": 1,
+   "n_rooms": 4,
+   "checks": "16/16",
+   "style": "dark",
+   "type": "dark citadel",
+   "n_parts": 100,
+   "width_m": 134.3
+  }
+ },
+ "edifice|dark_citadel|dark|cat_fortress_hill_1|2": {
+  "plan": "2228ea2521dfd8bc",
+  "checks": "16/16",
+  "relief": "c50f9243e90cf3a1",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 159.0,
+   "length_m": 138.2,
+   "n_flights": 1,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "dark",
+   "type": "dark citadel",
+   "n_parts": 102,
+   "width_m": 93.4
+  }
+ },
+ "edifice|dark_citadel|hell|cat_crater_battlefield_2|1": {
+  "plan": "5d752340d44a4663",
+  "checks": "16/16",
+  "relief": "392c8fffb4599a8e",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 490.9,
+   "length_m": 350.6,
+   "n_flights": 1,
+   "n_rooms": 7,
+   "checks": "16/16",
+   "style": "hell",
+   "type": "dark citadel",
+   "n_parts": 216,
+   "width_m": 222.4
+  }
+ },
+ "edifice|dark_citadel|hell|cat_crater_battlefield_2|2": {
+  "plan": "321fa0ee32ada648",
+  "checks": "16/16",
+  "relief": "564d7c7b49b0ecc5",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 293.8,
+   "length_m": 237.2,
+   "n_flights": 1,
+   "n_rooms": 7,
+   "checks": "16/16",
+   "style": "hell",
+   "type": "dark citadel",
+   "n_parts": 145,
+   "width_m": 179.6
+  }
+ },
+ "edifice|dark_citadel|hell|cat_fortress_hill_1|1": {
+  "plan": "3cfb58bd26a5c000",
+  "checks": "16/16",
+  "relief": "477dd62381697692",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 490.9,
+   "length_m": 350.6,
+   "n_flights": 1,
+   "n_rooms": 7,
+   "checks": "16/16",
+   "style": "hell",
+   "type": "dark citadel",
+   "n_parts": 216,
+   "width_m": 222.4
+  }
+ },
+ "edifice|dark_citadel|hell|cat_fortress_hill_1|2": {
+  "plan": "a18150b52bee006f",
+  "checks": "16/16",
+  "relief": "635b97f2eeab36c3",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 293.8,
+   "length_m": 237.2,
+   "n_flights": 1,
+   "n_rooms": 7,
+   "checks": "16/16",
+   "style": "hell",
+   "type": "dark citadel",
+   "n_parts": 145,
+   "width_m": 179.6
+  }
+ },
+ "edifice|domed|byzantine|cat_crater_battlefield_2|1": {
+  "plan": "53e7a9f4dbdc8dac",
+  "checks": "15/15",
+  "relief": "c8c53cc37dc0452b",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 27.6,
+   "length_m": 53.8,
+   "n_flights": 0,
+   "n_rooms": 3,
+   "checks": "15/15",
+   "style": "byzantine",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 53.8
+  }
+ },
+ "edifice|domed|byzantine|cat_crater_battlefield_2|2": {
+  "plan": "24244cf1d0a55f1c",
+  "checks": "15/15",
+  "relief": "9088c991b5998bc1",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 19.9,
+   "length_m": 54.7,
+   "n_flights": 0,
+   "n_rooms": 3,
+   "checks": "15/15",
+   "style": "byzantine",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 54.7
+  }
+ },
+ "edifice|domed|byzantine|cat_fortress_hill_1|1": {
+  "plan": "da9d3837d2444a6a",
+  "checks": "15/15",
+  "relief": "02e1bac110904180",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 27.6,
+   "length_m": 53.8,
+   "n_flights": 0,
+   "n_rooms": 3,
+   "checks": "15/15",
+   "style": "byzantine",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 53.8
+  }
+ },
+ "edifice|domed|byzantine|cat_fortress_hill_1|2": {
+  "plan": "39cbe5ee1980aa3f",
+  "checks": "15/15",
+  "relief": "4cecc5d2d46aa818",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 19.9,
+   "length_m": 54.7,
+   "n_flights": 0,
+   "n_rooms": 3,
+   "checks": "15/15",
+   "style": "byzantine",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 54.7
+  }
+ },
+ "edifice|domed|forge_cult|cat_crater_battlefield_2|1": {
+  "plan": "d6d8015607512049",
+  "checks": "15/15",
+  "relief": "9f43239dddb60e83",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 103.5,
+   "length_m": 145.7,
+   "n_flights": 0,
+   "n_rooms": 2,
+   "checks": "15/15",
+   "style": "forge_cult",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 145.7
+  }
+ },
+ "edifice|domed|forge_cult|cat_crater_battlefield_2|2": {
+  "plan": "13260db3ba905f9b",
+  "checks": "15/15",
+  "relief": "a2dfdfa4d9633a4e",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 88.0,
+   "length_m": 108.6,
+   "n_flights": 0,
+   "n_rooms": 2,
+   "checks": "15/15",
+   "style": "forge_cult",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 108.6
+  }
+ },
+ "edifice|domed|forge_cult|cat_fortress_hill_1|1": {
+  "plan": "454c9ac4066b5c4f",
+  "checks": "15/15",
+  "relief": "109173c9296d1aa6",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 103.5,
+   "length_m": 145.7,
+   "n_flights": 0,
+   "n_rooms": 2,
+   "checks": "15/15",
+   "style": "forge_cult",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 145.7
+  }
+ },
+ "edifice|domed|forge_cult|cat_fortress_hill_1|2": {
+  "plan": "91138eb625ed453d",
+  "checks": "15/15",
+  "relief": "700f07e921ca5504",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 88.0,
+   "length_m": 108.6,
+   "n_flights": 0,
+   "n_rooms": 2,
+   "checks": "15/15",
+   "style": "forge_cult",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 108.6
+  }
+ },
+ "edifice|domed|orthodox|cat_crater_battlefield_2|1": {
+  "plan": "a2aabebdbcebb220",
+  "checks": "15/15",
+  "relief": "174d554d613f267f",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 31.6,
+   "length_m": 41.3,
+   "n_flights": 0,
+   "n_rooms": 3,
+   "checks": "15/15",
+   "style": "orthodox",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 41.3
+  }
+ },
+ "edifice|domed|orthodox|cat_crater_battlefield_2|2": {
+  "plan": "e4d65a29eb640f52",
+  "checks": "15/15",
+  "relief": "8fd4e06e511adc66",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 22.8,
+   "length_m": 40.5,
+   "n_flights": 0,
+   "n_rooms": 3,
+   "checks": "15/15",
+   "style": "orthodox",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 40.5
+  }
+ },
+ "edifice|domed|orthodox|cat_fortress_hill_1|1": {
+  "plan": "71e039c5b31f4a9f",
+  "checks": "15/15",
+  "relief": "d807f4421d5d3a80",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 31.6,
+   "length_m": 41.3,
+   "n_flights": 0,
+   "n_rooms": 3,
+   "checks": "15/15",
+   "style": "orthodox",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 41.3
+  }
+ },
+ "edifice|domed|orthodox|cat_fortress_hill_1|2": {
+  "plan": "8b5190b1bc24d9f2",
+  "checks": "15/15",
+  "relief": "7d15fd3a71bc1493",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 22.8,
+   "length_m": 40.5,
+   "n_flights": 0,
+   "n_rooms": 3,
+   "checks": "15/15",
+   "style": "orthodox",
+   "type": "domed centralized",
+   "n_parts": 1,
+   "width_m": 40.5
+  }
+ },
+ "edifice|light_order_temple|light_order|cat_crater_battlefield_2|1": {
+  "plan": "cdfd718258d42e7d",
+  "checks": "16/16",
+  "relief": "f3c7a7f06fe13497",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 221.2,
+   "length_m": 213.0,
+   "n_flights": 1,
+   "n_rooms": 5,
+   "checks": "16/16",
+   "style": "light_order",
+   "type": "Light order temple",
+   "n_parts": 14,
+   "width_m": 178.7
+  }
+ },
+ "edifice|light_order_temple|light_order|cat_crater_battlefield_2|2": {
+  "plan": "27b541f340407fa9",
+  "checks": "16/16",
+  "relief": "8cbfca251206b7e0",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 157.0,
+   "length_m": 181.6,
+   "n_flights": 5,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "light_order",
+   "type": "Light order temple",
+   "n_parts": 16,
+   "width_m": 132.7
+  }
+ },
+ "edifice|light_order_temple|light_order|cat_fortress_hill_1|1": {
+  "plan": "07e3f87efd7266c5",
+  "checks": "16/16",
+  "relief": "591ccf09ec17ac57",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 221.2,
+   "length_m": 213.0,
+   "n_flights": 1,
+   "n_rooms": 5,
+   "checks": "16/16",
+   "style": "light_order",
+   "type": "Light order temple",
+   "n_parts": 14,
+   "width_m": 178.7
+  }
+ },
+ "edifice|light_order_temple|light_order|cat_fortress_hill_1|2": {
+  "plan": "5029683ef7137d33",
+  "checks": "16/16",
+  "relief": "77c4de08c480da3d",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 157.0,
+   "length_m": 181.6,
+   "n_flights": 5,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "light_order",
+   "type": "Light order temple",
+   "n_parts": 16,
+   "width_m": 132.7
+  }
+ },
+ "edifice|occult_ring|occult|cat_crater_battlefield_2|1": {
+  "plan": "9215a620f067097b",
+  "checks": "15/15",
+  "relief": "6760c4756bf37df4",
+  "summary": {
+   "n_entrances": 6,
+   "highest_m": 56.0,
+   "length_m": 199.8,
+   "n_flights": 1,
+   "n_rooms": 7,
+   "checks": "15/15",
+   "style": "occult",
+   "type": "occult sanctuary",
+   "n_parts": 23,
+   "width_m": 162.7
+  }
+ },
+ "edifice|occult_ring|occult|cat_crater_battlefield_2|2": {
+  "plan": "10dbdb8789ecefaa",
+  "checks": "15/15",
+  "relief": "079c871d580300ee",
+  "summary": {
+   "n_entrances": 6,
+   "highest_m": 49.7,
+   "length_m": 166.1,
+   "n_flights": 1,
+   "n_rooms": 8,
+   "checks": "15/15",
+   "style": "occult",
+   "type": "occult sanctuary",
+   "n_parts": 21,
+   "width_m": 132.0
+  }
+ },
+ "edifice|occult_ring|occult|cat_fortress_hill_1|1": {
+  "plan": "7ed41d90f8cf7b36",
+  "checks": "15/15",
+  "relief": "c335f16146f6fa6f",
+  "summary": {
+   "n_entrances": 6,
+   "highest_m": 56.0,
+   "length_m": 199.8,
+   "n_flights": 1,
+   "n_rooms": 7,
+   "checks": "15/15",
+   "style": "occult",
+   "type": "occult sanctuary",
+   "n_parts": 23,
+   "width_m": 162.7
+  }
+ },
+ "edifice|occult_ring|occult|cat_fortress_hill_1|2": {
+  "plan": "2b610dab560c2b12",
+  "checks": "15/15",
+  "relief": "92d58105af6c694a",
+  "summary": {
+   "n_entrances": 6,
+   "highest_m": 49.7,
+   "length_m": 166.1,
+   "n_flights": 1,
+   "n_rooms": 8,
+   "checks": "15/15",
+   "style": "occult",
+   "type": "occult sanctuary",
+   "n_parts": 21,
+   "width_m": 132.0
+  }
+ },
+ "edifice|dark_order_temple|dark_order|cat_crater_battlefield_2|1": {
+  "plan": "8748eda05bf8a31d",
+  "checks": "16/16",
+  "relief": "1a2b1f4843f7d38f",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 197.6,
+   "length_m": 151.2,
+   "n_flights": 1,
+   "n_rooms": 3,
+   "checks": "16/16",
+   "style": "dark_order",
+   "type": "Dark order temple",
+   "n_parts": 18,
+   "width_m": 123.2
+  }
+ },
+ "edifice|dark_order_temple|dark_order|cat_crater_battlefield_2|2": {
+  "plan": "9f698e8708c3721c",
+  "checks": "16/16",
+  "relief": "37b9110e2ebcdcaa",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 139.4,
+   "length_m": 119.9,
+   "n_flights": 1,
+   "n_rooms": 4,
+   "checks": "16/16",
+   "style": "dark_order",
+   "type": "Dark order temple",
+   "n_parts": 31,
+   "width_m": 100.5
+  }
+ },
+ "edifice|dark_order_temple|dark_order|cat_fortress_hill_1|1": {
+  "plan": "6e97184ae4dc8c1d",
+  "checks": "16/16",
+  "relief": "55e9e0e581d368cb",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 197.6,
+   "length_m": 151.2,
+   "n_flights": 1,
+   "n_rooms": 3,
+   "checks": "16/16",
+   "style": "dark_order",
+   "type": "Dark order temple",
+   "n_parts": 18,
+   "width_m": 123.2
+  }
+ },
+ "edifice|dark_order_temple|dark_order|cat_fortress_hill_1|2": {
+  "plan": "2d3304d06379f678",
+  "checks": "16/16",
+  "relief": "f5a1ddb12441bc60",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 139.4,
+   "length_m": 119.9,
+   "n_flights": 1,
+   "n_rooms": 4,
+   "checks": "16/16",
+   "style": "dark_order",
+   "type": "Dark order temple",
+   "n_parts": 31,
+   "width_m": 100.5
+  }
+ },
+ "edifice|spiral_tower|elven|cat_crater_battlefield_2|1": {
+  "plan": "850064a59293c422",
+  "checks": "15/15",
+  "relief": "f584e9d36d01d410",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 96.4,
+   "length_m": 75.7,
+   "n_flights": 1,
+   "n_rooms": 9,
+   "checks": "15/15",
+   "style": "elven",
+   "type": "spiral tower",
+   "n_parts": 8,
+   "width_m": 65.6
+  }
+ },
+ "edifice|spiral_tower|elven|cat_crater_battlefield_2|2": {
+  "plan": "9d373bd20fc36371",
+  "checks": "15/15",
+  "relief": "14d6d5d4d411bdac",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 63.2,
+   "length_m": 62.2,
+   "n_flights": 1,
+   "n_rooms": 4,
+   "checks": "15/15",
+   "style": "elven",
+   "type": "spiral tower",
+   "n_parts": 5,
+   "width_m": 52.6
+  }
+ },
+ "edifice|spiral_tower|elven|cat_fortress_hill_1|1": {
+  "plan": "6b3b677dbb48b636",
+  "checks": "15/15",
+  "relief": "c6b8e6d3b092e0b3",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 96.4,
+   "length_m": 75.7,
+   "n_flights": 1,
+   "n_rooms": 9,
+   "checks": "15/15",
+   "style": "elven",
+   "type": "spiral tower",
+   "n_parts": 8,
+   "width_m": 65.6
+  }
+ },
+ "edifice|spiral_tower|elven|cat_fortress_hill_1|2": {
+  "plan": "1bba44bbafba5940",
+  "checks": "15/15",
+  "relief": "8001e848bf00fc73",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 63.2,
+   "length_m": 62.2,
+   "n_flights": 1,
+   "n_rooms": 4,
+   "checks": "15/15",
+   "style": "elven",
+   "type": "spiral tower",
+   "n_parts": 5,
+   "width_m": 52.6
+  }
+ },
+ "edifice|spiral_tower|mesopotamian|cat_crater_battlefield_2|1": {
+  "plan": "89bde714ceea57b5",
+  "checks": "15/15",
+  "relief": "f584e9d36d01d410",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 96.4,
+   "length_m": 75.7,
+   "n_flights": 1,
+   "n_rooms": 9,
+   "checks": "15/15",
+   "style": "mesopotamian",
+   "type": "spiral tower",
+   "n_parts": 8,
+   "width_m": 65.6
+  }
+ },
+ "edifice|spiral_tower|mesopotamian|cat_crater_battlefield_2|2": {
+  "plan": "1f7da4883ac82ead",
+  "checks": "15/15",
+  "relief": "14d6d5d4d411bdac",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 63.2,
+   "length_m": 62.2,
+   "n_flights": 1,
+   "n_rooms": 4,
+   "checks": "15/15",
+   "style": "mesopotamian",
+   "type": "spiral tower",
+   "n_parts": 5,
+   "width_m": 52.6
+  }
+ },
+ "edifice|spiral_tower|mesopotamian|cat_fortress_hill_1|1": {
+  "plan": "d4d9979c429b280c",
+  "checks": "15/15",
+  "relief": "c6b8e6d3b092e0b3",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 96.4,
+   "length_m": 75.7,
+   "n_flights": 1,
+   "n_rooms": 9,
+   "checks": "15/15",
+   "style": "mesopotamian",
+   "type": "spiral tower",
+   "n_parts": 8,
+   "width_m": 65.6
+  }
+ },
+ "edifice|spiral_tower|mesopotamian|cat_fortress_hill_1|2": {
+  "plan": "425c3a4c7a2904d3",
+  "checks": "15/15",
+  "relief": "8001e848bf00fc73",
+  "summary": {
+   "n_entrances": 0,
+   "highest_m": 63.2,
+   "length_m": 62.2,
+   "n_flights": 1,
+   "n_rooms": 4,
+   "checks": "15/15",
+   "style": "mesopotamian",
+   "type": "spiral tower",
+   "n_parts": 5,
+   "width_m": 52.6
+  }
+ },
+ "edifice|step_pyramid|dark|cat_crater_battlefield_2|1": {
+  "plan": "1481e4b84a024700",
+  "checks": "16/16",
+  "relief": "e468771f0b2b0497",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 54.8,
+   "length_m": 59.5,
+   "n_flights": 1,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "dark",
+   "type": "stepped pyramid",
+   "n_parts": 7,
+   "width_m": 51.1
+  }
+ },
+ "edifice|step_pyramid|dark|cat_crater_battlefield_2|2": {
+  "plan": "d2db6abea4a37a43",
+  "checks": "16/16",
+  "relief": "5e66ad34d19e1825",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 31.3,
+   "length_m": 57.2,
+   "n_flights": 4,
+   "n_rooms": 8,
+   "checks": "16/16",
+   "style": "dark",
+   "type": "stepped pyramid",
+   "n_parts": 12,
+   "width_m": 52.8
+  }
+ },
+ "edifice|step_pyramid|dark|cat_fortress_hill_1|1": {
+  "plan": "be5e0c4df3921d0a",
+  "checks": "16/16",
+  "relief": "d43e271446a25b46",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 54.8,
+   "length_m": 59.5,
+   "n_flights": 1,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "dark",
+   "type": "stepped pyramid",
+   "n_parts": 7,
+   "width_m": 51.1
+  }
+ },
+ "edifice|step_pyramid|dark|cat_fortress_hill_1|2": {
+  "plan": "1803ef3a52cdcd26",
+  "checks": "16/16",
+  "relief": "7e4ddbb28720afca",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 31.3,
+   "length_m": 57.2,
+   "n_flights": 4,
+   "n_rooms": 8,
+   "checks": "16/16",
+   "style": "dark",
+   "type": "stepped pyramid",
+   "n_parts": 12,
+   "width_m": 52.8
+  }
+ },
+ "edifice|step_pyramid|mesoamerican|cat_crater_battlefield_2|1": {
+  "plan": "e4e651d808cae30f",
+  "checks": "16/16",
+  "relief": "945e644a9f9303c7",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 60.7,
+   "length_m": 61.6,
+   "n_flights": 1,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "mesoamerican",
+   "type": "stepped pyramid",
+   "n_parts": 7,
+   "width_m": 51.1
+  }
+ },
+ "edifice|step_pyramid|mesoamerican|cat_crater_battlefield_2|2": {
+  "plan": "ba50f7e03780768b",
+  "checks": "16/16",
+  "relief": "e1aa746dc72949ad",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 34.8,
+   "length_m": 58.1,
+   "n_flights": 4,
+   "n_rooms": 8,
+   "checks": "16/16",
+   "style": "mesoamerican",
+   "type": "stepped pyramid",
+   "n_parts": 12,
+   "width_m": 53.7
+  }
+ },
+ "edifice|step_pyramid|mesoamerican|cat_fortress_hill_1|1": {
+  "plan": "50cf782fabb304da",
+  "checks": "16/16",
+  "relief": "8a9a797d55ca564a",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 60.7,
+   "length_m": 61.6,
+   "n_flights": 1,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "mesoamerican",
+   "type": "stepped pyramid",
+   "n_parts": 7,
+   "width_m": 51.1
+  }
+ },
+ "edifice|step_pyramid|mesoamerican|cat_fortress_hill_1|2": {
+  "plan": "c741c2850ee51e21",
+  "checks": "16/16",
+  "relief": "3e707fb3a9f79064",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 34.8,
+   "length_m": 58.1,
+   "n_flights": 4,
+   "n_rooms": 8,
+   "checks": "16/16",
+   "style": "mesoamerican",
+   "type": "stepped pyramid",
+   "n_parts": 12,
+   "width_m": 53.7
+  }
+ },
+ "edifice|temple_mountain|hive_gothic|cat_crater_battlefield_2|1": {
+  "plan": "7e2c91c500f91a49",
+  "checks": "16/16",
+  "relief": "2cf77b812981a1f8",
+  "summary": {
+   "n_entrances": 22,
+   "highest_m": 473.2,
+   "length_m": 989.0,
+   "n_flights": 13,
+   "n_rooms": 9,
+   "checks": "16/16",
+   "style": "hive_gothic",
+   "type": "temple-mountain",
+   "n_parts": 50,
+   "width_m": 859.1
+  }
+ },
+ "edifice|temple_mountain|hive_gothic|cat_crater_battlefield_2|2": {
+  "plan": "5614a95ea0b5ecf1",
+  "checks": "16/16",
+  "relief": "1c96d8fef282bb40",
+  "summary": {
+   "n_entrances": 16,
+   "highest_m": 237.1,
+   "length_m": 514.1,
+   "n_flights": 8,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "hive_gothic",
+   "type": "temple-mountain",
+   "n_parts": 33,
+   "width_m": 487.5
+  }
+ },
+ "edifice|temple_mountain|hive_gothic|cat_fortress_hill_1|1": {
+  "plan": "72d26cfa6481ec6e",
+  "checks": "16/16",
+  "relief": "4a5aa863dfd669cf",
+  "summary": {
+   "n_entrances": 22,
+   "highest_m": 473.2,
+   "length_m": 989.0,
+   "n_flights": 13,
+   "n_rooms": 9,
+   "checks": "16/16",
+   "style": "hive_gothic",
+   "type": "temple-mountain",
+   "n_parts": 50,
+   "width_m": 859.1
+  }
+ },
+ "edifice|temple_mountain|hive_gothic|cat_fortress_hill_1|2": {
+  "plan": "4f989d0af13e4911",
+  "checks": "16/16",
+  "relief": "04e96a569303ff74",
+  "summary": {
+   "n_entrances": 16,
+   "highest_m": 237.1,
+   "length_m": 514.1,
+   "n_flights": 8,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "hive_gothic",
+   "type": "temple-mountain",
+   "n_parts": 33,
+   "width_m": 487.5
+  }
+ },
+ "edifice|temple_mountain|khmer|cat_crater_battlefield_2|1": {
+  "plan": "e7125cee8bb2bfb5",
+  "checks": "16/16",
+  "relief": "dddc3154f8a1ad9a",
+  "summary": {
+   "n_entrances": 16,
+   "highest_m": 77.3,
+   "length_m": 226.7,
+   "n_flights": 9,
+   "n_rooms": 7,
+   "checks": "16/16",
+   "style": "khmer",
+   "type": "temple-mountain",
+   "n_parts": 36,
+   "width_m": 215.0
+  }
+ },
+ "edifice|temple_mountain|khmer|cat_crater_battlefield_2|2": {
+  "plan": "9f412a1968e56ec4",
+  "checks": "16/16",
+  "relief": "2908602ae0854ac1",
+  "summary": {
+   "n_entrances": 16,
+   "highest_m": 72.2,
+   "length_m": 186.0,
+   "n_flights": 9,
+   "n_rooms": 7,
+   "checks": "16/16",
+   "style": "khmer",
+   "type": "temple-mountain",
+   "n_parts": 36,
+   "width_m": 160.4
+  }
+ },
+ "edifice|temple_mountain|khmer|cat_fortress_hill_1|1": {
+  "plan": "1ac46770912cc7ca",
+  "checks": "16/16",
+  "relief": "a7da6c4b2fdac10b",
+  "summary": {
+   "n_entrances": 16,
+   "highest_m": 77.3,
+   "length_m": 226.7,
+   "n_flights": 9,
+   "n_rooms": 7,
+   "checks": "16/16",
+   "style": "khmer",
+   "type": "temple-mountain",
+   "n_parts": 36,
+   "width_m": 215.0
+  }
+ },
+ "edifice|temple_mountain|khmer|cat_fortress_hill_1|2": {
+  "plan": "afc087ceb3559a23",
+  "checks": "16/16",
+  "relief": "d7c9a61cd3e49f29",
+  "summary": {
+   "n_entrances": 16,
+   "highest_m": 72.2,
+   "length_m": 186.0,
+   "n_flights": 9,
+   "n_rooms": 7,
+   "checks": "16/16",
+   "style": "khmer",
+   "type": "temple-mountain",
+   "n_parts": 36,
+   "width_m": 160.4
+  }
+ },
+ "edifice|ziggurat|mesopotamian|cat_crater_battlefield_2|1": {
+  "plan": "f43549f3d7831720",
+  "checks": "16/16",
+  "relief": "830a75ecbf3d005c",
+  "summary": {
+   "n_entrances": 3,
+   "highest_m": 77.9,
+   "length_m": 126.0,
+   "n_flights": 3,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "mesopotamian",
+   "type": "ziggurat",
+   "n_parts": 11,
+   "width_m": 76.3
+  }
+ },
+ "edifice|ziggurat|mesopotamian|cat_crater_battlefield_2|2": {
+  "plan": "070026978db13578",
+  "checks": "16/16",
+  "relief": "8dcd286349381123",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 32.3,
+   "length_m": 78.2,
+   "n_flights": 5,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "mesopotamian",
+   "type": "ziggurat",
+   "n_parts": 11,
+   "width_m": 51.7
+  }
+ },
+ "edifice|ziggurat|mesopotamian|cat_fortress_hill_1|1": {
+  "plan": "9ba16a6f0f29534f",
+  "checks": "16/16",
+  "relief": "c91e33ff4fc6470a",
+  "summary": {
+   "n_entrances": 3,
+   "highest_m": 77.9,
+   "length_m": 126.0,
+   "n_flights": 3,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "mesopotamian",
+   "type": "ziggurat",
+   "n_parts": 11,
+   "width_m": 76.3
+  }
+ },
+ "edifice|ziggurat|mesopotamian|cat_fortress_hill_1|2": {
+  "plan": "2363e9a89918c7d8",
+  "checks": "16/16",
+  "relief": "ad9910825c89bd89",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 32.3,
+   "length_m": 78.2,
+   "n_flights": 5,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "mesopotamian",
+   "type": "ziggurat",
+   "n_parts": 11,
+   "width_m": 51.7
+  }
+ },
+ "edifice|ziggurat|occult|cat_crater_battlefield_2|1": {
+  "plan": "5399033393f2432a",
+  "checks": "16/16",
+  "relief": "830a75ecbf3d005c",
+  "summary": {
+   "n_entrances": 3,
+   "highest_m": 77.9,
+   "length_m": 126.0,
+   "n_flights": 3,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "occult",
+   "type": "ziggurat",
+   "n_parts": 11,
+   "width_m": 76.3
+  }
+ },
+ "edifice|ziggurat|occult|cat_crater_battlefield_2|2": {
+  "plan": "a8cc52590cbabe09",
+  "checks": "16/16",
+  "relief": "075c17fde36ec739",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 32.3,
+   "length_m": 78.0,
+   "n_flights": 4,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "occult",
+   "type": "ziggurat",
+   "n_parts": 11,
+   "width_m": 51.7
+  }
+ },
+ "edifice|ziggurat|occult|cat_fortress_hill_1|1": {
+  "plan": "fe374bd5d5286d14",
+  "checks": "16/16",
+  "relief": "c91e33ff4fc6470a",
+  "summary": {
+   "n_entrances": 3,
+   "highest_m": 77.9,
+   "length_m": 126.0,
+   "n_flights": 3,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "occult",
+   "type": "ziggurat",
+   "n_parts": 11,
+   "width_m": 76.3
+  }
+ },
+ "edifice|ziggurat|occult|cat_fortress_hill_1|2": {
+  "plan": "be8efcbc56f79f14",
+  "checks": "16/16",
+  "relief": "6541e39283474b75",
+  "summary": {
+   "n_entrances": 1,
+   "highest_m": 32.3,
+   "length_m": 78.0,
+   "n_flights": 4,
+   "n_rooms": 6,
+   "checks": "16/16",
+   "style": "occult",
+   "type": "ziggurat",
+   "n_parts": 11,
+   "width_m": 51.7
+  }
+ },
+ "temple|cat_badlands_2|dark+hive_gothic|1": {
+  "plan": "7b4cb27634891d8f",
+  "checks": "25/25",
+  "relief": "36a8a8ea5b0673c6",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 4,
+   "highest_m": 476.9,
+   "length_m": 561.5,
+   "n_campaigns": 2,
+   "n_buttresses": 30,
+   "special": "twin_different",
+   "n_rooms": 42,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "25/25",
+   "span_m": 52.3,
+   "vault_m": 164.4
+  }
+ },
+ "temple|cat_badlands_2|dark+hive_gothic|2": {
+  "plan": "d9dd78f979996f47",
+  "checks": "28/28",
+  "relief": "680f5477975f7f8f",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 396.9,
+   "length_m": 476.7,
+   "n_campaigns": 3,
+   "n_buttresses": 40,
+   "special": "transept_towers",
+   "n_rooms": 36,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "28/28",
+   "span_m": 44.3,
+   "vault_m": 136.9
+  }
+ },
+ "temple|cat_badlands_2|dark|1": {
+  "plan": "d86cf2795435c199",
+  "checks": "22/22",
+  "relief": "740b921503d3316c",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 144.8,
+   "length_m": 130.7,
+   "n_campaigns": 4,
+   "n_buttresses": 38,
+   "special": "great_spire",
+   "n_rooms": 27,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "22/22",
+   "span_m": 14.0,
+   "vault_m": 51.7
+  }
+ },
+ "temple|cat_badlands_2|dark|2": {
+  "plan": "fdb172c4ecd6d07c",
+  "checks": "23/23",
+  "relief": "d6b33056c46ab646",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 134.2,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "great_spire",
+   "n_rooms": 53,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 45.2
+  }
+ },
+ "temple|cat_badlands_2|dwarven|1": {
+  "plan": "127a91422bb1fd4f",
+  "checks": "22/22",
+  "relief": "602fe6c90a55310b",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 50.1,
+   "length_m": 149.4,
+   "n_campaigns": 2,
+   "n_buttresses": 21,
+   "special": "westwork",
+   "n_rooms": 26,
+   "annexes": [
+    "westwork",
+    "turrets",
+    "cloister"
+   ],
+   "checks": "22/22",
+   "span_m": 20.9,
+   "vault_m": 29.7
+  }
+ },
+ "temple|cat_badlands_2|dwarven|2": {
+  "plan": "a9e7223f6d060d34",
+  "checks": "22/22",
+  "relief": "63d6e166aac4243d",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 3,
+   "highest_m": 39.7,
+   "length_m": 96.9,
+   "n_campaigns": 3,
+   "n_buttresses": 18,
+   "special": "fortress",
+   "n_rooms": 17,
+   "annexes": [],
+   "checks": "22/22",
+   "span_m": 16.1,
+   "vault_m": 23.4
+  }
+ },
+ "temple|cat_badlands_2|elven|1": {
+  "plan": "34d9d2db1d7e8664",
+  "checks": "22/22",
+  "relief": "e451717e4d9eb527",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 132.8,
+   "length_m": 116.2,
+   "n_campaigns": 4,
+   "n_buttresses": 32,
+   "special": "lantern",
+   "n_rooms": 24,
+   "annexes": [],
+   "checks": "22/22",
+   "span_m": 14.0,
+   "vault_m": 52.2
+  }
+ },
+ "temple|cat_badlands_2|elven|2": {
+  "plan": "e61e73f26db6f39d",
+  "checks": "23/23",
+  "relief": "a23f2dfc85af417d",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 3,
+   "highest_m": 165.2,
+   "length_m": 100.3,
+   "n_campaigns": 2,
+   "n_buttresses": 28,
+   "special": "great_spire",
+   "n_rooms": 45,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 43.2
+  }
+ },
+ "temple|cat_badlands_2|gothic_early|1": {
+  "plan": "3f4db0ccdf663813",
+  "checks": "30/30",
+  "relief": "bf10a10978cce187",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 60.4,
+   "length_m": 114.3,
+   "n_campaigns": 4,
+   "n_buttresses": 38,
+   "special": "lantern",
+   "n_rooms": 22,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "30/30",
+   "span_m": 14.0,
+   "vault_m": 33.0
+  }
+ },
+ "temple|cat_badlands_2|gothic_early|2": {
+  "plan": "18edd2964f949d35",
+  "checks": "23/23",
+  "relief": "cf7cc36099a8662d",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 6,
+   "highest_m": 68.6,
+   "length_m": 114.2,
+   "n_campaigns": 2,
+   "n_buttresses": 32,
+   "special": "crossing_dome",
+   "n_rooms": 49,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 34.3
+  }
+ },
+ "temple|cat_badlands_2|gothic_en|1": {
+  "plan": "3efc4af8f1a4c452",
+  "checks": "29/29",
+  "relief": "7c84cd0424659a77",
+  "summary": {
+   "n_towers": 0,
+   "n_entrances": 6,
+   "highest_m": 47.7,
+   "length_m": 113.6,
+   "n_campaigns": 4,
+   "n_buttresses": 34,
+   "special": "lantern",
+   "n_rooms": 31,
+   "annexes": [
+    "chapter_house",
+    "cloister"
+   ],
+   "checks": "29/29",
+   "span_m": 12.0,
+   "vault_m": 26.7
+  }
+ },
+ "temple|cat_badlands_2|gothic_en|2": {
+  "plan": "b8b3f42bc08c94b6",
+  "checks": "20/20",
+  "relief": "fc2f751a325328be",
+  "summary": {
+   "n_towers": 0,
+   "n_entrances": 4,
+   "highest_m": 39.4,
+   "length_m": 121.1,
+   "n_campaigns": 2,
+   "n_buttresses": 44,
+   "special": "lantern",
+   "n_rooms": 35,
+   "annexes": [
+    "chapter_house",
+    "sacristy",
+    "chapels"
+   ],
+   "checks": "20/20",
+   "span_m": 11.5,
+   "vault_m": 25.3
+  }
+ },
+ "temple|cat_badlands_2|gothic_fr|1": {
+  "plan": "3450853015dec9eb",
+  "checks": "31/31",
+  "relief": "a2ec7376eb75d277",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 68.0,
+   "length_m": 118.6,
+   "n_campaigns": 4,
+   "n_buttresses": 30,
+   "special": "twin_different",
+   "n_rooms": 27,
+   "annexes": [],
+   "checks": "31/31",
+   "span_m": 14.0,
+   "vault_m": 41.5
+  }
+ },
+ "temple|cat_badlands_2|gothic_fr|2": {
+  "plan": "336f0bad358e0625",
+  "checks": "23/23",
+  "relief": "9b84646fe2d6e99b",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 85.3,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "twin_different",
+   "n_rooms": 49,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 35.6
+  }
+ },
+ "temple|cat_badlands_2|gothic_late|1": {
+  "plan": "bea78387aaf3565e",
+  "checks": "27/27",
+  "relief": "203124b84350250f",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 71.0,
+   "length_m": 111.4,
+   "n_campaigns": 4,
+   "n_buttresses": 34,
+   "special": "lantern",
+   "n_rooms": 28,
+   "annexes": [],
+   "checks": "27/27",
+   "span_m": 14.0,
+   "vault_m": 40.7
+  }
+ },
+ "temple|cat_badlands_2|gothic_late|2": {
+  "plan": "d934fc2405858ef4",
+  "checks": "23/23",
+  "relief": "51d6258e7b10f4d1",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 91.1,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 38,
+   "special": "great_spire",
+   "n_rooms": 34,
+   "annexes": [
+    "sacristy",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 41.2
+  }
+ },
+ "temple|cat_badlands_2|hall|1": {
+  "plan": "dfa79e7555f597d5",
+  "checks": "29/29",
+  "relief": "38c4c20ce5eb2b98",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 1,
+   "highest_m": 134.3,
+   "length_m": 123.5,
+   "n_campaigns": 4,
+   "n_buttresses": 28,
+   "special": "great_spire",
+   "n_rooms": 21,
+   "annexes": [],
+   "checks": "29/29",
+   "span_m": 12.5,
+   "vault_m": 27.5
+  }
+ },
+ "temple|cat_badlands_2|hall|2": {
+  "plan": "a5af4cfbfa495fc4",
+  "checks": "19/19",
+  "relief": "e59deffce252596f",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 112.1,
+   "length_m": 92.3,
+   "n_campaigns": 2,
+   "n_buttresses": 31,
+   "special": "great_spire",
+   "n_rooms": 15,
+   "annexes": [
+    "cloister"
+   ],
+   "checks": "19/19",
+   "span_m": 11.8,
+   "vault_m": 22.6
+  }
+ },
+ "temple|cat_badlands_2|hell|1": {
+  "plan": "096e34e54667d01b",
+  "checks": "23/23",
+  "relief": "4e1536f883a88c5b",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 2,
+   "highest_m": 264.8,
+   "length_m": 248.1,
+   "n_campaigns": 2,
+   "n_buttresses": 40,
+   "special": "pinnacle_forest",
+   "n_rooms": 36,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "23/23",
+   "span_m": 27.0,
+   "vault_m": 94.6
+  }
+ },
+ "temple|cat_badlands_2|hell|2": {
+  "plan": "44941ecc747a9bc7",
+  "checks": "26/26",
+  "relief": "be039d1e4c9fbe9e",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 207.6,
+   "length_m": 160.5,
+   "n_campaigns": 3,
+   "n_buttresses": 34,
+   "special": "transept_towers",
+   "n_rooms": 37,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "26/26",
+   "span_m": 21.9,
+   "vault_m": 74.2
+  }
+ },
+ "temple|cat_badlands_2|hive_gothic|1": {
+  "plan": "1361ca0279cb2803",
+  "checks": "25/25",
+  "relief": "8ae88f164433b97d",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 4,
+   "highest_m": 523.6,
+   "length_m": 507.8,
+   "n_campaigns": 2,
+   "n_buttresses": 28,
+   "special": "pinnacle_forest",
+   "n_rooms": 49,
+   "annexes": [
+    "chapter_house",
+    "chapels",
+    "turrets"
+   ],
+   "checks": "25/25",
+   "span_m": 52.3,
+   "vault_m": 174.5
+  }
+ },
+ "temple|cat_badlands_2|hive_gothic|2": {
+  "plan": "5ce9408d5c616320",
+  "checks": "27/27",
+  "relief": "e0c092ccff5527f4",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 5,
+   "highest_m": 413.8,
+   "length_m": 467.4,
+   "n_campaigns": 3,
+   "n_buttresses": 30,
+   "special": "transept_towers",
+   "n_rooms": 39,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "27/27",
+   "span_m": 44.3,
+   "vault_m": 137.9
+  }
+ },
+ "temple|cat_badlands_2|holy|1": {
+  "plan": "8bb21f841fbd45da",
+  "checks": "23/23",
+  "relief": "a408ce9929a13171",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 207.2,
+   "length_m": 174.2,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "great_spire",
+   "n_rooms": 38,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "23/23",
+   "span_m": 20.9,
+   "vault_m": 68.3
+  }
+ },
+ "temple|cat_badlands_2|holy|2": {
+  "plan": "468e1dbf564edc47",
+  "checks": "23/23",
+  "relief": "952b0851ed9243f9",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 182.8,
+   "length_m": 130.1,
+   "n_campaigns": 3,
+   "n_buttresses": 34,
+   "special": "pinnacle_forest",
+   "n_rooms": 29,
+   "annexes": [],
+   "checks": "23/23",
+   "span_m": 17.7,
+   "vault_m": 65.3
+  }
+ },
+ "temple|cat_badlands_2|romanesque|1": {
+  "plan": "35eead2927e1e548",
+  "checks": "26/26",
+  "relief": "d97929ae8c04c8f0",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 4,
+   "highest_m": 56.3,
+   "length_m": 134.3,
+   "n_campaigns": 4,
+   "n_buttresses": 40,
+   "special": "twin_different",
+   "n_rooms": 22,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "26/26",
+   "span_m": 12.5,
+   "vault_m": 29.0
+  }
+ },
+ "temple|cat_badlands_2|romanesque|2": {
+  "plan": "b02d6e902e26ea85",
+  "checks": "23/23",
+  "relief": "7c19963deffa71cb",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 58.8,
+   "length_m": 130.7,
+   "n_campaigns": 2,
+   "n_buttresses": 38,
+   "special": "campanile",
+   "n_rooms": 32,
+   "annexes": [
+    "campanile",
+    "chapter_house",
+    "cloister",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 11.8,
+   "vault_m": 27.3
+  }
+ },
+ "temple|cat_crater_battlefield_2|dark+hive_gothic|1": {
+  "plan": "70fa89acdd08a999",
+  "checks": "25/25",
+  "relief": "91fbeb0eb411b997",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 4,
+   "highest_m": 476.9,
+   "length_m": 561.5,
+   "n_campaigns": 2,
+   "n_buttresses": 30,
+   "special": "twin_different",
+   "n_rooms": 42,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "25/25",
+   "span_m": 52.3,
+   "vault_m": 164.4
+  }
+ },
+ "temple|cat_crater_battlefield_2|dark+hive_gothic|2": {
+  "plan": "7a538bb7a267fa47",
+  "checks": "28/28",
+  "relief": "228f9e9081c32f86",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 396.9,
+   "length_m": 476.7,
+   "n_campaigns": 3,
+   "n_buttresses": 40,
+   "special": "transept_towers",
+   "n_rooms": 36,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "28/28",
+   "span_m": 44.3,
+   "vault_m": 136.9
+  }
+ },
+ "temple|cat_crater_battlefield_2|dark|1": {
+  "plan": "087a80ae00f2820a",
+  "checks": "22/22",
+  "relief": "e0beb622a23a0702",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 144.8,
+   "length_m": 130.7,
+   "n_campaigns": 4,
+   "n_buttresses": 38,
+   "special": "great_spire",
+   "n_rooms": 27,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "22/22",
+   "span_m": 14.0,
+   "vault_m": 51.7
+  }
+ },
+ "temple|cat_crater_battlefield_2|dark|2": {
+  "plan": "d1f9a4d87cf3e342",
+  "checks": "23/23",
+  "relief": "a29bb7d2d6231bbb",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 134.2,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "great_spire",
+   "n_rooms": 53,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 45.2
+  }
+ },
+ "temple|cat_crater_battlefield_2|dwarven|1": {
+  "plan": "968140342dc53989",
+  "checks": "22/22",
+  "relief": "0dabdd1cb7d65eb5",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 50.1,
+   "length_m": 149.4,
+   "n_campaigns": 2,
+   "n_buttresses": 21,
+   "special": "westwork",
+   "n_rooms": 25,
+   "annexes": [
+    "westwork",
+    "turrets",
+    "cloister"
+   ],
+   "checks": "22/22",
+   "span_m": 20.9,
+   "vault_m": 29.7
+  }
+ },
+ "temple|cat_crater_battlefield_2|dwarven|2": {
+  "plan": "6b94db047aa4c576",
+  "checks": "22/22",
+  "relief": "56d2827ab3665965",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 3,
+   "highest_m": 39.7,
+   "length_m": 96.9,
+   "n_campaigns": 3,
+   "n_buttresses": 18,
+   "special": "fortress",
+   "n_rooms": 17,
+   "annexes": [],
+   "checks": "22/22",
+   "span_m": 16.1,
+   "vault_m": 23.4
+  }
+ },
+ "temple|cat_crater_battlefield_2|elven|1": {
+  "plan": "caef0ddd57c58c93",
+  "checks": "22/22",
+  "relief": "b143688264b43f6b",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 132.8,
+   "length_m": 116.2,
+   "n_campaigns": 4,
+   "n_buttresses": 32,
+   "special": "lantern",
+   "n_rooms": 24,
+   "annexes": [],
+   "checks": "22/22",
+   "span_m": 14.0,
+   "vault_m": 52.2
+  }
+ },
+ "temple|cat_crater_battlefield_2|elven|2": {
+  "plan": "01634f58157d3a03",
+  "checks": "23/23",
+  "relief": "7fc53103f675763a",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 3,
+   "highest_m": 165.2,
+   "length_m": 100.3,
+   "n_campaigns": 2,
+   "n_buttresses": 28,
+   "special": "great_spire",
+   "n_rooms": 45,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 43.2
+  }
+ },
+ "temple|cat_crater_battlefield_2|gothic_early|1": {
+  "plan": "885a9b9baa28277f",
+  "checks": "30/30",
+  "relief": "a2021a31aa1ad6d9",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 60.4,
+   "length_m": 114.3,
+   "n_campaigns": 4,
+   "n_buttresses": 38,
+   "special": "lantern",
+   "n_rooms": 21,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "30/30",
+   "span_m": 14.0,
+   "vault_m": 33.0
+  }
+ },
+ "temple|cat_crater_battlefield_2|gothic_early|2": {
+  "plan": "cc41cf9093e63f6c",
+  "checks": "23/23",
+  "relief": "3ca7d8f4422740a2",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 6,
+   "highest_m": 68.6,
+   "length_m": 114.2,
+   "n_campaigns": 2,
+   "n_buttresses": 32,
+   "special": "crossing_dome",
+   "n_rooms": 49,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 34.3
+  }
+ },
+ "temple|cat_crater_battlefield_2|gothic_en|1": {
+  "plan": "54c954ec977f4550",
+  "checks": "29/29",
+  "relief": "2b71d76954a5bffb",
+  "summary": {
+   "n_towers": 0,
+   "n_entrances": 6,
+   "highest_m": 47.7,
+   "length_m": 113.6,
+   "n_campaigns": 4,
+   "n_buttresses": 34,
+   "special": "lantern",
+   "n_rooms": 31,
+   "annexes": [
+    "chapter_house",
+    "cloister"
+   ],
+   "checks": "29/29",
+   "span_m": 12.0,
+   "vault_m": 26.7
+  }
+ },
+ "temple|cat_crater_battlefield_2|gothic_en|2": {
+  "plan": "22fbef8f3a008fc2",
+  "checks": "20/20",
+  "relief": "6fa06acee9c74bef",
+  "summary": {
+   "n_towers": 0,
+   "n_entrances": 4,
+   "highest_m": 39.4,
+   "length_m": 121.1,
+   "n_campaigns": 2,
+   "n_buttresses": 44,
+   "special": "lantern",
+   "n_rooms": 35,
+   "annexes": [
+    "chapter_house",
+    "sacristy",
+    "chapels"
+   ],
+   "checks": "20/20",
+   "span_m": 11.5,
+   "vault_m": 25.3
+  }
+ },
+ "temple|cat_crater_battlefield_2|gothic_fr|1": {
+  "plan": "c8ed91b99cc9b317",
+  "checks": "31/31",
+  "relief": "35d038f1e0f71ef5",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 68.0,
+   "length_m": 118.6,
+   "n_campaigns": 4,
+   "n_buttresses": 30,
+   "special": "twin_different",
+   "n_rooms": 27,
+   "annexes": [],
+   "checks": "31/31",
+   "span_m": 14.0,
+   "vault_m": 41.5
+  }
+ },
+ "temple|cat_crater_battlefield_2|gothic_fr|2": {
+  "plan": "eebe04170a42a35b",
+  "checks": "23/23",
+  "relief": "3536003e3e9108f8",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 85.3,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "twin_different",
+   "n_rooms": 49,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 35.6
+  }
+ },
+ "temple|cat_crater_battlefield_2|gothic_late|1": {
+  "plan": "21e486373908d854",
+  "checks": "27/27",
+  "relief": "d33396c27d4e2b28",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 71.0,
+   "length_m": 111.4,
+   "n_campaigns": 4,
+   "n_buttresses": 34,
+   "special": "lantern",
+   "n_rooms": 28,
+   "annexes": [],
+   "checks": "27/27",
+   "span_m": 14.0,
+   "vault_m": 40.7
+  }
+ },
+ "temple|cat_crater_battlefield_2|gothic_late|2": {
+  "plan": "5f905318ea0d0231",
+  "checks": "23/23",
+  "relief": "310be2b338cf4c96",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 91.1,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 38,
+   "special": "great_spire",
+   "n_rooms": 34,
+   "annexes": [
+    "sacristy",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 41.2
+  }
+ },
+ "temple|cat_crater_battlefield_2|hall|1": {
+  "plan": "114352e75dbe55a2",
+  "checks": "29/29",
+  "relief": "2bf5622af7d2058a",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 1,
+   "highest_m": 134.3,
+   "length_m": 123.5,
+   "n_campaigns": 4,
+   "n_buttresses": 28,
+   "special": "great_spire",
+   "n_rooms": 21,
+   "annexes": [],
+   "checks": "29/29",
+   "span_m": 12.5,
+   "vault_m": 27.5
+  }
+ },
+ "temple|cat_crater_battlefield_2|hall|2": {
+  "plan": "7f767f05bafec8e5",
+  "checks": "19/19",
+  "relief": "635e6e658406dd1a",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 112.1,
+   "length_m": 92.3,
+   "n_campaigns": 2,
+   "n_buttresses": 31,
+   "special": "great_spire",
+   "n_rooms": 15,
+   "annexes": [
+    "cloister"
+   ],
+   "checks": "19/19",
+   "span_m": 11.8,
+   "vault_m": 22.6
+  }
+ },
+ "temple|cat_crater_battlefield_2|hell|1": {
+  "plan": "64f952c37d0f5624",
+  "checks": "23/23",
+  "relief": "68bbb30dd01d93eb",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 2,
+   "highest_m": 264.8,
+   "length_m": 248.1,
+   "n_campaigns": 2,
+   "n_buttresses": 40,
+   "special": "pinnacle_forest",
+   "n_rooms": 35,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "23/23",
+   "span_m": 27.0,
+   "vault_m": 94.6
+  }
+ },
+ "temple|cat_crater_battlefield_2|hell|2": {
+  "plan": "2cd133db42e1234f",
+  "checks": "26/26",
+  "relief": "90cf2f6ebec6238f",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 207.6,
+   "length_m": 160.5,
+   "n_campaigns": 3,
+   "n_buttresses": 34,
+   "special": "transept_towers",
+   "n_rooms": 36,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "26/26",
+   "span_m": 21.9,
+   "vault_m": 74.2
+  }
+ },
+ "temple|cat_crater_battlefield_2|hive_gothic|1": {
+  "plan": "56f8301f96f31e59",
+  "checks": "25/25",
+  "relief": "ea0e648922fa39e5",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 4,
+   "highest_m": 523.6,
+   "length_m": 507.8,
+   "n_campaigns": 2,
+   "n_buttresses": 28,
+   "special": "pinnacle_forest",
+   "n_rooms": 49,
+   "annexes": [
+    "chapter_house",
+    "chapels",
+    "turrets"
+   ],
+   "checks": "25/25",
+   "span_m": 52.3,
+   "vault_m": 174.5
+  }
+ },
+ "temple|cat_crater_battlefield_2|hive_gothic|2": {
+  "plan": "2bc8e7d81ca3ddd4",
+  "checks": "27/27",
+  "relief": "00eeae8f9a14884e",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 5,
+   "highest_m": 413.8,
+   "length_m": 467.4,
+   "n_campaigns": 3,
+   "n_buttresses": 30,
+   "special": "transept_towers",
+   "n_rooms": 39,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "27/27",
+   "span_m": 44.3,
+   "vault_m": 137.9
+  }
+ },
+ "temple|cat_crater_battlefield_2|holy|1": {
+  "plan": "202300881d14c0cb",
+  "checks": "23/23",
+  "relief": "d5f63ad47ca8cd3b",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 207.2,
+   "length_m": 174.2,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "great_spire",
+   "n_rooms": 37,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "23/23",
+   "span_m": 20.9,
+   "vault_m": 68.3
+  }
+ },
+ "temple|cat_crater_battlefield_2|holy|2": {
+  "plan": "a6cfa25d2fee5a92",
+  "checks": "23/23",
+  "relief": "cc7a683f78b86f8b",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 182.8,
+   "length_m": 130.1,
+   "n_campaigns": 3,
+   "n_buttresses": 34,
+   "special": "pinnacle_forest",
+   "n_rooms": 29,
+   "annexes": [],
+   "checks": "23/23",
+   "span_m": 17.7,
+   "vault_m": 65.3
+  }
+ },
+ "temple|cat_crater_battlefield_2|romanesque|1": {
+  "plan": "c0228322912bd430",
+  "checks": "26/26",
+  "relief": "c0ff1d3cea23ac2f",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 4,
+   "highest_m": 56.3,
+   "length_m": 134.3,
+   "n_campaigns": 4,
+   "n_buttresses": 40,
+   "special": "twin_different",
+   "n_rooms": 22,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "26/26",
+   "span_m": 12.5,
+   "vault_m": 29.0
+  }
+ },
+ "temple|cat_crater_battlefield_2|romanesque|2": {
+  "plan": "b3dfdfd49a84a2dd",
+  "checks": "23/23",
+  "relief": "5298ac2077ac9e1c",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 58.8,
+   "length_m": 130.7,
+   "n_campaigns": 2,
+   "n_buttresses": 38,
+   "special": "campanile",
+   "n_rooms": 32,
+   "annexes": [
+    "campanile",
+    "chapter_house",
+    "cloister",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 11.8,
+   "vault_m": 27.3
+  }
+ },
+ "temple|cat_fortress_hill_1|dark+hive_gothic|1": {
+  "plan": "f03a2f04fb538934",
+  "checks": "25/25",
+  "relief": "883bfb71131b9295",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 4,
+   "highest_m": 476.9,
+   "length_m": 561.5,
+   "n_campaigns": 2,
+   "n_buttresses": 30,
+   "special": "twin_different",
+   "n_rooms": 42,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "25/25",
+   "span_m": 52.3,
+   "vault_m": 164.4
+  }
+ },
+ "temple|cat_fortress_hill_1|dark+hive_gothic|2": {
+  "plan": "0e0cbb2be20124b2",
+  "checks": "28/28",
+  "relief": "73b405ac4f093427",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 396.9,
+   "length_m": 476.7,
+   "n_campaigns": 3,
+   "n_buttresses": 40,
+   "special": "transept_towers",
+   "n_rooms": 36,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "28/28",
+   "span_m": 44.3,
+   "vault_m": 136.9
+  }
+ },
+ "temple|cat_fortress_hill_1|dark|1": {
+  "plan": "adead7806cdcfd0b",
+  "checks": "22/22",
+  "relief": "b208d2cf177d4a08",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 144.8,
+   "length_m": 130.7,
+   "n_campaigns": 4,
+   "n_buttresses": 38,
+   "special": "great_spire",
+   "n_rooms": 27,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "22/22",
+   "span_m": 14.0,
+   "vault_m": 51.7
+  }
+ },
+ "temple|cat_fortress_hill_1|dark|2": {
+  "plan": "48724352f681d7a1",
+  "checks": "23/23",
+  "relief": "c2e5a3a0ca2336f6",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 134.2,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "great_spire",
+   "n_rooms": 53,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 45.2
+  }
+ },
+ "temple|cat_fortress_hill_1|dwarven|1": {
+  "plan": "94fb52c0849dd048",
+  "checks": "22/22",
+  "relief": "04bd6a4d7876ce48",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 50.1,
+   "length_m": 149.4,
+   "n_campaigns": 2,
+   "n_buttresses": 21,
+   "special": "westwork",
+   "n_rooms": 25,
+   "annexes": [
+    "westwork",
+    "turrets",
+    "cloister"
+   ],
+   "checks": "22/22",
+   "span_m": 20.9,
+   "vault_m": 29.7
+  }
+ },
+ "temple|cat_fortress_hill_1|dwarven|2": {
+  "plan": "b66aef489fc9ac98",
+  "checks": "22/22",
+  "relief": "709e680c592a76d7",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 3,
+   "highest_m": 39.7,
+   "length_m": 96.9,
+   "n_campaigns": 3,
+   "n_buttresses": 18,
+   "special": "fortress",
+   "n_rooms": 17,
+   "annexes": [],
+   "checks": "22/22",
+   "span_m": 16.1,
+   "vault_m": 23.4
+  }
+ },
+ "temple|cat_fortress_hill_1|elven|1": {
+  "plan": "fe743269c5f7eff9",
+  "checks": "22/22",
+  "relief": "32692b2722c34965",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 132.8,
+   "length_m": 116.2,
+   "n_campaigns": 4,
+   "n_buttresses": 32,
+   "special": "lantern",
+   "n_rooms": 24,
+   "annexes": [],
+   "checks": "22/22",
+   "span_m": 14.0,
+   "vault_m": 52.2
+  }
+ },
+ "temple|cat_fortress_hill_1|elven|2": {
+  "plan": "71bb33717984db9f",
+  "checks": "23/23",
+  "relief": "021c1b1b32a5a12a",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 3,
+   "highest_m": 165.2,
+   "length_m": 100.3,
+   "n_campaigns": 2,
+   "n_buttresses": 28,
+   "special": "great_spire",
+   "n_rooms": 45,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 43.2
+  }
+ },
+ "temple|cat_fortress_hill_1|gothic_early|1": {
+  "plan": "817c09a2ae8310d3",
+  "checks": "30/30",
+  "relief": "011f2bfcaf750808",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 60.4,
+   "length_m": 114.3,
+   "n_campaigns": 4,
+   "n_buttresses": 38,
+   "special": "lantern",
+   "n_rooms": 21,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "30/30",
+   "span_m": 14.0,
+   "vault_m": 33.0
+  }
+ },
+ "temple|cat_fortress_hill_1|gothic_early|2": {
+  "plan": "708210be6ef75757",
+  "checks": "23/23",
+  "relief": "bf6e0641b21f82c7",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 6,
+   "highest_m": 68.6,
+   "length_m": 114.2,
+   "n_campaigns": 2,
+   "n_buttresses": 32,
+   "special": "crossing_dome",
+   "n_rooms": 49,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 34.3
+  }
+ },
+ "temple|cat_fortress_hill_1|gothic_en|1": {
+  "plan": "6d35e22a9aa03f9a",
+  "checks": "29/29",
+  "relief": "1a61c894f3ba35b7",
+  "summary": {
+   "n_towers": 0,
+   "n_entrances": 6,
+   "highest_m": 47.7,
+   "length_m": 113.6,
+   "n_campaigns": 4,
+   "n_buttresses": 34,
+   "special": "lantern",
+   "n_rooms": 31,
+   "annexes": [
+    "chapter_house",
+    "cloister"
+   ],
+   "checks": "29/29",
+   "span_m": 12.0,
+   "vault_m": 26.7
+  }
+ },
+ "temple|cat_fortress_hill_1|gothic_en|2": {
+  "plan": "03d9aed2365e23ce",
+  "checks": "20/20",
+  "relief": "75b8f891f0e9ff47",
+  "summary": {
+   "n_towers": 0,
+   "n_entrances": 4,
+   "highest_m": 39.4,
+   "length_m": 121.1,
+   "n_campaigns": 2,
+   "n_buttresses": 44,
+   "special": "lantern",
+   "n_rooms": 35,
+   "annexes": [
+    "chapter_house",
+    "sacristy",
+    "chapels"
+   ],
+   "checks": "20/20",
+   "span_m": 11.5,
+   "vault_m": 25.3
+  }
+ },
+ "temple|cat_fortress_hill_1|gothic_fr|1": {
+  "plan": "d3f8ba038e3b2232",
+  "checks": "31/31",
+  "relief": "e5d4885d775d8a14",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 68.0,
+   "length_m": 118.6,
+   "n_campaigns": 4,
+   "n_buttresses": 30,
+   "special": "twin_different",
+   "n_rooms": 27,
+   "annexes": [],
+   "checks": "31/31",
+   "span_m": 14.0,
+   "vault_m": 41.5
+  }
+ },
+ "temple|cat_fortress_hill_1|gothic_fr|2": {
+  "plan": "4abf1f96d3c1e13c",
+  "checks": "23/23",
+  "relief": "5382f493fd32df92",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 85.3,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "twin_different",
+   "n_rooms": 49,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 35.6
+  }
+ },
+ "temple|cat_fortress_hill_1|gothic_late|1": {
+  "plan": "8a4961d0d958a543",
+  "checks": "27/27",
+  "relief": "be3eb195723ec352",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 71.0,
+   "length_m": 111.4,
+   "n_campaigns": 4,
+   "n_buttresses": 34,
+   "special": "lantern",
+   "n_rooms": 28,
+   "annexes": [],
+   "checks": "27/27",
+   "span_m": 14.0,
+   "vault_m": 40.7
+  }
+ },
+ "temple|cat_fortress_hill_1|gothic_late|2": {
+  "plan": "186c10c2d7c67747",
+  "checks": "23/23",
+  "relief": "eba82d2e93b72108",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 91.1,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 38,
+   "special": "great_spire",
+   "n_rooms": 34,
+   "annexes": [
+    "sacristy",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 41.2
+  }
+ },
+ "temple|cat_fortress_hill_1|hall|1": {
+  "plan": "018e104e79fc3a53",
+  "checks": "29/29",
+  "relief": "5f8ff2b98850bc03",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 1,
+   "highest_m": 134.3,
+   "length_m": 123.5,
+   "n_campaigns": 4,
+   "n_buttresses": 28,
+   "special": "great_spire",
+   "n_rooms": 21,
+   "annexes": [],
+   "checks": "29/29",
+   "span_m": 12.5,
+   "vault_m": 27.5
+  }
+ },
+ "temple|cat_fortress_hill_1|hall|2": {
+  "plan": "49079ae5148ac6aa",
+  "checks": "19/19",
+  "relief": "11b188c7f50f1e0c",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 112.1,
+   "length_m": 92.3,
+   "n_campaigns": 2,
+   "n_buttresses": 31,
+   "special": "great_spire",
+   "n_rooms": 15,
+   "annexes": [
+    "cloister"
+   ],
+   "checks": "19/19",
+   "span_m": 11.8,
+   "vault_m": 22.6
+  }
+ },
+ "temple|cat_fortress_hill_1|hell|1": {
+  "plan": "ca8fb8f05b168382",
+  "checks": "23/23",
+  "relief": "2be508491e1ba9fc",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 2,
+   "highest_m": 264.8,
+   "length_m": 248.1,
+   "n_campaigns": 2,
+   "n_buttresses": 40,
+   "special": "pinnacle_forest",
+   "n_rooms": 35,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "23/23",
+   "span_m": 27.0,
+   "vault_m": 94.6
+  }
+ },
+ "temple|cat_fortress_hill_1|hell|2": {
+  "plan": "03e39b24380f689f",
+  "checks": "26/26",
+  "relief": "c543b851b87393ba",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 207.6,
+   "length_m": 160.5,
+   "n_campaigns": 3,
+   "n_buttresses": 34,
+   "special": "transept_towers",
+   "n_rooms": 36,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "26/26",
+   "span_m": 21.9,
+   "vault_m": 74.2
+  }
+ },
+ "temple|cat_fortress_hill_1|hive_gothic|1": {
+  "plan": "39c2842901bad86d",
+  "checks": "25/25",
+  "relief": "227c951e51864886",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 4,
+   "highest_m": 523.6,
+   "length_m": 507.8,
+   "n_campaigns": 2,
+   "n_buttresses": 28,
+   "special": "pinnacle_forest",
+   "n_rooms": 49,
+   "annexes": [
+    "chapter_house",
+    "chapels",
+    "turrets"
+   ],
+   "checks": "25/25",
+   "span_m": 52.3,
+   "vault_m": 174.5
+  }
+ },
+ "temple|cat_fortress_hill_1|hive_gothic|2": {
+  "plan": "47dd9b147fa71772",
+  "checks": "27/27",
+  "relief": "d7e849b20925bfc3",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 5,
+   "highest_m": 413.8,
+   "length_m": 467.4,
+   "n_campaigns": 3,
+   "n_buttresses": 30,
+   "special": "transept_towers",
+   "n_rooms": 39,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "27/27",
+   "span_m": 44.3,
+   "vault_m": 137.9
+  }
+ },
+ "temple|cat_fortress_hill_1|holy|1": {
+  "plan": "24b023f362b2b5aa",
+  "checks": "23/23",
+  "relief": "d5c8abf4234430ec",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 207.2,
+   "length_m": 174.2,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "great_spire",
+   "n_rooms": 37,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "23/23",
+   "span_m": 20.9,
+   "vault_m": 68.3
+  }
+ },
+ "temple|cat_fortress_hill_1|holy|2": {
+  "plan": "04412538fe5f0ea4",
+  "checks": "23/23",
+  "relief": "61b9ccab8ab814a8",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 182.8,
+   "length_m": 130.1,
+   "n_campaigns": 3,
+   "n_buttresses": 34,
+   "special": "pinnacle_forest",
+   "n_rooms": 29,
+   "annexes": [],
+   "checks": "23/23",
+   "span_m": 17.7,
+   "vault_m": 65.3
+  }
+ },
+ "temple|cat_fortress_hill_1|romanesque|1": {
+  "plan": "6b92431132387712",
+  "checks": "26/26",
+  "relief": "b35b7afa86241f22",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 4,
+   "highest_m": 56.3,
+   "length_m": 134.3,
+   "n_campaigns": 4,
+   "n_buttresses": 40,
+   "special": "twin_different",
+   "n_rooms": 22,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "26/26",
+   "span_m": 12.5,
+   "vault_m": 29.0
+  }
+ },
+ "temple|cat_fortress_hill_1|romanesque|2": {
+  "plan": "463d22312e55cc76",
+  "checks": "23/23",
+  "relief": "dfa42d1e49c6bd3b",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 58.8,
+   "length_m": 130.7,
+   "n_campaigns": 2,
+   "n_buttresses": 38,
+   "special": "campanile",
+   "n_rooms": 32,
+   "annexes": [
+    "campanile",
+    "chapter_house",
+    "cloister",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 11.8,
+   "vault_m": 27.3
+  }
+ },
+ "temple|cat_mountain_lake_1|dark+hive_gothic|1": {
+  "plan": "8dc8c6e7d52b758d",
+  "checks": "25/25",
+  "relief": "ed0a25e50a37d3d8",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 4,
+   "highest_m": 476.9,
+   "length_m": 561.5,
+   "n_campaigns": 2,
+   "n_buttresses": 30,
+   "special": "twin_different",
+   "n_rooms": 42,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "25/25",
+   "span_m": 52.3,
+   "vault_m": 164.4
+  }
+ },
+ "temple|cat_mountain_lake_1|dark+hive_gothic|2": {
+  "plan": "a4520b7d0fdf9f92",
+  "checks": "28/28",
+  "relief": "cbcb8b2ae69ccb73",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 396.9,
+   "length_m": 476.7,
+   "n_campaigns": 3,
+   "n_buttresses": 40,
+   "special": "transept_towers",
+   "n_rooms": 36,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "28/28",
+   "span_m": 44.3,
+   "vault_m": 136.9
+  }
+ },
+ "temple|cat_mountain_lake_1|dark|1": {
+  "plan": "d0c7c79a67446fa4",
+  "checks": "22/22",
+  "relief": "e4d5fe915326214e",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 144.8,
+   "length_m": 130.7,
+   "n_campaigns": 4,
+   "n_buttresses": 38,
+   "special": "great_spire",
+   "n_rooms": 27,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "22/22",
+   "span_m": 14.0,
+   "vault_m": 51.7
+  }
+ },
+ "temple|cat_mountain_lake_1|dark|2": {
+  "plan": "1ecd00af1a0037b3",
+  "checks": "23/23",
+  "relief": "124ba28929321a9b",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 134.2,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "great_spire",
+   "n_rooms": 53,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 45.2
+  }
+ },
+ "temple|cat_mountain_lake_1|dwarven|1": {
+  "plan": "fa2ef42d936400ac",
+  "checks": "22/22",
+  "relief": "5271f09ca0f0da59",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 50.1,
+   "length_m": 149.4,
+   "n_campaigns": 2,
+   "n_buttresses": 21,
+   "special": "westwork",
+   "n_rooms": 25,
+   "annexes": [
+    "westwork",
+    "turrets",
+    "cloister"
+   ],
+   "checks": "22/22",
+   "span_m": 20.9,
+   "vault_m": 29.7
+  }
+ },
+ "temple|cat_mountain_lake_1|dwarven|2": {
+  "plan": "ea9d7f6ae28c58c1",
+  "checks": "22/22",
+  "relief": "c3fa0a169f4a96c7",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 3,
+   "highest_m": 39.7,
+   "length_m": 96.9,
+   "n_campaigns": 3,
+   "n_buttresses": 18,
+   "special": "fortress",
+   "n_rooms": 17,
+   "annexes": [],
+   "checks": "22/22",
+   "span_m": 16.1,
+   "vault_m": 23.4
+  }
+ },
+ "temple|cat_mountain_lake_1|elven|1": {
+  "plan": "2042fe4a63922831",
+  "checks": "22/22",
+  "relief": "dcd9cb1014e85dc8",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 132.8,
+   "length_m": 116.2,
+   "n_campaigns": 4,
+   "n_buttresses": 32,
+   "special": "lantern",
+   "n_rooms": 24,
+   "annexes": [],
+   "checks": "22/22",
+   "span_m": 14.0,
+   "vault_m": 52.2
+  }
+ },
+ "temple|cat_mountain_lake_1|elven|2": {
+  "plan": "efbcb5ce2f11af68",
+  "checks": "23/23",
+  "relief": "28098671b3f15184",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 3,
+   "highest_m": 165.2,
+   "length_m": 100.3,
+   "n_campaigns": 2,
+   "n_buttresses": 28,
+   "special": "great_spire",
+   "n_rooms": 45,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 43.2
+  }
+ },
+ "temple|cat_mountain_lake_1|gothic_early|1": {
+  "plan": "7ebf603dd447d058",
+  "checks": "30/30",
+  "relief": "f4c67e63072b840f",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 60.4,
+   "length_m": 114.3,
+   "n_campaigns": 4,
+   "n_buttresses": 38,
+   "special": "lantern",
+   "n_rooms": 21,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "30/30",
+   "span_m": 14.0,
+   "vault_m": 33.0
+  }
+ },
+ "temple|cat_mountain_lake_1|gothic_early|2": {
+  "plan": "a216b44ad2f93439",
+  "checks": "23/23",
+  "relief": "b74f2c63be1b8196",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 6,
+   "highest_m": 68.6,
+   "length_m": 114.2,
+   "n_campaigns": 2,
+   "n_buttresses": 32,
+   "special": "crossing_dome",
+   "n_rooms": 49,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 34.3
+  }
+ },
+ "temple|cat_mountain_lake_1|gothic_en|1": {
+  "plan": "b1340be81f5dbbd4",
+  "checks": "29/29",
+  "relief": "db6fabd02da9961b",
+  "summary": {
+   "n_towers": 0,
+   "n_entrances": 6,
+   "highest_m": 47.7,
+   "length_m": 113.6,
+   "n_campaigns": 4,
+   "n_buttresses": 34,
+   "special": "lantern",
+   "n_rooms": 31,
+   "annexes": [
+    "chapter_house",
+    "cloister"
+   ],
+   "checks": "29/29",
+   "span_m": 12.0,
+   "vault_m": 26.7
+  }
+ },
+ "temple|cat_mountain_lake_1|gothic_en|2": {
+  "plan": "45391e8d50c82269",
+  "checks": "20/20",
+  "relief": "5b39aaa0bc7ab4f9",
+  "summary": {
+   "n_towers": 0,
+   "n_entrances": 4,
+   "highest_m": 39.4,
+   "length_m": 121.1,
+   "n_campaigns": 2,
+   "n_buttresses": 44,
+   "special": "lantern",
+   "n_rooms": 35,
+   "annexes": [
+    "chapter_house",
+    "sacristy",
+    "chapels"
+   ],
+   "checks": "20/20",
+   "span_m": 11.5,
+   "vault_m": 25.3
+  }
+ },
+ "temple|cat_mountain_lake_1|gothic_fr|1": {
+  "plan": "c7d8d7c32f50e54f",
+  "checks": "31/31",
+  "relief": "1b0ab8fdf1d7ed3e",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 68.0,
+   "length_m": 118.6,
+   "n_campaigns": 4,
+   "n_buttresses": 30,
+   "special": "twin_different",
+   "n_rooms": 27,
+   "annexes": [],
+   "checks": "31/31",
+   "span_m": 14.0,
+   "vault_m": 41.5
+  }
+ },
+ "temple|cat_mountain_lake_1|gothic_fr|2": {
+  "plan": "f62afc0e4e4a1be5",
+  "checks": "23/23",
+  "relief": "3d8ebb840074497d",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 85.3,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "twin_different",
+   "n_rooms": 49,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 35.6
+  }
+ },
+ "temple|cat_mountain_lake_1|gothic_late|1": {
+  "plan": "7f742f99b7c79cc8",
+  "checks": "27/27",
+  "relief": "ea4696c380692909",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 71.0,
+   "length_m": 111.4,
+   "n_campaigns": 4,
+   "n_buttresses": 34,
+   "special": "lantern",
+   "n_rooms": 28,
+   "annexes": [],
+   "checks": "27/27",
+   "span_m": 14.0,
+   "vault_m": 40.7
+  }
+ },
+ "temple|cat_mountain_lake_1|gothic_late|2": {
+  "plan": "94813f43de437546",
+  "checks": "23/23",
+  "relief": "25437899f9698b9e",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 91.1,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 38,
+   "special": "great_spire",
+   "n_rooms": 34,
+   "annexes": [
+    "sacristy",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 41.2
+  }
+ },
+ "temple|cat_mountain_lake_1|hall|1": {
+  "plan": "11d2cb431dd332e8",
+  "checks": "29/29",
+  "relief": "ab9c284719c6a07b",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 1,
+   "highest_m": 134.3,
+   "length_m": 123.5,
+   "n_campaigns": 4,
+   "n_buttresses": 28,
+   "special": "great_spire",
+   "n_rooms": 21,
+   "annexes": [],
+   "checks": "29/29",
+   "span_m": 12.5,
+   "vault_m": 27.5
+  }
+ },
+ "temple|cat_mountain_lake_1|hall|2": {
+  "plan": "c572c84663bc654a",
+  "checks": "19/19",
+  "relief": "9a56f70024333676",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 112.1,
+   "length_m": 92.3,
+   "n_campaigns": 2,
+   "n_buttresses": 31,
+   "special": "great_spire",
+   "n_rooms": 15,
+   "annexes": [
+    "cloister"
+   ],
+   "checks": "19/19",
+   "span_m": 11.8,
+   "vault_m": 22.6
+  }
+ },
+ "temple|cat_mountain_lake_1|hell|1": {
+  "plan": "2f7771364d35bd50",
+  "checks": "23/23",
+  "relief": "9d60df5bc0141e65",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 2,
+   "highest_m": 264.8,
+   "length_m": 248.1,
+   "n_campaigns": 2,
+   "n_buttresses": 40,
+   "special": "pinnacle_forest",
+   "n_rooms": 36,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "23/23",
+   "span_m": 27.0,
+   "vault_m": 94.6
+  }
+ },
+ "temple|cat_mountain_lake_1|hell|2": {
+  "plan": "a6560f2e83d048f9",
+  "checks": "26/26",
+  "relief": "8c73525b2a18eebf",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 207.6,
+   "length_m": 160.5,
+   "n_campaigns": 3,
+   "n_buttresses": 34,
+   "special": "transept_towers",
+   "n_rooms": 36,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "26/26",
+   "span_m": 21.9,
+   "vault_m": 74.2
+  }
+ },
+ "temple|cat_mountain_lake_1|hive_gothic|1": {
+  "plan": "61459ffaa40de021",
+  "checks": "25/25",
+  "relief": "2af0ff7f5ddf4a55",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 4,
+   "highest_m": 523.6,
+   "length_m": 507.8,
+   "n_campaigns": 2,
+   "n_buttresses": 28,
+   "special": "pinnacle_forest",
+   "n_rooms": 49,
+   "annexes": [
+    "chapter_house",
+    "chapels",
+    "turrets"
+   ],
+   "checks": "25/25",
+   "span_m": 52.3,
+   "vault_m": 174.5
+  }
+ },
+ "temple|cat_mountain_lake_1|hive_gothic|2": {
+  "plan": "936e3b53c4e6ab1c",
+  "checks": "27/27",
+  "relief": "2ea6223bc5fb4688",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 5,
+   "highest_m": 413.8,
+   "length_m": 467.4,
+   "n_campaigns": 3,
+   "n_buttresses": 30,
+   "special": "transept_towers",
+   "n_rooms": 39,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "27/27",
+   "span_m": 44.3,
+   "vault_m": 137.9
+  }
+ },
+ "temple|cat_mountain_lake_1|holy|1": {
+  "plan": "2352886111f50707",
+  "checks": "23/23",
+  "relief": "e7778f7a21c94a96",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 207.2,
+   "length_m": 174.2,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "great_spire",
+   "n_rooms": 37,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "23/23",
+   "span_m": 20.9,
+   "vault_m": 68.3
+  }
+ },
+ "temple|cat_mountain_lake_1|holy|2": {
+  "plan": "7cd6720556fe0922",
+  "checks": "23/23",
+  "relief": "e4178b9072037982",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 182.8,
+   "length_m": 130.1,
+   "n_campaigns": 3,
+   "n_buttresses": 34,
+   "special": "pinnacle_forest",
+   "n_rooms": 29,
+   "annexes": [],
+   "checks": "23/23",
+   "span_m": 17.7,
+   "vault_m": 65.3
+  }
+ },
+ "temple|cat_mountain_lake_1|romanesque|1": {
+  "plan": "397e39639583d0dc",
+  "checks": "26/26",
+  "relief": "b60134ee68729c98",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 4,
+   "highest_m": 56.3,
+   "length_m": 134.3,
+   "n_campaigns": 4,
+   "n_buttresses": 40,
+   "special": "twin_different",
+   "n_rooms": 22,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "26/26",
+   "span_m": 12.5,
+   "vault_m": 29.0
+  }
+ },
+ "temple|cat_mountain_lake_1|romanesque|2": {
+  "plan": "1121a6705a5f645b",
+  "checks": "23/23",
+  "relief": "7508c3800bf8b81e",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 58.8,
+   "length_m": 130.7,
+   "n_campaigns": 2,
+   "n_buttresses": 38,
+   "special": "campanile",
+   "n_rooms": 32,
+   "annexes": [
+    "campanile",
+    "chapter_house",
+    "cloister",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 11.8,
+   "vault_m": 27.3
+  }
+ },
+ "temple|cat_river_crossing_1|dark+hive_gothic|1": {
+  "plan": "8dceae7baf0e5f7d",
+  "checks": "25/25",
+  "relief": "df4d99d729b500ca",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 4,
+   "highest_m": 476.9,
+   "length_m": 561.5,
+   "n_campaigns": 2,
+   "n_buttresses": 30,
+   "special": "twin_different",
+   "n_rooms": 42,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "25/25",
+   "span_m": 52.3,
+   "vault_m": 164.4
+  }
+ },
+ "temple|cat_river_crossing_1|dark+hive_gothic|2": {
+  "plan": "995b2202092fb982",
+  "checks": "28/28",
+  "relief": "7c7f01ef7d9ee235",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 396.9,
+   "length_m": 476.7,
+   "n_campaigns": 3,
+   "n_buttresses": 40,
+   "special": "transept_towers",
+   "n_rooms": 36,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "28/28",
+   "span_m": 44.3,
+   "vault_m": 136.9
+  }
+ },
+ "temple|cat_river_crossing_1|dark|1": {
+  "plan": "8a6c6ed072ab6c26",
+  "checks": "22/22",
+  "relief": "a2684db6d16f38bf",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 144.8,
+   "length_m": 130.7,
+   "n_campaigns": 4,
+   "n_buttresses": 38,
+   "special": "great_spire",
+   "n_rooms": 27,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "22/22",
+   "span_m": 14.0,
+   "vault_m": 51.7
+  }
+ },
+ "temple|cat_river_crossing_1|dark|2": {
+  "plan": "bd4b3e3d4419ffca",
+  "checks": "23/23",
+  "relief": "3218a04d76afae63",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 134.2,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "great_spire",
+   "n_rooms": 53,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 45.2
+  }
+ },
+ "temple|cat_river_crossing_1|dwarven|1": {
+  "plan": "0f07ce3ab73f1c4e",
+  "checks": "22/22",
+  "relief": "c6c678358ec19a32",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 50.1,
+   "length_m": 149.4,
+   "n_campaigns": 2,
+   "n_buttresses": 21,
+   "special": "westwork",
+   "n_rooms": 25,
+   "annexes": [
+    "westwork",
+    "turrets",
+    "cloister"
+   ],
+   "checks": "22/22",
+   "span_m": 20.9,
+   "vault_m": 29.7
+  }
+ },
+ "temple|cat_river_crossing_1|dwarven|2": {
+  "plan": "7e1f2fb1e3b585c4",
+  "checks": "22/22",
+  "relief": "0c92ae76ccf1fbf2",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 3,
+   "highest_m": 39.7,
+   "length_m": 96.9,
+   "n_campaigns": 3,
+   "n_buttresses": 18,
+   "special": "fortress",
+   "n_rooms": 17,
+   "annexes": [],
+   "checks": "22/22",
+   "span_m": 16.1,
+   "vault_m": 23.4
+  }
+ },
+ "temple|cat_river_crossing_1|elven|1": {
+  "plan": "997b6755f3f673e7",
+  "checks": "22/22",
+  "relief": "0808e775f3cc5860",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 132.8,
+   "length_m": 116.2,
+   "n_campaigns": 4,
+   "n_buttresses": 32,
+   "special": "lantern",
+   "n_rooms": 24,
+   "annexes": [],
+   "checks": "22/22",
+   "span_m": 14.0,
+   "vault_m": 52.2
+  }
+ },
+ "temple|cat_river_crossing_1|elven|2": {
+  "plan": "64f02e4311de11ad",
+  "checks": "23/23",
+  "relief": "cf9ae5ea02683736",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 3,
+   "highest_m": 165.2,
+   "length_m": 100.3,
+   "n_campaigns": 2,
+   "n_buttresses": 28,
+   "special": "great_spire",
+   "n_rooms": 45,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 43.2
+  }
+ },
+ "temple|cat_river_crossing_1|gothic_early|1": {
+  "plan": "1ca3d2589e9d3df0",
+  "checks": "30/30",
+  "relief": "365a5f9d4f0afb65",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 60.4,
+   "length_m": 114.3,
+   "n_campaigns": 4,
+   "n_buttresses": 38,
+   "special": "lantern",
+   "n_rooms": 21,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "30/30",
+   "span_m": 14.0,
+   "vault_m": 33.0
+  }
+ },
+ "temple|cat_river_crossing_1|gothic_early|2": {
+  "plan": "9735d7568500f089",
+  "checks": "23/23",
+  "relief": "a36b0ede3ae9532d",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 6,
+   "highest_m": 68.6,
+   "length_m": 114.2,
+   "n_campaigns": 2,
+   "n_buttresses": 32,
+   "special": "crossing_dome",
+   "n_rooms": 49,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 34.3
+  }
+ },
+ "temple|cat_river_crossing_1|gothic_en|1": {
+  "plan": "ac39f1ab9fbdcbec",
+  "checks": "29/29",
+  "relief": "46e7c8e4d548e688",
+  "summary": {
+   "n_towers": 0,
+   "n_entrances": 6,
+   "highest_m": 47.7,
+   "length_m": 113.6,
+   "n_campaigns": 4,
+   "n_buttresses": 34,
+   "special": "lantern",
+   "n_rooms": 31,
+   "annexes": [
+    "chapter_house",
+    "cloister"
+   ],
+   "checks": "29/29",
+   "span_m": 12.0,
+   "vault_m": 26.7
+  }
+ },
+ "temple|cat_river_crossing_1|gothic_en|2": {
+  "plan": "fd97707c4ece8d82",
+  "checks": "20/20",
+  "relief": "dd2b440583726343",
+  "summary": {
+   "n_towers": 0,
+   "n_entrances": 4,
+   "highest_m": 39.4,
+   "length_m": 121.1,
+   "n_campaigns": 2,
+   "n_buttresses": 44,
+   "special": "lantern",
+   "n_rooms": 35,
+   "annexes": [
+    "chapter_house",
+    "sacristy",
+    "chapels"
+   ],
+   "checks": "20/20",
+   "span_m": 11.5,
+   "vault_m": 25.3
+  }
+ },
+ "temple|cat_river_crossing_1|gothic_fr|1": {
+  "plan": "219d63434270c0bf",
+  "checks": "31/31",
+  "relief": "136a64208c0c5419",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 68.0,
+   "length_m": 118.6,
+   "n_campaigns": 4,
+   "n_buttresses": 30,
+   "special": "twin_different",
+   "n_rooms": 27,
+   "annexes": [],
+   "checks": "31/31",
+   "span_m": 14.0,
+   "vault_m": 41.5
+  }
+ },
+ "temple|cat_river_crossing_1|gothic_fr|2": {
+  "plan": "1b731ee3ef6b78bd",
+  "checks": "23/23",
+  "relief": "03dce139c2bf803d",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 85.3,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "twin_different",
+   "n_rooms": 49,
+   "annexes": [
+    "chapels",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 35.6
+  }
+ },
+ "temple|cat_river_crossing_1|gothic_late|1": {
+  "plan": "cf96233aa2a48ad5",
+  "checks": "27/27",
+  "relief": "7de0fd33747e802d",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 71.0,
+   "length_m": 111.4,
+   "n_campaigns": 4,
+   "n_buttresses": 34,
+   "special": "lantern",
+   "n_rooms": 28,
+   "annexes": [],
+   "checks": "27/27",
+   "span_m": 14.0,
+   "vault_m": 40.7
+  }
+ },
+ "temple|cat_river_crossing_1|gothic_late|2": {
+  "plan": "daeae5d99bc65c5b",
+  "checks": "23/23",
+  "relief": "cca2f42fcc61d97c",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 91.1,
+   "length_m": 112.8,
+   "n_campaigns": 2,
+   "n_buttresses": 38,
+   "special": "great_spire",
+   "n_rooms": 34,
+   "annexes": [
+    "sacristy",
+    "chapter_house",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 13.5,
+   "vault_m": 41.2
+  }
+ },
+ "temple|cat_river_crossing_1|hall|1": {
+  "plan": "49786a467ffe9741",
+  "checks": "29/29",
+  "relief": "020dd2e41b47146a",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 1,
+   "highest_m": 134.3,
+   "length_m": 123.5,
+   "n_campaigns": 4,
+   "n_buttresses": 28,
+   "special": "great_spire",
+   "n_rooms": 21,
+   "annexes": [],
+   "checks": "29/29",
+   "span_m": 12.5,
+   "vault_m": 27.5
+  }
+ },
+ "temple|cat_river_crossing_1|hall|2": {
+  "plan": "78a04c73c9e68f04",
+  "checks": "19/19",
+  "relief": "d599aaff2ddd3170",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 3,
+   "highest_m": 112.1,
+   "length_m": 92.3,
+   "n_campaigns": 2,
+   "n_buttresses": 31,
+   "special": "great_spire",
+   "n_rooms": 15,
+   "annexes": [
+    "cloister"
+   ],
+   "checks": "19/19",
+   "span_m": 11.8,
+   "vault_m": 22.6
+  }
+ },
+ "temple|cat_river_crossing_1|hell|1": {
+  "plan": "f53d65ac136dfbfe",
+  "checks": "23/23",
+  "relief": "ac3d7e7485686d67",
+  "summary": {
+   "n_towers": 1,
+   "n_entrances": 2,
+   "highest_m": 264.8,
+   "length_m": 248.1,
+   "n_campaigns": 2,
+   "n_buttresses": 40,
+   "special": "pinnacle_forest",
+   "n_rooms": 35,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "23/23",
+   "span_m": 27.0,
+   "vault_m": 94.6
+  }
+ },
+ "temple|cat_river_crossing_1|hell|2": {
+  "plan": "28bed87f3baf21c1",
+  "checks": "26/26",
+  "relief": "dc056350da942030",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 207.6,
+   "length_m": 160.5,
+   "n_campaigns": 3,
+   "n_buttresses": 34,
+   "special": "transept_towers",
+   "n_rooms": 36,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "26/26",
+   "span_m": 21.9,
+   "vault_m": 74.2
+  }
+ },
+ "temple|cat_river_crossing_1|hive_gothic|1": {
+  "plan": "4c375d4b6cc97a2d",
+  "checks": "25/25",
+  "relief": "594fa5dd717519ff",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 4,
+   "highest_m": 523.6,
+   "length_m": 507.8,
+   "n_campaigns": 2,
+   "n_buttresses": 28,
+   "special": "pinnacle_forest",
+   "n_rooms": 49,
+   "annexes": [
+    "chapter_house",
+    "chapels",
+    "turrets"
+   ],
+   "checks": "25/25",
+   "span_m": 52.3,
+   "vault_m": 174.5
+  }
+ },
+ "temple|cat_river_crossing_1|hive_gothic|2": {
+  "plan": "f221687da07291b4",
+  "checks": "27/27",
+  "relief": "1098a761ff805043",
+  "summary": {
+   "n_towers": 4,
+   "n_entrances": 5,
+   "highest_m": 413.8,
+   "length_m": 467.4,
+   "n_campaigns": 3,
+   "n_buttresses": 30,
+   "special": "transept_towers",
+   "n_rooms": 39,
+   "annexes": [
+    "transept_towers"
+   ],
+   "checks": "27/27",
+   "span_m": 44.3,
+   "vault_m": 137.9
+  }
+ },
+ "temple|cat_river_crossing_1|holy|1": {
+  "plan": "f8e8240ffdd753a1",
+  "checks": "23/23",
+  "relief": "4dedf99b7fd9a74b",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 207.2,
+   "length_m": 174.2,
+   "n_campaigns": 2,
+   "n_buttresses": 34,
+   "special": "great_spire",
+   "n_rooms": 37,
+   "annexes": [
+    "turrets",
+    "chapter_house"
+   ],
+   "checks": "23/23",
+   "span_m": 20.9,
+   "vault_m": 68.3
+  }
+ },
+ "temple|cat_river_crossing_1|holy|2": {
+  "plan": "8ca1fb8aa8950414",
+  "checks": "23/23",
+  "relief": "f4e24b1df035478b",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 182.8,
+   "length_m": 130.1,
+   "n_campaigns": 3,
+   "n_buttresses": 34,
+   "special": "pinnacle_forest",
+   "n_rooms": 29,
+   "annexes": [],
+   "checks": "23/23",
+   "span_m": 17.7,
+   "vault_m": 65.3
+  }
+ },
+ "temple|cat_river_crossing_1|romanesque|1": {
+  "plan": "755befc9fcdd3879",
+  "checks": "26/26",
+  "relief": "c6a28a10d025334a",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 4,
+   "highest_m": 56.3,
+   "length_m": 134.3,
+   "n_campaigns": 4,
+   "n_buttresses": 40,
+   "special": "twin_different",
+   "n_rooms": 22,
+   "annexes": [
+    "turrets"
+   ],
+   "checks": "26/26",
+   "span_m": 12.5,
+   "vault_m": 29.0
+  }
+ },
+ "temple|cat_river_crossing_1|romanesque|2": {
+  "plan": "da585715e17f0764",
+  "checks": "23/23",
+  "relief": "7043da499d15c35a",
+  "summary": {
+   "n_towers": 2,
+   "n_entrances": 5,
+   "highest_m": 58.8,
+   "length_m": 130.7,
+   "n_campaigns": 2,
+   "n_buttresses": 38,
+   "special": "campanile",
+   "n_rooms": 32,
+   "annexes": [
+    "campanile",
+    "chapter_house",
+    "cloister",
+    "turrets"
+   ],
+   "checks": "23/23",
+   "span_m": 11.8,
+   "vault_m": 27.3
+  }
+ }
+}

@@ -1,0 +1,415 @@
+# The form language of buildings (temples, edifices, castles): a family is a set of genes; historical styles,
+# fantasy and sci-fi are points of one space. Meters; [from, to] — a spread by seed; fractions —
+# of the span W or the height H. A categorical gene is {variant: weight} or a single value.
+# A mix of families: style=a+b or a:0.6,b:0.4 (numbers — weighted, variants — weights add up). Inheritance — base.
+# Read by style/style_genes.py; used by temples/temple_plan.py, edifices/edifice_plan.py.
+
+categorical: [plan, arch, vault, east, roof, crossing.kind, tower.spire, buttress.kind, win.tracery, west.towers, central.kind,
+              central.dome, central.corner_domes, ziggurat.top, ed.type, ed.shrine_roof, ed.ring_obj, ed.edge, ed.column]
+
+families:
+  romanesque:                # Speyer, Cluny: a semicircular arch, thick walls, square bays, an apse, a westwork
+    lineage: west
+    era: 0
+    plan: basilica
+    W: [11.0, 14.0]          # nave span between axes
+    HW: [2.0, 2.4]           # vault height / span
+    A: 0.5                   # side aisle / span
+    HA: 0.5                  # side-aisle vault / nave vault
+    B: 1.0                   # nave bay / span (a square — a bound system: two side-aisle bays to one nave bay)
+    aisle_bays: 2
+    choir_aisles: false      # a choir without side aisles (Speyer)
+    elevation: {tribune: 0.45, clerestory: 0.55}   # fractions of the wall above the arcade up to the springing of the vault: the triforium (gallery) and the clerestory
+    tri_n: 2                 # gallery openings per side-aisle bay
+    aisle_pitch: 22          # slope of the side-aisle roof, degrees
+    arch: round              # semicircular, pointed, lancet, ogee, horseshoe, parabola, stepped, lintel
+    vault: groin             # groin — a groin vault, rib4 — a ribbed vault, star — a star vault, barrel — a barrel vault, flat — flat with beams
+    roof: gable              # gable — a gabled roof, terrace — flat with a parapet
+    t: 2.2                   # wall thickness
+    pier: 0.16               # pier side / span
+    pier_kind: square
+    buttress: {depth: 0.07, w: 0.12, flyers: 0, kind: lesene}   # pilaster strips; buttress tiers; the pier kind
+    win: {aisle: [0.28, 0.55], clerestory: [0.3, 0.7], tracery: none}   # window: width / the span between piers, height / zone
+    roof_pitch: 32
+    nave_bays: [5, 7]
+    choir_bays: [2, 3]
+    transept: [1, 1]         # bays in a transept arm
+    east: apse
+    chapels: [0, 0]
+    west: {towers: 2, tower_k: 2.0, portals: 1, rose: 0.0}   # towers — in vault heights
+    tower: {stage_h: 8.0, taper: 0.97, octagon: 0.0, spire: {pyramid: 0.6, helm: 0.4}, spire_k: [0.18, 0.26], buttresses: false,
+            pinnacles: false, open: round, max_stages: 4}
+    crossing: {kind: tower, k: 1.7}
+    spikes: 0.0              # fractions 0–1: spikes, irregularity, organic, fortress, factory
+    irregular: 0.2
+    organic: 0.0
+    fortified: 0.15
+    industrial: 0.0
+    colors: {stone: [0.70, 0.56, 0.46], roof: [0.42, 0.24, 0.18], accent: [0.45, 0.47, 0.50], hole: [0.05, 0.05, 0.06]}
+  gothic_early:              # Chartres, Laon, early Notre-Dame: a single tier of flying buttresses, plate tracery, towers with spires
+    base: gothic_fr
+    era: 1
+    HW: [2.25, 2.6]
+    buttress: {depth: 0.38, w: 0.13, flyers: 1, kind: flyer}
+    win: {aisle: [0.5, 0.8], clerestory: [0.7, 0.9], tracery: plate}
+    chapels: [3, 5]
+    west: {towers: 2, tower_k: 1.9, portals: 3, rose: 0.38}
+    tower: {stage_h: 10.0, taper: 0.94, octagon: 0.5, spire: {needle: 0.55, flat: 0.45}, spire_k: [0.36, 0.44], buttresses: true,
+            pinnacles: true, open: pointed, max_stages: 3}
+    crossing: {kind: {spire: 0.5, lantern: 0.3, tower: 0.2}, k: 2.0}
+    colors: {stone: [0.80, 0.75, 0.64], roof: [0.32, 0.34, 0.38], accent: [0.42, 0.44, 0.47], hole: [0.05, 0.05, 0.07]}
+  gothic_fr:                 # Amiens, Reims: two towers, three portals, a rose window, an ambulatory with chapels, flying buttresses in two tiers
+    lineage: west
+    era: 2
+    plan: basilica
+    W: [13.0, 15.0]
+    HW: [2.4, 3.0]
+    A: 0.43
+    HA: 0.47
+    B: 0.5
+    aisle_bays: 1
+    choir_aisles: true
+    elevation: {tribune: 0.24, clerestory: 0.76}
+    tri_n: 4
+    aisle_pitch: 16
+    arch: pointed
+    vault: rib4
+    roof: gable
+    t: 1.3
+    pier: 0.12
+    pier_kind: compound      # a round pier with shafts, a vaulting shaft up to the springing of the vault
+    buttress: {depth: 0.42, w: 0.13, flyers: 2, kind: flyer}
+    win: {aisle: [0.6, 0.9], clerestory: [0.78, 1.0], tracery: bar}
+    roof_pitch: 58
+    nave_bays: [7, 9]
+    choir_bays: [3, 4]
+    transept: [2, 3]
+    east: chevet
+    chapels: [5, 7]
+    west: {towers: 2, tower_k: 1.7, portals: 3, rose: 0.42}
+    tower: {stage_h: 11.0, taper: 0.93, octagon: 0.3, spire: {flat: 0.55, needle: 0.45}, spire_k: [0.36, 0.42], buttresses: true,
+            pinnacles: true, open: pointed, max_stages: 3}
+    crossing: {kind: spire, k: 2.4}   # flèche: Notre-Dame 96 m with a 33 m vault, Amiens ~112 m with 42 m
+    spikes: 0.0
+    irregular: 0.15
+    organic: 0.0
+    fortified: 0.0
+    industrial: 0.0
+    colors: {stone: [0.78, 0.74, 0.66], roof: [0.30, 0.33, 0.36], accent: [0.42, 0.44, 0.47], hole: [0.05, 0.05, 0.07]}
+  gothic_late:               # Flamboyant: Rouen, Burgos, Strasbourg, Milan — ogees, flamboyant tracery, openwork spires, star vaults
+    base: gothic_fr
+    era: 3
+    HW: [2.7, 3.2]
+    arch: {pointed: 0.55, ogee: 0.45}
+    vault: {rib4: 0.4, star: 0.6}
+    win: {aisle: [0.6, 0.9], clerestory: [0.8, 1.0], tracery: flamboyant}
+    tower: {stage_h: 11.0, taper: 0.92, octagon: 0.6, spire: {openwork: 0.6, needle: 0.4}, spire_k: [0.38, 0.46], buttresses: true,
+            pinnacles: true, open: pointed, max_stages: 3}
+    crossing: {kind: {spire: 0.5, tower_spire: 0.3, lantern: 0.2}, k: 2.6}
+    pinnacle_k: 1.6          # pinnacles denser and taller
+    irregular: 0.25
+    colors: {stone: [0.84, 0.80, 0.70], roof: [0.30, 0.32, 0.36], accent: [0.42, 0.44, 0.47], hole: [0.05, 0.05, 0.07]}
+  gothic_en:                 # Salisbury, Wells, Lincoln: long and lower, a screen facade, a flat east end, a spire over the crossing
+    base: gothic_fr
+    lineage: english
+    era: 2
+    W: [11.0, 13.0]
+    HW: [2.0, 2.3]
+    A: 0.45
+    HA: 0.5
+    B: 0.55
+    elevation: {tribune: 0.36, clerestory: 0.64}
+    tri_n: 3
+    aisle_pitch: 20
+    vault: {rib4: 0.4, star: 0.6}   # the tiercerons of Lincoln and Exeter
+    t: 1.4
+    buttress: {depth: 0.3, w: 0.12, flyers: 1, kind: flyer}
+    win: {aisle: [0.45, 0.8], clerestory: [0.55, 0.9], tracery: {bar: 0.5, grid: 0.5}}
+    roof_pitch: 50
+    nave_bays: [9, 11]
+    choir_bays: [5, 6]
+    east: flat
+    chapels: [0, 0]
+    west: {towers: 0, turrets: 2, portals: 3, rose: 0.0, screen: 0.35}   # the screen facade is wider than the side aisles by 0.35 of a side aisle
+    tower: {stage_h: 10.0, taper: 0.95, octagon: 0.0, spire: {needle: 1.0}, spire_k: [0.5, 0.56], buttresses: true,
+            pinnacles: true, open: pointed, max_stages: 2}
+    crossing: {kind: {tower_spire: 0.6, tower: 0.25, lantern: 0.15}, k: 4.6}   # Salisbury: a 123 m spire with a 26 m vault
+    colors: {stone: [0.72, 0.72, 0.66], roof: [0.34, 0.36, 0.38], accent: [0.42, 0.44, 0.47], hole: [0.05, 0.05, 0.07]}
+  hall:                      # Marburg, Ulm, Vienna: a hall church — the aisles as tall as the nave, a single roof, one west tower
+    base: gothic_fr
+    lineage: german
+    era: 2
+    W: [11.0, 14.0]
+    HW: [1.9, 2.3]
+    A: 0.62
+    HA: 1.0
+    B: 0.55
+    choir_aisles: false      # a long choir without aisles (Ulm)
+    elevation: {tribune: 0.0, clerestory: 0.0}
+    tri_n: 0
+    aisle_pitch: 0
+    vault: {rib4: 0.4, star: 0.6}   # star and net vaults of the late Gothic
+    pier: 0.1
+    pier_kind: fasciculate   # a cluster of shafts up to the springing of the vault
+    buttress: {depth: 0.32, w: 0.12, flyers: 0, kind: buttress}
+    win: {aisle: [0.55, 0.95], clerestory: [0.0, 0.0], tracery: bar}
+    roof_pitch: 62
+    nave_bays: [6, 8]
+    choir_bays: [3, 4]
+    transept: [0, 0]
+    east: polygon
+    chapels: [0, 0]
+    west: {towers: 1, tower_k: 3.8, portals: 1, rose: 0.0}   # Ulm: 161.5 m with a 41 m vault
+    tower: {stage_h: 13.0, taper: 0.92, octagon: 1.0, spire: {needle: 0.6, openwork: 0.4}, spire_k: [0.36, 0.42], buttresses: true,
+            pinnacles: true, open: pointed, max_stages: 4}
+    crossing: {kind: none, k: 0}
+    colors: {stone: [0.66, 0.50, 0.42], roof: [0.38, 0.22, 0.18], accent: [0.42, 0.44, 0.47], hole: [0.05, 0.05, 0.07]}
+  byzantine:                 # Hagia Sophia, San Marco, Hosios Loukas: a dome on pendentives, a cross-in-square or a Greek cross
+    lineage: east
+    era: 0
+    plan: edifice
+    ed: {type: domed, edge: none, column: round, shrine_roof: dome, batter: 0.02}
+    arch: round
+    vault: barrel
+    t: 1.6
+    pier: 0.16
+    pier_kind: square
+    win: {aisle: [0.3, 0.5], clerestory: [0.3, 0.6], tracery: none}
+    roof_pitch: 24
+    central: {kind: {cross_in_square: 0.6, greek: 0.4}, W: [9.0, 16.0], HW: [1.0, 1.3], arm: [0.5, 0.8], drum_k: [0.25, 0.45],
+              dome: {hemi: 0.8, pointed: 0.2}, dome_k: [0.9, 1.0], corner_domes: {0: 0.4, 4: 0.6}, apses: 3, narthex: 0.7,
+              drum_windows: [12, 20]}
+    west: {towers: 0, tower_k: 1.6, portals: 1, rose: 0.0}
+    tower: {stage_h: 7.0, taper: 0.97, octagon: 0.0, spire: {pyramid: 0.5, dome: 0.5}, spire_k: [0.15, 0.25], buttresses: false,
+            pinnacles: false, open: round, max_stages: 3}
+    spikes: 0.0
+    irregular: 0.1
+    organic: 0.0
+    fortified: 0.0
+    industrial: 0.0
+    colors: {stone: [0.80, 0.70, 0.56], roof: [0.48, 0.50, 0.52], accent: [0.50, 0.52, 0.55], hole: [0.05, 0.05, 0.06]}
+  orthodox:                  # Rus: five domes on tall drums, onion domes, white walls, a tented bell tower
+    base: byzantine
+    era: 1
+    central: {kind: {cross_in_square: 1.0}, W: [7.0, 12.0], HW: [1.3, 1.7], arm: [0.5, 0.7], drum_k: [0.6, 1.0],
+              dome: {onion: 0.85, hemi: 0.15}, dome_k: [1.2, 1.5], corner_domes: {4: 0.75, 0: 0.25}, apses: 3, narthex: 0.4,
+              drum_windows: [8, 12]}
+    roof_pitch: 30
+    tower: {stage_h: 7.0, taper: 0.95, octagon: 0.6, spire: {tent: 0.7, onion: 0.3}, spire_k: [0.35, 0.5], buttresses: false,
+            pinnacles: false, open: round, max_stages: 3}
+    colors: {stone: [0.92, 0.90, 0.84], roof: [0.30, 0.42, 0.36], accent: [0.85, 0.66, 0.22], hole: [0.05, 0.05, 0.06]}
+  holy:                      # a bright fantasy cathedral (Gondor, paladins): white with gold, lancets, clusters of spires, a dome
+    base: gothic_fr
+    lineage: none
+    era: 2
+    scale: [1.2, 1.6]
+    HW: [3.2, 3.8]
+    arch: {lancet: 0.6, pointed: 0.4}
+    west: {towers: {2: 0.6, 4: 0.4}, tower_k: 2.3, portals: 3, rose: 0.45}
+    tower: {stage_h: 11.0, taper: 0.9, octagon: 0.7, spire: {cluster: 0.4, needle: 0.35, dome: 0.25}, spire_k: [0.38, 0.48],
+            buttresses: true, pinnacles: true, open: pointed, max_stages: 4, slender: 11}
+    crossing: {kind: {dome: 0.5, spire: 0.3, lantern: 0.2}, k: 2.8}
+    pinnacle_k: 1.4
+    irregular: 0.1
+    ed: {edge: pinnacles, column: round, shrine_roof: {dome: 0.6, gable: 0.4}, batter: 0.05, ring_obj: {pillar: 0.6, obelisk: 0.4}, type: ziggurat}
+    colors: {stone: [0.93, 0.92, 0.88], roof: [0.22, 0.34, 0.58], accent: [0.86, 0.68, 0.25], hole: [0.06, 0.07, 0.10]}
+  elven:                     # elves (Rivendell: Celtic and Art Nouveau): parabolic arches, thin walls, branch buttresses, leaf spires
+    base: gothic_fr
+    lineage: none
+    era: 2
+    HW: [3.0, 3.8]
+    arch: {parabolic: 0.6, lancet: 0.4}
+    t: 0.9
+    pier: 0.075
+    buttress: {depth: 0.36, w: 0.08, flyers: 1, kind: branch}
+    win: {aisle: [0.6, 0.95], clerestory: [0.8, 1.0], tracery: flowing}
+    nave_bays: [5, 7]
+    chapels: [3, 5]
+    west: {towers: {2: 0.5, 1: 0.5}, tower_k: 2.6, portals: 1, rose: 0.4}
+    tower: {stage_h: 12.0, taper: 0.84, octagon: 1.0, spire: {leaf: 0.8, needle: 0.2}, spire_k: [0.45, 0.55], buttresses: false,
+            pinnacles: false, open: pointed, max_stages: 4, slender: 13}
+    crossing: {kind: {spire: 0.6, lantern: 0.4}, k: 3.0}
+    organic: 0.9
+    irregular: 0.3
+    ed: {edge: none, column: round, shrine_roof: {dome: 0.5, gable: 0.5}, batter: 0.03, ring_obj: {pillar: 0.7, menhir: 0.3}, type: spiral_tower}
+    colors: {stone: [0.86, 0.89, 0.83], roof: [0.30, 0.50, 0.44], accent: [0.78, 0.82, 0.74], hole: [0.05, 0.07, 0.07]}
+  dwarven:                   # dwarves (Dwemer, Erebor): square forms, stepped arches, flat ceilings, massiveness, bronze
+    base: romanesque
+    lineage: none
+    era: 0
+    scale: [1.2, 1.8]
+    HW: [1.3, 1.7]
+    A: 0.45
+    B: 0.6
+    aisle_bays: 1
+    arch: {stepped: 0.8, flat: 0.2}
+    vault: {flat: 0.65, barrel: 0.35}
+    roof: {terrace: 0.7, gable: 0.3}
+    roof_pitch: 18
+    t: 3.2
+    pier: 0.24
+    win: {aisle: [0.18, 0.4], clerestory: [0.22, 0.5], tracery: none}
+    buttress: {depth: 0.16, w: 0.16, flyers: 0, kind: buttress}
+    west: {towers: 2, tower_k: 1.5, portals: 1, rose: 0.0}
+    tower: {stage_h: 9.0, taper: 0.88, octagon: 0.0, spire: {stepped: 0.7, flat: 0.3}, spire_k: [0.15, 0.25], buttresses: false,
+            pinnacles: false, open: stepped, max_stages: 3}
+    tower_side_k: 1.35
+    crossing: {kind: tower, k: 1.6}
+    fortified: 0.6
+    irregular: 0.1
+    ed: {edge: merlons, column: square, shrine_roof: stepped, batter: 0.12, ring_obj: {pillar: 0.6, obelisk: 0.4}, type: ziggurat}
+    colors: {stone: [0.48, 0.48, 0.50], roof: [0.34, 0.31, 0.27], accent: [0.72, 0.50, 0.25], hole: [0.06, 0.05, 0.04]}
+  dark:                      # a dark temple (sorcerer, necromancer, Chaos): black stone, lancets, spikes, horns, claws, irregular
+    base: gothic_fr
+    lineage: none
+    era: 2
+    HW: [3.0, 3.8]
+    arch: {lancet: 0.7, pointed: 0.3}
+    buttress: {depth: 0.45, w: 0.12, flyers: 2, kind: {claw: 0.6, flyer: 0.4}}
+    west: {towers: {2: 0.7, 1: 0.3}, tower_k: [1.8, 2.6], portals: 3, rose: 0.4}
+    tower: {stage_h: 11.0, taper: 0.88, octagon: 0.6, spire: {spikes: 0.35, horns: 0.25, needle: 0.25, blades: 0.15},
+            spire_k: [0.35, 0.5], buttresses: true, pinnacles: true, open: pointed, max_stages: 4, slender: 12}
+    crossing: {kind: {spire: 0.6, tower_spire: 0.4}, k: 2.8}
+    spikes: 0.8
+    irregular: 0.6
+    ed: {edge: spikes, column: twisted, shrine_roof: {pyramid: 0.5, flat: 0.5}, batter: 0.15, ring_obj: {obelisk: 0.5, pillar: 0.3, menhir: 0.2}, type: dark_citadel}
+    colors: {stone: [0.17, 0.16, 0.18], roof: [0.10, 0.09, 0.11], accent: [0.30, 0.08, 0.08], hole: [0.35, 0.05, 0.04]}
+  hell:                      # hell: red stone, claw buttresses, horns and blades, fire in the openings, larger
+    base: dark
+    scale: [1.4, 2.2]
+    tower: {stage_h: 11.0, taper: 0.86, octagon: 0.5, spire: {horns: 0.5, blades: 0.3, spikes: 0.2}, spire_k: [0.3, 0.45],
+            buttresses: true, pinnacles: true, open: pointed, max_stages: 4, slender: 12}
+    buttress: {depth: 0.5, w: 0.12, flyers: 2, kind: {claw: 0.85, flyer: 0.15}}
+    spikes: 1.0
+    irregular: 0.8
+    colors: {stone: [0.34, 0.15, 0.12], roof: [0.09, 0.07, 0.07], accent: [0.20, 0.10, 0.08], hole: [0.95, 0.42, 0.10]}
+  hive_gothic:                   # a hive mega-cathedral: Amiens ×3–4 on a fortress podium, the buttress piers are towers with spires, a factory
+    base: gothic_fr
+    lineage: none
+    scale: [3.0, 4.0]        # multiplier of the span and heights
+    HW: [3.0, 3.5]
+    t: 1.6                   # (× scale) — walls like armor
+    tri_n: 5
+    buttress: {depth: 0.5, w: 0.16, flyers: 3, kind: flyer}
+    buttress_towers: true    # the buttress pier is a tiered tower with a spire
+    podium: {levels: [1, 3], h: [0.12, 0.2]}   # podium tiers, the tier height is a fraction of the nave vault
+    nave_bays: [7, 9]
+    choir_bays: [3, 4]
+    transept: [2, 3]
+    chapels: [5, 7]
+    west: {towers: 4, tower_k: 2.4, portals: 3, rose: 0.42}   # the second pair — at the corners of the transept and the choir (Speyer, Bamberg)
+    tower_side_k: 1.3        # the hive towers are more massive (masonry slenderness ≤ 9)
+    tower: {stage_h: 11.0, taper: 0.9, octagon: 1.0, spire: {needle: 0.6, cluster: 0.4}, spire_k: [0.3, 0.38], buttresses: true,
+            pinnacles: true, open: pointed, max_stages: 5}
+    crossing: {kind: {spire: 0.6, dome: 0.4}, k: 3.0}
+    spikes: 0.25
+    industrial: 0.5
+    irregular: 0.2
+    ed: {edge: pinnacles, column: square, shrine_roof: pyramid, batter: 0.08, ring_obj: {obelisk: 0.6, pillar: 0.4}, type: dark_citadel}
+    colors: {stone: [0.52, 0.51, 0.50], roof: [0.20, 0.20, 0.23], accent: [0.62, 0.52, 0.30], hole: [0.04, 0.04, 0.05]}
+  forge_cult:                # a forge-cult temple: a gear rotunda, a ribbed dome, fin teeth, pipes, forge fire
+    base: byzantine
+    lineage: none
+    ed: {type: domed, edge: spikes, column: square, shrine_roof: dome, batter: 0.06}
+    scale: [2.0, 3.0]
+    central: {kind: {rotunda: 1.0}, W: [16.0, 22.0], HW: [1.1, 1.4], arm: [0.0, 0.0], drum_k: [0.3, 0.5], dome: {ribbed: 1.0},
+              dome_k: [0.7, 0.9], corner_domes: {0: 1.0}, apses: 0, narthex: 1.0, drum_windows: [16, 24], fins: [16, 24],
+              stacks: [4, 8]}
+    arch: {round: 0.5, flat: 0.5}
+    industrial: 1.0
+    spikes: 0.2
+    colors: {stone: [0.36, 0.34, 0.33], roof: [0.46, 0.27, 0.16], accent: [0.70, 0.55, 0.26], hole: [0.95, 0.55, 0.15]}
+  light_order:                      # Light order temple: a ziggurat (Maya) and five minaret-spires, the central one taller
+    lineage: none
+    era: 0
+    plan: edifice
+    ed: {type: light_order_temple, edge: none, column: square, shrine_roof: flat, batter: 0.06}
+    tower: {stage_h: 9.0, taper: 0.95, octagon: 0.0, spire: {minaret: 1.0}, spire_k: [0.4, 0.5], buttresses: false, pinnacles: false, open: round, max_stages: 2}
+    arch: flat
+    ziggurat: {L: [140.0, 220.0], ratio: [0.75, 1.0], levels: [4, 6], H: [0.35, 0.5], setback: [0.06, 0.1], batter: 0.08,
+               top: {spires5: 1.0}, spire_k: [1.6, 2.2], stairs: front}
+    t: 2.0
+    spikes: 0.0
+    irregular: 0.0
+    organic: 0.0
+    fortified: 0.3
+    industrial: 0.0
+    colors: {stone: [0.80, 0.72, 0.58], roof: [0.74, 0.66, 0.52], accent: [0.86, 0.78, 0.60], hole: [0.06, 0.06, 0.06]}
+  dark_order:                      # Dark order: a dark steep ziggurat-pyramid with fins and an obelisk
+    base: light_order
+    ed: {type: dark_order_temple, edge: spikes, column: square, shrine_roof: pyramid, batter: 0.2}
+    ziggurat: {L: [90.0, 150.0], ratio: [0.9, 1.0], levels: [3, 5], H: [0.55, 0.8], setback: [0.05, 0.08], batter: 0.2,
+               top: {obelisk: 1.0}, spire_k: [1.0, 1.6], stairs: front, fins: [8, 16]}
+    spikes: 0.4
+    colors: {stone: [0.09, 0.09, 0.11], roof: [0.07, 0.07, 0.09], accent: [0.55, 0.05, 0.05], hole: [0.75, 0.06, 0.04]}
+
+  mesopotamian:              # Ur, Babylon: mud brick, tiers with a batter, pilasters, flat roofs, blue glaze at the top
+    lineage: none
+    era: 0
+    plan: edifice
+    arch: {round: 0.6, flat: 0.4}
+    tower: {stage_h: 8.0, taper: 0.9, octagon: 0.0, spire: {flat: 0.7, stepped: 0.3}, spire_k: [0.1, 0.2], buttresses: false, pinnacles: false,
+            open: round, max_stages: 3}
+    ed: {type: ziggurat, batter: 0.12, pilaster: 1.0, edge: merlons, column: square, shrine_roof: flat, ring_obj: {pillar: 1.0}}
+    spikes: 0.0
+    irregular: 0.1
+    organic: 0.0
+    fortified: 0.3
+    industrial: 0.0
+    colors: {stone: [0.74, 0.62, 0.46], roof: [0.62, 0.52, 0.40], accent: [0.16, 0.30, 0.62], hole: [0.06, 0.05, 0.04]}
+  mesoamerican:              # Maya and Aztecs: painted limestone, steep tiers (talud-tablero), a roof comb, corbelled (stepped) vaults
+    lineage: none
+    era: 0
+    plan: edifice
+    arch: {stepped: 0.7, flat: 0.3}
+    tower: {stage_h: 8.0, taper: 0.9, octagon: 0.0, spire: {stepped: 1.0}, spire_k: [0.1, 0.2], buttresses: false, pinnacles: false,
+            open: stepped, max_stages: 2}
+    ed: {type: step_pyramid, batter: 0.28, tablero: 1.0, edge: none, column: square, shrine_roof: comb, ring_obj: {pillar: 0.5, statue: 0.5}}
+    spikes: 0.0
+    irregular: 0.1
+    organic: 0.0
+    fortified: 0.0
+    industrial: 0.0
+    colors: {stone: [0.80, 0.76, 0.66], roof: [0.66, 0.30, 0.22], accent: [0.72, 0.22, 0.16], hole: [0.07, 0.05, 0.04]}
+  khmer:                     # Angkor: sandstone, galleries on square piers, prang towers, corbelled vaults, steep stairs
+    lineage: none
+    era: 0
+    plan: edifice
+    arch: {stepped: 0.6, pointed: 0.4}
+    tower: {stage_h: 9.0, taper: 0.92, octagon: 0.0, spire: {prang: 1.0}, spire_k: [0.55, 0.7], buttresses: false, pinnacles: false,
+            open: stepped, max_stages: 1}
+    ed: {type: temple_mountain, batter: 0.06, edge: gallery, column: square, shrine_roof: stepped, ring_obj: {statue: 0.6, pillar: 0.4}}
+    spikes: 0.0
+    irregular: 0.1
+    organic: 0.2
+    fortified: 0.0
+    industrial: 0.0
+    colors: {stone: [0.62, 0.58, 0.50], roof: [0.50, 0.46, 0.40], accent: [0.56, 0.52, 0.44], hole: [0.06, 0.06, 0.05]}
+  egyptian:                  # Karnak, Edfu: battered pylons, a court with a colonnade, a hypostyle, obelisks, a cavetto cornice, flat roofs
+    lineage: none
+    era: 0
+    plan: edifice
+    arch: flat
+    tower: {stage_h: 8.0, taper: 0.9, octagon: 0.0, spire: {flat: 1.0}, spire_k: [0.1, 0.2], buttresses: false, pinnacles: false,
+            open: round, max_stages: 2}
+    ed: {type: axial_temple, batter: 0.1, edge: none, column: papyrus, cornice: cavetto, shrine_roof: flat, ring_obj: {statue: 0.7, obelisk: 0.3}}
+    spikes: 0.0
+    irregular: 0.05
+    organic: 0.0
+    fortified: 0.0
+    industrial: 0.0
+    colors: {stone: [0.84, 0.74, 0.56], roof: [0.78, 0.68, 0.50], accent: [0.25, 0.40, 0.62], hole: [0.07, 0.06, 0.05]}
+  occult:                    # an occult sanctuary: black stone, obelisks, spikes, sunken circles, a purple-green glow
+    base: dark
+    plan: edifice
+    tower: {stage_h: 11.0, taper: 0.86, octagon: 0.6, spire: {spikes: 0.35, horns: 0.25, needle: 0.2, blades: 0.2}, spire_k: [0.35, 0.5],
+            buttresses: true, pinnacles: true, open: pointed, max_stages: 4, slender: 12}
+    ed: {type: occult_ring, batter: 0.15, edge: spikes, column: twisted, shrine_roof: pyramid, ring_obj: {obelisk: 0.5, menhir: 0.3, pillar: 0.2}}
+    spikes: 0.9
+    irregular: 0.6
+    colors: {stone: [0.14, 0.13, 0.16], roof: [0.09, 0.08, 0.11], accent: [0.32, 0.85, 0.48], hole: [0.48, 0.22, 0.80]}
+lineages:                    # the eras of one tradition in order: construction campaigns take the style of their time
+  west: [romanesque, gothic_early, gothic_fr, gothic_late]
+  english: [romanesque, gothic_early, gothic_en, gothic_late]
+  german: [romanesque, gothic_early, hall, gothic_late]
+  east: [byzantine, orthodox]

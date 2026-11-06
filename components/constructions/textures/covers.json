@@ -1,0 +1,901 @@
+{
+ "_": "covering substance — components/constructions/textures/covers.py from covers.yaml and the parts' knowledge",
+ "version": 1,
+ "defaults": {
+  "rot": "free",
+  "jitter": 3,
+  "strength": 1.0,
+  "chroma": 1.0,
+  "rough": [
+   0.5,
+   1.0
+  ],
+  "metal": 0.0,
+  "bump": 0.25
+ },
+ "substances": {
+  "terracotta": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 1.0,
+   "rough": [
+    0.62,
+    0.9
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "clay_plaster"
+  },
+  "terracotta_old": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.1,
+   "chroma": 1.0,
+   "rough": [
+    0.72,
+    0.95
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "clay_plaster"
+  },
+  "slate": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 0.55,
+   "chroma": 0.3,
+   "rough": [
+    0.4,
+    0.65
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "seaside_rock"
+  },
+  "limestone_slate": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 1.0,
+   "rough": [
+    0.7,
+    0.95
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "worn_rock_natural_01"
+  },
+  "wood": {
+   "rot": "grain",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.6,
+   "rough": [
+    0.72,
+    0.95
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rough_wood"
+  },
+  "wood_aspen": {
+   "rot": "grain",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.3,
+   "rough": [
+    0.7,
+    0.92
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rough_wood"
+  },
+  "straw": {
+   "rot": "grain",
+   "jitter": 3,
+   "strength": 1.2,
+   "chroma": 1.0,
+   "rough": [
+    0.85,
+    1.0
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "riet_01"
+  },
+  "copper": {
+   "rot": "grain",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.25,
+   "rough": [
+    0.65,
+    0.9
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rusty_metal_sheet"
+  },
+  "gold": {
+   "rot": "grain",
+   "jitter": 3,
+   "strength": 0.3,
+   "chroma": 0.0,
+   "rough": [
+    0.22,
+    0.42
+   ],
+   "metal": 1.0,
+   "bump": 0.25,
+   "scan": "rusty_metal_sheet"
+  },
+  "lead": {
+   "rot": "grain",
+   "jitter": 3,
+   "strength": 0.6,
+   "chroma": 0.0,
+   "rough": [
+    0.5,
+    0.8
+   ],
+   "metal": 0.25,
+   "bump": 0.25,
+   "scan": "rusty_metal_sheet"
+  },
+  "zinc": {
+   "rot": "grain",
+   "jitter": 3,
+   "strength": 0.5,
+   "chroma": 0.0,
+   "rough": [
+    0.45,
+    0.75
+   ],
+   "metal": 0.35,
+   "bump": 0.25,
+   "scan": "rusty_metal_sheet"
+  },
+  "iron": {
+   "rot": "grain",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.6,
+   "rough": [
+    0.45,
+    0.85
+   ],
+   "metal": 0.5,
+   "bump": 0.25,
+   "scan": "rusty_metal_sheet"
+  },
+  "iron_green": {
+   "rot": "grain",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.6,
+   "rough": [
+    0.35,
+    0.7
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "green_metal_rust"
+  },
+  "iron_red": {
+   "rot": "grain",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.3,
+   "rough": [
+    0.35,
+    0.7
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "green_metal_rust"
+  },
+  "mortar": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 1.0,
+   "rough": [
+    0.85,
+    1.0
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "grey_plaster_03"
+  },
+  "granite": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.6,
+   "rough": [
+    0.6,
+    0.9
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rock_01"
+  },
+  "granite_red": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 1.0,
+   "rough": [
+    0.6,
+    0.9
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rock_boulder_dry"
+  },
+  "basalt": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.5,
+   "rough": [
+    0.5,
+    0.8
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "seaside_rock"
+  },
+  "river_stone": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 1.0,
+   "rough": [
+    0.45,
+    0.75
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rock_01"
+  },
+  "limestone": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 0.6,
+   "chroma": 0.4,
+   "rough": [
+    0.65,
+    0.95
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rock_boulder_dry"
+  },
+  "sandstone": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 1.0,
+   "rough": [
+    0.7,
+    0.95
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "worn_rock_natural_01"
+  },
+  "clinker": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 0.9,
+   "chroma": 1.0,
+   "rough": [
+    0.6,
+    0.85
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "clay_plaster"
+  },
+  "tile_dark": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 0.6,
+   "chroma": 1.0,
+   "rough": [
+    0.2,
+    0.45
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "clay_floor_001"
+  },
+  "tile_light": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 0.6,
+   "chroma": 1.0,
+   "rough": [
+    0.2,
+    0.45
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "clay_floor_001"
+  },
+  "oak": {
+   "rot": "long",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.5,
+   "rough": [
+    0.6,
+    0.9
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rough_wood"
+  },
+  "pine": {
+   "rot": "long",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.5,
+   "rough": [
+    0.6,
+    0.9
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rough_wood"
+  },
+  "pine_old": {
+   "rot": "long",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.4,
+   "rough": [
+    0.7,
+    0.95
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rough_wood"
+  },
+  "sand": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 1.0,
+   "rough": [
+    0.85,
+    1.0
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "gravelly_sand"
+  },
+  "earth": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 1.0,
+   "rough": [
+    0.8,
+    1.0
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "dirt"
+  },
+  "oak_dark": {
+   "rot": "long",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.4,
+   "rough": [
+    0.6,
+    0.9
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rough_wood"
+  },
+  "pine_grey": {
+   "rot": "long",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 0.3,
+   "rough": [
+    0.7,
+    0.95
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "rough_wood"
+  },
+  "plaster": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 0.6,
+   "chroma": 0.5,
+   "rough": [
+    0.8,
+    1.0
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "white_plaster_02"
+  },
+  "plaster_ochre": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 0.6,
+   "chroma": 0.5,
+   "rough": [
+    0.8,
+    1.0
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "white_plaster_02"
+  },
+  "daub": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 1.0,
+   "rough": [
+    0.85,
+    1.0
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "clay_plaster"
+  },
+  "brick": {
+   "rot": "free",
+   "jitter": 3,
+   "strength": 1.0,
+   "chroma": 1.0,
+   "rough": [
+    0.7,
+    0.95
+   ],
+   "metal": 0.0,
+   "bump": 0.25,
+   "scan": "clay_plaster"
+  }
+ },
+ "skip": [
+  "moss"
+ ],
+ "parts": {
+  "sk_roofing": {
+   "kinds": {
+    "plain": {
+     "substance": "terracotta",
+     "role": "roof",
+     "second": null
+    },
+    "beaver": {
+     "substance": "terracotta",
+     "role": "roof",
+     "second": null
+    },
+    "pointed": {
+     "substance": "terracotta",
+     "role": "roof",
+     "second": null
+    },
+    "hexagon": {
+     "substance": "terracotta",
+     "role": "roof",
+     "second": null
+    },
+    "scallop": {
+     "substance": "terracotta",
+     "role": "roof",
+     "second": null
+    },
+    "slate": {
+     "substance": "slate",
+     "role": "roof",
+     "second": null
+    },
+    "slate_random": {
+     "substance": "slate",
+     "role": "roof",
+     "second": null
+    },
+    "shingle": {
+     "substance": "wood",
+     "role": "wood",
+     "second": null
+    },
+    "lemekh": {
+     "substance": "wood_aspen",
+     "role": "wood",
+     "second": null
+    },
+    "lemekh_round": {
+     "substance": "wood_aspen",
+     "role": "wood",
+     "second": null
+    },
+    "lemekh_stepped": {
+     "substance": "wood_aspen",
+     "role": "wood",
+     "second": null
+    },
+    "copper_scale": {
+     "substance": "copper",
+     "role": "metal",
+     "second": null
+    },
+    "iron_plates": {
+     "substance": "iron",
+     "role": "metal",
+     "second": null
+    },
+    "stone_slate": {
+     "substance": "limestone_slate",
+     "role": "roof",
+     "second": null
+    },
+    "thatch": {
+     "substance": "straw",
+     "role": "roof",
+     "second": null
+    },
+    "copper_seam": {
+     "substance": "copper",
+     "role": "metal",
+     "second": null
+    },
+    "gilded_seam": {
+     "substance": "gold",
+     "role": "metal",
+     "second": null
+    },
+    "iron_seam": {
+     "substance": "iron_green",
+     "role": "metal",
+     "second": null
+    },
+    "boards": {
+     "substance": "wood",
+     "role": "wood",
+     "second": null
+    },
+    "pantile": {
+     "substance": "terracotta",
+     "role": "roof",
+     "second": null
+    },
+    "roman": {
+     "substance": "terracotta",
+     "role": "roof",
+     "second": null
+    },
+    "canal": {
+     "substance": "terracotta_old",
+     "role": "roof",
+     "second": null
+    }
+   },
+   "tones": {
+    "terracotta": [
+     0.5,
+     0.22,
+     0.12
+    ],
+    "terracotta_old": [
+     0.4,
+     0.25,
+     0.18
+    ],
+    "slate": [
+     0.12,
+     0.13,
+     0.15
+    ],
+    "wood": [
+     0.3,
+     0.23,
+     0.16
+    ],
+    "wood_aspen": [
+     0.5,
+     0.49,
+     0.46
+    ],
+    "copper": [
+     0.26,
+     0.47,
+     0.39
+    ],
+    "lead": [
+     0.32,
+     0.33,
+     0.35
+    ],
+    "iron": [
+     0.21,
+     0.2,
+     0.19
+    ],
+    "mortar": [
+     0.62,
+     0.58,
+     0.52
+    ],
+    "gold": [
+     0.78,
+     0.55,
+     0.2
+    ],
+    "zinc": [
+     0.46,
+     0.48,
+     0.5
+    ],
+    "iron_green": [
+     0.07,
+     0.2,
+     0.12
+    ],
+    "iron_red": [
+     0.3,
+     0.07,
+     0.05
+    ],
+    "limestone_slate": [
+     0.42,
+     0.38,
+     0.31
+    ],
+    "straw": [
+     0.45,
+     0.36,
+     0.21
+    ]
+   }
+  },
+  "sk_paving": {
+   "kinds": {
+    "cobble": {
+     "substance": "river_stone",
+     "role": "floor",
+     "second": "sand"
+    },
+    "setts_small": {
+     "substance": "granite",
+     "role": "floor",
+     "second": "sand"
+    },
+    "setts_large": {
+     "substance": "basalt",
+     "role": "floor",
+     "second": "sand"
+    },
+    "flagstone": {
+     "substance": "limestone",
+     "role": "floor",
+     "second": "sand"
+    },
+    "flagstone_crazy": {
+     "substance": "sandstone",
+     "role": "floor",
+     "second": "sand"
+    },
+    "brick_herringbone": {
+     "substance": "clinker",
+     "role": "floor",
+     "second": "sand"
+    },
+    "brick_basket": {
+     "substance": "clinker",
+     "role": "floor",
+     "second": "sand"
+    },
+    "wood_pavement": {
+     "substance": "pine_old",
+     "role": "wood",
+     "second": "earth"
+    },
+    "planks": {
+     "substance": "oak",
+     "role": "wood",
+     "second": "pine_old"
+    },
+    "floor_tiles": {
+     "substance": "terracotta",
+     "role": "floor",
+     "second": "mortar"
+    },
+    "floor_tiles_diag": {
+     "substance": "tile_light",
+     "role": "floor",
+     "second": "mortar"
+    }
+   },
+   "tones": {
+    "granite": [
+     0.36,
+     0.35,
+     0.34
+    ],
+    "granite_red": [
+     0.42,
+     0.3,
+     0.26
+    ],
+    "basalt": [
+     0.17,
+     0.17,
+     0.18
+    ],
+    "river_stone": [
+     0.4,
+     0.37,
+     0.32
+    ],
+    "limestone": [
+     0.58,
+     0.54,
+     0.46
+    ],
+    "sandstone": [
+     0.55,
+     0.42,
+     0.3
+    ],
+    "clinker": [
+     0.4,
+     0.18,
+     0.12
+    ],
+    "terracotta": [
+     0.55,
+     0.26,
+     0.14
+    ],
+    "tile_dark": [
+     0.12,
+     0.07,
+     0.05
+    ],
+    "tile_light": [
+     0.62,
+     0.48,
+     0.28
+    ],
+    "oak": [
+     0.34,
+     0.22,
+     0.12
+    ],
+    "pine": [
+     0.48,
+     0.34,
+     0.2
+    ],
+    "pine_old": [
+     0.3,
+     0.25,
+     0.2
+    ],
+    "sand": [
+     0.42,
+     0.37,
+     0.28
+    ],
+    "mortar": [
+     0.56,
+     0.53,
+     0.48
+    ],
+    "earth": [
+     0.23,
+     0.19,
+     0.14
+    ]
+   }
+  },
+  "sk_timber": {
+   "kinds": {
+    "fachwerk": {
+     "substance": "oak_dark",
+     "role": "wood",
+     "second": "plaster"
+    },
+    "fachwerk_close": {
+     "substance": "oak_dark",
+     "role": "wood",
+     "second": "plaster"
+    },
+    "fachwerk_cross": {
+     "substance": "oak",
+     "role": "wood",
+     "second": "plaster_ochre"
+    },
+    "log_oblo": {
+     "substance": "pine_grey",
+     "role": "wood",
+     "second": "plaster"
+    },
+    "log_lapa": {
+     "substance": "pine",
+     "role": "wood",
+     "second": "plaster"
+    },
+    "boards": {
+     "substance": "pine_grey",
+     "role": "wood",
+     "second": "plaster"
+    },
+    "palisade": {
+     "substance": "pine_grey",
+     "role": "wood",
+     "second": "plaster"
+    },
+    "wattle": {
+     "substance": "oak",
+     "role": "wood",
+     "second": "plaster"
+    }
+   },
+   "tones": {
+    "oak_dark": [
+     0.1,
+     0.07,
+     0.05
+    ],
+    "oak": [
+     0.3,
+     0.2,
+     0.12
+    ],
+    "pine": [
+     0.42,
+     0.3,
+     0.18
+    ],
+    "pine_grey": [
+     0.34,
+     0.31,
+     0.27
+    ],
+    "plaster": [
+     0.78,
+     0.74,
+     0.64
+    ],
+    "plaster_ochre": [
+     0.72,
+     0.58,
+     0.36
+    ],
+    "daub": [
+     0.5,
+     0.42,
+     0.3
+    ],
+    "moss": [
+     0.16,
+     0.15,
+     0.1
+    ],
+    "brick": [
+     0.4,
+     0.18,
+     0.12
+    ]
+   }
+  }
+ }
+}

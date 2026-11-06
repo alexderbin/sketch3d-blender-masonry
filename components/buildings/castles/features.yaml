@@ -1,0 +1,119 @@
+# Unique elements of a castle (castles/castle_features.py → base/arch_elems.py): where, when, how many;
+# parameters. Meters. Cultures and eras are as in castles.yaml.
+# cultures: the probability of an element for a culture (no culture — 0); share — the share of suitable
+# stretches; count — [from, to] per castle.
+
+sections:                      # wall stretches (between towers and gates)
+  hoarding:                    # a wooden hoarding gallery on beams — toward the threat
+    eras: [romanesque, gothic]
+    cultures: {german: 1.0, french: 0.8, english: 0.5, crusader: 0.3, moorish: 0.2, kremlin: 0.6, hell: 0.4}
+    exposure: [gentle, uphill]
+    share: 0.6
+  machicolation:               # stone machicolations on corbels — toward the threat and at the gate
+    eras: [gothic, late, future]
+    cultures: {french: 1.0, crusader: 0.9, moorish: 0.6, german: 0.5, english: 0.35, kremlin: 0.5, imperial_scifi: 1.0, hell: 0.8}
+    exposure: [gentle, uphill]
+    share: 0.6
+    tiers: [2, 3]
+  covered_walk:                # covered walk along the wall
+    cultures: {german: 0.6, kremlin: 0.7, english: 0.2}
+    share: 0.35
+  zwinger:                     # a low outer wall in front of the threat stretch
+    eras: [gothic, late, future]
+    cultures: {german: 0.8, french: 0.5, english: 0.4, crusader: 0.6, moorish: 0.5, kremlin: 0.3, imperial_scifi: 0.8, hell: 0.5}
+    exposure: [gentle, uphill]
+    min_len: 22
+    offset: 7.0
+    height: 5.0
+    count: [1, 2]
+  garderobe:                   # garderobe on corbels — over a cliff, a moat, water, by a dwelling
+    exposure: [cliff, steep, water]
+    behind: [palas, palas_big, hall, governor, wing, barracks, convent, kitchen, tower_house]
+    count: [1, 3]
+  palace_windows:              # residential windows in the curtain — a palas behind the wall, no threat outside; rare and without stained glass
+    behind: [palas, palas_big, hall, governor, wing, convent, tower_house]
+    exposure: [cliff, steep, water, gentle]
+    max_sections: 2
+  oriel:                       # an oriel on the upper floor — at the palas, the safe side
+    behind: [palas, palas_big, hall, governor, tower_house]
+    count: [1, 1]
+  chapel_bay:                  # a chapel apse through the wall — a wall facing east
+    behind: [chapel, chapel_big]
+    facing_east_deg: 70
+  postern:                     # wicket gate — a quiet side, far from the gate
+    count: [1, 1]
+    min_gate_dist: 40
+  buttresses:                  # buttresses — a stretch on a slope, a high foundation
+    base_depth: 9.0
+    spacing: 6.0
+  stairs:                      # stairs from the court to the wall
+    per_ward: [1, 2]
+  arrow_loops:                 # loopholes in the curtain — toward the threat, where there is no gallery or machicolations (late ones are cruciform)
+    share: 0.7
+  putlogs:                     # scaffold putlog holes in rows — a trace of construction
+    share: 0.35
+  water_gate:                  # water gate — a stretch by the water
+    exposure: [water]
+    count: [1, 1]
+  two_level:                   # two-tier defense (Pierrefonds): a covered walk over the machicolations
+    eras: [late, future]
+    cultures: {french: 0.85, imperial_scifi: 0.5, english: 0.3, hell: 0.3}
+  pinnacle_buttresses:         # Gothic buttresses with pinnacles (Roriczer) — fantasy Gothic
+    cultures: {gothic: 0.95, vampire: 0.55}
+    spacing: 8.0
+    share: 0.85
+  dansker:                     # projecting tower on an arcade (Danzker, Marienburg): by a dwelling, not toward the threat, above water or a slope
+    purposes: {order_castle: 0.95, palace: 0.35, lord_seat: 0.2, citadel: 0.25, lair: 0.3, prison: 0.15}
+    exposure: [water, steep, cliff, gentle]
+    behind: [convent, palas, palas_big, hall, governor, wing, barracks]
+    dist: [22, 60]               # from the wall, m (× scale^0.5)
+
+history:                       # traces of rebuilds
+  raised:                      # wall superstructure: the old merlons are filled in, the new parapet is higher
+    prob: 0.75
+    count: [1, 2]
+    dz: [1.8, 3.2]
+  blocked_gate:                # former gates bricked up — on the core toward the outer court or the old approach
+    prob: 0.55
+
+towers:
+  butterfass:                  # "butter churn" — a smaller tower on top of the bergfried
+    keeps: [bergfried]
+    cultures: {german: 0.75}
+  prow:                        # a wedge tower toward the threat (the main one or one wall tower)
+    cultures: {german: 0.55, french: 0.5, crusader: 0.7, hell: 0.8, imperial_scifi: 0.4}
+  sky_bridges:                 # bridges between the tops of tall towers (Ravenloft, Lothric) — fantasy
+    cultures: {vampire: 0.9, gothic: 0.6, sorcerer: 0.3}
+    count: [1, 2]
+    span: [10, 48]               # between the faces of the towers, m
+  bartizans:                   # corner turrets on corbels: donjon, gatehouse, corners without towers
+    eras: [gothic, late, future]
+    cultures: {french: 0.85, english: 0.5, moorish: 0.6, crusader: 0.3, kremlin: 0.4, german: 0.35, imperial_scifi: 0.7, hell: 0.6}
+
+gates:
+  barbican:                    # a fortification in front of the gate beyond the moat
+    eras: [gothic, late]
+    min_scale: [medium, large, royal]
+    prob: 0.75
+  drawbridge:                  # drawbridge; lever arms in slots — from the 14th century
+    beams_eras: [late, future]
+  portcullis: {}
+  breteche:                    # a projecting loophole booth over the gateway
+    prob: 0.6
+
+buildings:
+  chimneys:    {kinds: [palas, palas_big, hall, kitchen, governor, wing, barracks, convent, house, tower_house], per: [1, 3]}
+  dormers:     {kinds: [palas, palas_big, wing, governor, convent, tower_house], min_pitch: 44}
+  fachwerk:    {cultures: {german: 0.8, french: 0.25, english: 0.3}, kinds: [palas, kitchen, stable, store, barracks, wing, house, armory, tower_house]}
+  turrets:     {kinds: [tower_house, palas, palas_big, governor], cultures: {german: 0.8, french: 0.9, english: 0.5, kremlin: 0.4, imperial_scifi: 0.6, hell: 0.5, moorish: 0.3, crusader: 0.2}}   # turrets at the corners (Eltz)
+  stepped_gable: {cultures: {german: 0.5, kremlin: 0.5, english: 0.15}}
+  roof_turret: {kinds: [chapel, chapel_big]}
+  tracery:     {eras: [gothic, late, future], kinds: [chapel, chapel_big], hall_prob: 0.5}   # stained glass is a luxury: the chapel, sometimes one hall
+
+roofs:                         # tower roofs (a roof is expensive; one tall cone is rare)
+  max_share: 0.65              # no more than 65 % of the towers are roofed in classic castles
+  share: {german: 0.5, french: 0.6, english: 0.12, crusader: 0.0, moorish: 0.0, kremlin: 0.65, imperial_scifi: 0.4, hell: 0.6}
+  pitch: {german: 50, french: 56, english: 45, crusader: 40, moorish: 40, kremlin: 66, imperial_scifi: 58, hell: 62}
+  cap: 0.38                    # an ordinary roof is no taller than 0.38 of the tower height
+  cap_landmark: 0.75           # one tall roof is a landmark
+  kind: {kremlin: {square: tent, round: tent}, hell: {poly6: spike, round: spike}, imperial_scifi: {poly8: spire}}

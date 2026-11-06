@@ -1,0 +1,284 @@
+# Roofing knowledge (components/constructions/roofing/): kinds of roof covering — clay tile, slate, lemekh (wooden
+# shingles), shingle, seamed sheets, boards, stone slab, thatch; real-life sizes, in meters. Read by roofing.py (the
+# project's Python; in Blender — from the JSON plan, there is no YAML there).
+# The logic is masonry with differences: rows along the eaves from the bottom up, bonding (staggered or stacked), but the
+# tiles overlap (lap), lie at a slope (the bottom is raised by the thickness of the lower layers), and the edges are a
+# ridge, a hip, a finial, an overhang.
+# Size sources: [f] — manufacturer and standards data, [p] — from memory.
+# A new kind is an entry under "kinds:" (generator — rows | columns | sheets); check — bench/bench.py.
+# Diminishing courses: L, lap, t are pairs [at the eaves, at the ridge]. Sheets: profile seam (panels) | boards (boards in two layers).
+
+version: 1
+
+base:                       # shared by all kinds; a kind overrides it with its own values
+  generator: rows             # rows — flat and shaped tiles in rows; columns — trough tiles in columns; sheets — strips from the eaves to the ridge
+  w: 0.165                    # tile width along the eaves; [from, to] — a random width (the bond randomly)
+  L: 0.265                    # length along the slope
+  t: 0.012                    # thickness
+  lap: 0.065              # longitudinal lap (head lap)
+  n_layers: 2                    # 1 — single layering (step = L − lap), 2 — double (step = (L − lap)/2), 3 — triple
+  bond: staggered        # staggered — the row is shifted by half a tile; stacked — row joints in a line; randomly — widths differ, joints ≥ from_side
+  from_side: 0.0                  # the smallest joint shift of adjacent rows for the bond randomly (side lap)
+  gap: 0.003                # gap between tiles in a row
+  bottom: straight                 # straight | circular (beaver tail) | sharp | hexagonal | fishscale (a semicircle across the full width) | crenellated | tufts
+  profile: flat            # flat | s (Dutch) | monk_nun | troughs (Spanish) | seam | boards
+  depth: 0.0                # trough depth / roll height of a profile tile / seam height
+  ridge: semicircular          # semicircular | triangular — ridge and hip tile
+  spread: 0.08               # tile tone spread (tile tone = substance × N(1, spread))
+  substance: terracotta        # → substances: tone
+  role: roof                # face role per the core contract: roof (2) | wood (3) | metal (4)
+  liveliness: 1.0                # "liveliness" of hand laying: shift ±3 mm, rotation ±0.8°, lift ±1 mm (0 — ruler-straight)
+
+substances:                     # default tone (linear RGB); a building may supply its own (the style palette)
+  terracotta:     [0.50, 0.22, 0.12]   # fired clay
+  terracotta_old: [0.40, 0.25, 0.18]   # old, faded
+  slate:          [0.12, 0.13, 0.15]   # slate
+  wood:           [0.30, 0.23, 0.16]   # shingles, split lath
+  wood_aspen:     [0.50, 0.49, 0.46]   # aspen — turns silver (lemekh)
+  copper:         [0.26, 0.47, 0.39]   # copper with patina
+  lead:           [0.32, 0.33, 0.35]   # lead
+  iron:           [0.21, 0.20, 0.19]   # iron
+  mortar:         [0.62, 0.58, 0.52]   # lime mortar — the ridge bed of trough tiles
+  gold:           [0.78, 0.55, 0.20]   # gilding (copper under gold — cathedral domes)
+  zinc:           [0.46, 0.48, 0.50]   # titanium zinc with patina
+  iron_green:     [0.07, 0.20, 0.12]   # roofing iron, painted (verdigris green)
+  iron_red:       [0.30, 0.07, 0.05]   # roofing iron, red lead
+  limestone_slate: [0.42, 0.38, 0.31]  # limestone slab (Cotswold)
+  straw:          [0.45, 0.36, 0.21]   # straw, reed
+
+kinds:
+  # ── rows: flat tiles, double layering staggered
+  plain:
+    title: "flat 265×165"          # [f] Wienerberger/Sandtoft: step 100, lap 65, slope from 35°
+  beaver:
+    title: "beaver tail 380×180"   # [f] Creaton Biber: step 145–165 depending on the slope
+    w: 0.18
+    L: 0.38
+    t: 0.014
+    lap: 0.08                         # step (0.38 − 0.08)/2 = 0.15
+    bottom: circular
+  pointed:
+    title: "pointed cut 380×180"      # Spitzschnitt — the same beaver tail with a pointed bottom
+    w: 0.18
+    L: 0.38
+    t: 0.014
+    lap: 0.08
+    bottom: sharp
+  hexagon:
+    title: "hexagonal 340×200"     # bottom corners cut off — diamonds on the roof
+    w: 0.20
+    L: 0.34
+    t: 0.014
+    lap: 0.07
+    bottom: hexagonal
+  scallop:
+    title: "fishscale 300×160"            # a semicircle across the full width — the fish scale of towers and spires
+    w: 0.16
+    L: 0.30
+    lap: 0.06
+    bottom: fishscale
+  slate:
+    title: "slate 500×250"           # [f] step (L − lap)/2: 212 for a lap of 75
+    w: 0.25
+    L: 0.50
+    t: 0.007
+    lap: 0.075
+    substance: slate
+    spread: 0.05
+  slate_random:
+    title: "slate of varying width"     # [f] one length, widths vary (≈ a third each), from_side ≥ 75 mm
+    w: [0.18, 0.32]
+    L: 0.50
+    t: 0.007
+    lap: 0.075
+    bond: randomly
+    from_side: 0.075
+    substance: slate
+    spread: 0.06
+  # ── rows: wood and metal
+  shingle:
+    title: "shingle (wood)"            # [p] small boards 0.4–0.5 m, triple layering, widths vary
+    w: [0.08, 0.16]
+    L: 0.45
+    t: 0.015
+    lap: 0.03
+    n_layers: 3
+    bond: randomly
+    from_side: 0.035
+    substance: wood
+    role: wood
+    spread: 0.12
+  lemekh:
+    title: "pointed lemekh (iron-shaped)"   # [s] aspen, width up to 22 cm, length 20–45 cm (the larger the dome, the larger the lemekh); domes, tents
+    w: 0.14
+    L: 0.42
+    t: 0.025
+    lap: 0.03
+    n_layers: 3
+    bottom: sharp
+    substance: wood_aspen
+    role: wood
+    spread: 0.07
+  lemekh_round:
+    title: "rounded lemekh"       # [s] scaly — a semicircular end
+    w: 0.14
+    L: 0.42
+    t: 0.025
+    lap: 0.03
+    n_layers: 3
+    bottom: fishscale
+    substance: wood_aspen
+    role: wood
+    spread: 0.07
+  lemekh_stepped:
+    title: "crenellated lemekh"         # [s] the end has stepped rectangular offsets
+    w: 0.14
+    L: 0.42
+    t: 0.025
+    lap: 0.03
+    n_layers: 3
+    bottom: crenellated
+    substance: wood_aspen
+    role: wood
+    spread: 0.07
+  copper_scale:
+    title: "copper scales"             # [p] sheets 0.3 × 0.2 — domes, spires
+    w: 0.20
+    L: 0.30
+    t: 0.003
+    lap: 0.08
+    bottom: fishscale
+    substance: copper
+    role: metal
+    spread: 0.05
+    liveliness: 0.3
+  iron_plates:
+    title: "iron plates"       # plates 2.0 × 1.2, single layering, staggered — hive, forge cult
+    w: 1.2
+    L: 2.0
+    t: 0.05
+    lap: 0.15
+    n_layers: 1
+    gap: 0.01
+    substance: iron
+    role: metal
+    spread: 0.04
+    liveliness: 0.0
+  stone_slate:
+    title: "stone slab, diminishing courses"   # [f] Cotswold: at the eaves 584 × 38, step 250 → 115, lap 100 → 65 (at the ridge the slab is ~300; 216 — the row under the ridge)
+    w: [0.25, 0.42]                       # at the eaves; toward the ridge — more gently than the length (√ of the fraction); widths vary
+    L: [0.585, 0.30]
+    t: [0.038, 0.015]
+    lap: [0.10, 0.065]
+    bond: randomly
+    from_side: 0.06
+    substance: limestone_slate
+    ridge: triangular                    # [f] sawn stone ridge 225 × 38
+    ridge_r: 0.13
+    spread: 0.09
+  thatch:
+    title: "thatch (reed)"            # [p] layer ~0.3 m: bundles in rows, the ridge a thick roll
+    w: 1.0
+    L: 0.9
+    t: 0.09
+    lap: 0.3
+    n_layers: 3
+    bottom: tufts
+    substance: straw
+    ridge_r: 0.24
+    spread: 0.06
+    liveliness: 0.5
+  # ── sheets: seamed panels and boards — strips from the eaves to the ridge; on a tent and a dome — wedges
+  copper_seam:
+    title: "copper, standing seam"       # [f] CDA: panels 0.30–0.46 m, seam ~19–25 mm, no seams at the crown — a cap
+    generator: sheets
+    profile: seam
+    w: 0.42
+    L: 2.0
+    t: 0.0008
+    depth: 0.025
+    substance: copper
+    role: metal
+    ridge: triangular
+    ridge_r: 0.06
+    spread: 0.04
+    liveliness: 0.0
+  gilded_seam:
+    title: "gilded copper, seam"     # cathedral domes
+    generator: sheets
+    profile: seam
+    w: 0.42
+    L: 2.0
+    t: 0.0008
+    depth: 0.022
+    substance: gold
+    role: metal
+    ridge: triangular
+    ridge_r: 0.06
+    spread: 0.03
+    liveliness: 0.0
+  iron_seam:
+    title: "roofing iron, painted"   # [p] sheet 710 × 1420, panel ≈ 0.68 after seaming
+    generator: sheets
+    profile: seam
+    w: 0.68
+    L: 1.39
+    t: 0.0008
+    depth: 0.025
+    substance: iron_green
+    role: metal
+    ridge: triangular
+    ridge_r: 0.07
+    spread: 0.03
+    liveliness: 0.0
+  boards:
+    title: "boards in two layers"            # [p] boards 0.2 × 0.03, the lower ones with a half-board gap, the upper ones over the gaps
+    generator: sheets
+    profile: boards
+    w: 0.20
+    L: 4.0
+    t: 0.03
+    substance: wood
+    role: wood
+    ridge: triangular
+    ridge_r: 0.12
+    spread: 0.10
+    liveliness: 0.2
+  # ── columns: trough tiles
+  pantile:
+    title: "Dutch S 342×247"    # [f] lap 72–75, step 267–270; stacked, interlock on the side
+    generator: columns
+    profile: s
+    w: 0.247
+    L: 0.342
+    t: 0.013
+    lap: 0.075
+    n_layers: 1
+    bond: stacked
+    depth: 0.035
+    gap: 0.0
+  roman:
+    title: "monk-nun"            # [f] nun — trough up, monk — on top over the joint; not flatter than 40°
+    generator: columns
+    profile: monk_nun
+    w: 0.20                               # column step: nun 0.18 + gap
+    L: 0.40
+    t: 0.016
+    lap: 0.08
+    n_layers: 1
+    bond: stacked
+    depth: 0.05
+    gap: 0.0
+  canal:
+    title: "Spanish (channel and capping tile)"   # [f] 408 × 150/116 mm, ≈ 33 pcs per m², slope from 26 %
+    generator: columns
+    profile: troughs
+    w: 0.19                               # step of the "channel + capping" pair (tile 0.15: the gap between channels is covered)
+    L: 0.408
+    t: 0.014
+    lap: 0.10
+    n_layers: 1
+    bond: stacked
+    depth: 0.06
+    gap: 0.0
+    substance: terracotta_old

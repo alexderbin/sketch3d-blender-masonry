@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "imprints": {
+    "plain:pitch": {
+      "n_tiles": 661,
+      "digest": "0799a1c50e3e1c55"
+    },
+    "plain:hip": {
+      "n_tiles": 350,
+      "digest": "4d3b388925ec3b3a"
+    },
+    "plain:cone": {
+      "n_tiles": 2316,
+      "digest": "745440ccf4a28bb9"
+    },
+    "beaver:pitch": {
+      "n_tiles": 425,
+      "digest": "a0fbb0e5f8c826a3"
+    },
+    "beaver:hip": {
+      "n_tiles": 222,
+      "digest": "3338cb30e9226be9"
+    },
+    "beaver:cone": {
+      "n_tiles": 1441,
+      "digest": "9d20166935463b52"
+    },
+    "pointed:pitch": {
+      "n_tiles": 404,
+      "digest": "9c9246b94ab14e26"
+    },
+    "pointed:hip": {
+      "n_tiles": 218,
+      "digest": "69b5fafa8cdf3cdc"
+    },
+    "pointed:cone": {
+      "n_tiles": 1441,
+      "digest": "4a5d1789fce67aad"
+    },
+    "hexagon:pitch": {
+      "n_tiles": 400,
+      "digest": "107f9c5496b50e76"
+    },
+    "hexagon:hip": {
+      "n_tiles": 229,
+      "digest": "94c83e79e27d2fb5"
+    },
+    "hexagon:cone": {
+      "n_tiles": 1439,
+      "digest": "ab7252cea88d7508"
+    },
+    "scallop:pitch": {
+      "n_tiles": 575,
+      "digest": "fb72ca86e36c7884"
+    },
+    "scallop:hip": {
+      "n_tiles": 301,
+      "digest": "153e45d22673706f"
+    },
+    "scallop:cone": {
+      "n_tiles": 2002,
+      "digest": "3c5913028b8280ae"
+    },
+    "slate:pitch": {
+      "n_tiles": 230,
+      "digest": "dc5f598794507bb6"
+    },
+    "slate:hip": {
+      "n_tiles": 122,
+      "digest": "15e636b58f6a3ca4"
+    },
+    "slate:cone": {
+      "n_tiles": 753,
+      "digest": "e82da72c34d7f023"
+    },
+    "slate_random:pitch": {
+      "n_tiles": 206,
+      "digest": "31af23a2ee674d07"
+    },
+    "slate_random:hip": {
+      "n_tiles": 112,
+      "digest": "5a37bed2626c6294"
+    },
+    "slate_random:cone": {
+      "n_tiles": 648,
+      "digest": "3566e93457e53c5f"
+    },
+    "shingle:pitch": {
+      "n_tiles": 554,
+      "digest": "98713870234272b4"
+    },
+    "shingle:hip": {
+      "n_tiles": 299,
+      "digest": "3ce59a209f2fd4a0"
+    },
+    "shingle:cone": {
+      "n_tiles": 1924,
+      "digest": "356caa9f9bcfb473"
+    },
+    "lemekh:pitch": {
+      "n_tiles": 598,
+      "digest": "a5dcf230b4cdb4f5"
+    },
+    "lemekh:hip": {
+      "n_tiles": 314,
+      "digest": "fc5ed8457d789065"
+    },
+    "lemekh:cone": {
+      "n_tiles": 2118,
+      "digest": "293a904c5d31b150"
+    },
+    "lemekh_round:pitch": {
+      "n_tiles": 598,
+      "digest": "18c5e17ec9df1384"
+    },
+    "lemekh_round:hip": {
+      "n_tiles": 321,
+      "digest": "0e3933b68988bb8f"
+    },
+    "lemekh_round:cone": {
+      "n_tiles": 2118,
+      "digest": "1d9a847a75aa7b61"
+    },
+    "lemekh_stepped:pitch": {
+      "n_tiles": 598,
+      "digest": "7050dc62e9c5d480"
+    },
+    "lemekh_stepped:hip": {
+      "n_tiles": 314,
+      "digest": "65cdfb9cfbf4c8cb"
+    },
+    "lemekh_stepped:cone": {
+      "n_tiles": 2118,
+      "digest": "453e7289231d4e22"
+    },
+    "copper_scale:pitch": {
+      "n_tiles": 500,
+      "digest": "f8ec58bc80e4e452"
+    },
+    "copper_scale:hip": {
+      "n_tiles": 261,
+      "digest": "8d838c721fcb0f13"
+    },
+    "copper_scale:cone": {
+      "n_tiles": 1748,
+      "digest": "0ec78b93bf3144ec"
+    },
+    "iron_plates:pitch": {
+      "n_tiles": 8,
+      "digest": "5388138a68c46aba"
+    },
+    "iron_plates:hip": {
+      "n_tiles": 6,
+      "digest": "f825fdf94fe33d53"
+    },
+    "iron_plates:cone": {
+      "n_tiles": 15,
+      "digest": "5c67365a420dc192"
+    },
+    "stone_slate:pitch": {
+      "n_tiles": 208,
+      "digest": "f2f4b97afd9ad034"
+    },
+    "stone_slate:hip": {
+      "n_tiles": 101,
+      "digest": "37bb31ccce2ca85b"
+    },
+    "stone_slate:cone": {
+      "n_tiles": 603,
+      "digest": "51bfa2debe285b23"
+    },
+    "thatch:pitch": {
+      "n_tiles": 62,
+      "digest": "8d93c69cb78db36a"
+    },
+    "thatch:hip": {
+      "n_tiles": 39,
+      "digest": "c657144a315f36c2"
+    },
+    "thatch:cone": {
+      "n_tiles": 175,
+      "digest": "1f124818ce4a9c6c"
+    },
+    "copper_seam:pitch": {
+      "n_tiles": 39,
+      "digest": "c20a795a398cc4c9"
+    },
+    "copper_seam:hip": {
+      "n_tiles": 29,
+      "digest": "e3bda5caa9f220f2"
+    },
+    "copper_seam:cone": {
+      "n_tiles": 164,
+      "digest": "42b62694a9431bba"
+    },
+    "gilded_seam:pitch": {
+      "n_tiles": 39,
+      "digest": "c20a795a398cc4c9"
+    },
+    "gilded_seam:hip": {
+      "n_tiles": 29,
+      "digest": "e3bda5caa9f220f2"
+    },
+    "gilded_seam:cone": {
+      "n_tiles": 164,
+      "digest": "42b62694a9431bba"
+    },
+    "iron_seam:pitch": {
+      "n_tiles": 33,
+      "digest": "e3307781248ac795"
+    },
+    "iron_seam:hip": {
+      "n_tiles": 25,
+      "digest": "310c33795bbbbc53"
+    },
+    "iron_seam:cone": {
+      "n_tiles": 160,
+      "digest": "8a807a69aea6e82d"
+    },
+    "boards:pitch": {
+      "n_tiles": 27,
+      "digest": "505a8f4718c3bbfc"
+    },
+    "boards:hip": {
+      "n_tiles": 27,
+      "digest": "cb5896e3dfe94943"
+    },
+    "boards:cone": {
+      "n_tiles": 92,
+      "digest": "c38fa9733b6da71c"
+    },
+    "pantile:pitch": {
+      "n_tiles": 169,
+      "digest": "2f2e78c5566dd8df"
+    },
+    "pantile:hip": {
+      "n_tiles": 84,
+      "digest": "513ad1683b403842"
+    },
+    "pantile:cone": {
+      "n_tiles": 570,
+      "digest": "b622bf70d503823a"
+    },
+    "roman:pitch": {
+      "n_tiles": 328,
+      "digest": "f0ee23ba35a81018"
+    },
+    "roman:hip": {
+      "n_tiles": 172,
+      "digest": "596a07f01440218d"
+    },
+    "roman:cone": {
+      "n_tiles": 1178,
+      "digest": "a09b22ee4dd999f3"
+    },
+    "canal:pitch": {
+      "n_tiles": 385,
+      "digest": "5d670b20e4aa422e"
+    },
+    "canal:hip": {
+      "n_tiles": 187,
+      "digest": "2d8f127946598bc4"
+    },
+    "canal:cone": {
+      "n_tiles": 1286,
+      "digest": "84c49007a89c86ed"
+    }
+  }
+}

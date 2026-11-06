@@ -1,0 +1,94 @@
+# Edifices (edifices/edifice_plan.py → edifices/bl_edifice.py): a type is which parts there are and how they
+# stand on each other and around the axis; the numbers come from reference examples. Meters (× style scale);
+# [from, to] — spread by seed; {variant: weight} — choice by seed. The form language of the parts (arches,
+# tower tops, palette, spikes) is in style/styles.yaml.
+
+types:
+  ziggurat:                  # Ur, Etemenanki: sloped tiers, a staircase (the triple one of Ur, or on the axis), a sanctuary on top
+    base: [55.0, 95.0]       # base length
+    ratio: [0.7, 1.0]        # width / length
+    tiers: [3, 7]
+    height: [0.35, 0.95]     # tier height / length (Ur ~0.3–0.45; Etemenanki ~1.0)
+    first: 1.6               # the lowest tier is this many times taller than the others
+    top: [0.22, 0.32]        # top platform / length
+    stairs: {triple: 0.55, axial: 0.45}
+    shrine: [0.16, 0.24]     # sanctuary / length
+  step_pyramid:              # Tikal, Templo Mayor, Chichen Itza: steep tiers, a steep staircase, a sanctuary with a roof comb
+    base: [32.0, 70.0]
+    ratio: [0.85, 1.0]
+    tiers: [5, 9]
+    height: [0.6, 0.95]
+    first: 1.0
+    top: [0.25, 0.35]
+    stairs: {single: 0.5, twin: 0.2, four: 0.3}
+    slope: [52.0, 68.0]      # staircase steepness, degrees (Tikal ~70°)
+    shrine: [0.2, 0.3]
+    comb: [0.6, 1.1]         # roof comb / sanctuary height
+  temple_mountain:           # Angkor: tiers, a gallery along the edge of each, five prangs on top, gates on the axes, a moat and a causeway
+    base: [90.0, 170.0]
+    ratio: [0.85, 1.0]
+    levels: [2, 3]
+    level_h: [0.05, 0.08]
+    shrink: [0.68, 0.78]     # each tier / the lowest
+    central: [0.38, 0.5]     # central tower above the top / base length (Angkor ~65 m)
+    corner: 0.7              # corner ones / central one
+    gallery_w: [0.035, 0.05]
+    moat: [0.0, 0.18]        # moat / base length
+  spiral_tower:              # Samarra, "Tower of Babel": a cone or round tiers with arcades, a spiral ramp
+    base: [30.0, 70.0]
+    height: [1.1, 1.9]       # height / base diameter (Samarra 52/33 ≈ 1.6)
+    turns: [3.5, 6.0]
+    kind: {cone: 0.45, arcaded: 0.55}
+    top: [0.22, 0.32]
+  occult_ring:               # occult sanctuary: a sunken circle with steps; a well, an altar or a spire in the center; a ring of obelisks
+    r: [28.0, 60.0]
+    depth: [0.1, 0.22]       # depth / radius
+    terraces: [3, 6]
+    ring: [7, 9, 11, 13]     # odd "ominous" numbers
+    obj_h: [0.4, 0.75]       # obelisk height / radius
+    center: {pit: 0.2, altar: 0.15, spire: 0.3, ziggurat: 0.35}   # in the center — a well, an altar, a spire or a dark ziggurat with an altar
+    wall: 0.85               # fraction with an outer wall
+    wall_h: [0.18, 0.3]      # wall height / radius
+    towers: [2, 4]
+    avenue: [0.8, 1.6]       # avenue to the gate / radius
+  light_order_temple:               # Light order temple: a ziggurat and five minaret-spires, the central one taller
+    base: [140.0, 220.0]
+    ratio: [0.75, 1.0]
+    tiers: [4, 6]
+    height: [0.3, 0.42]
+    first: 1.0
+    top: [0.3, 0.42]
+    spire: [1.6, 2.2]        # central spire / ziggurat height
+    corner: [0.55, 0.7]
+  dark_order_temple:               # Dark order: a steep dark pyramid with fins and an obelisk, a narrow staircase
+    base: [80.0, 140.0]
+    ratio: [0.9, 1.0]
+    tiers: [3, 5]
+    height: [0.65, 0.9]
+    first: 1.0
+    top: [0.16, 0.24]
+    fins: [3, 6]             # fins per face
+    obelisk: [0.8, 1.3]      # obelisk / pyramid height
+  dark_citadel:              # dark citadel (Barad-dûr): bastions in tiers, a cluster of towers, bridges between the towers, a pylon gate
+    base: [90.0, 160.0]
+    ratio: [0.7, 1.0]
+    tiers: [3, 5]
+    height: [0.5, 0.85]
+    first: 1.4
+    top: [0.3, 0.42]
+    towers: [4, 8]
+    main: [1.2, 2.0]         # main tower above the top tier / tier height
+    bridges: [1, 3]
+  axial_temple:              # Karnak, Edfu: an avenue, a pylon, a court with a colonnade, a pylon, a hypostyle hall, a sanctuary — along the axis
+    width: [48.0, 80.0]
+    pylon_h: [0.42, 0.55]    # pylon height / width
+    court: [0.9, 1.3]        # court length / width
+    hall: [0.8, 1.2]         # hypostyle length / width
+    hall_h: [0.3, 0.4]       # height of the hypostyle's middle nave / width (Karnak ~21 m at 53 m)
+    sanctuary: [0.5, 0.8]
+    avenue: [0.8, 1.6]
+    obelisks: 0.8
+  domed:                     # centric domed: a cross in a square (five domes), a Greek cross, a rotunda-forge
+    kinds: {cross_in_square: 0.5, greek: 0.3, rotunda: 0.2}
+
+canon: {step: 0.17, stair_slope: 38.0, door_h: [2.4, 6.0], human: 1.8, plinth: 0.3}

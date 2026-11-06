@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "imprints": {
+    "fachwerk": {
+      "n_elements": 112,
+      "digest": "c34644027ff413aa"
+    },
+    "fachwerk_close": {
+      "n_elements": 122,
+      "digest": "89866a9ca5b2a89d"
+    },
+    "fachwerk_cross": {
+      "n_elements": 92,
+      "digest": "ea76093b58ae32b4"
+    },
+    "log_oblo": {
+      "n_elements": 73,
+      "digest": "1b7be3c0209883aa"
+    },
+    "log_lapa": {
+      "n_elements": 74,
+      "digest": "b8211977d3880243"
+    },
+    "boards": {
+      "n_elements": 99,
+      "digest": "c242bef6eba6ebc0"
+    },
+    "palisade": {
+      "n_elements": 35,
+      "digest": "63f1dea965c966a2"
+    },
+    "wattle": {
+      "n_elements": 23,
+      "digest": "f320124ae612da57"
+    }
+  }
+}

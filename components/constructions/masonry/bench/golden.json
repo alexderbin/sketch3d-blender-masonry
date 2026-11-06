@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "imprints": {
+    "kind:ashlar": {
+      "n_stones": 102,
+      "n_surrounds": 28,
+      "digest": "94418a70b9de6978"
+    },
+    "kind:ashlar_fine": {
+      "n_stones": 57,
+      "n_surrounds": 23,
+      "digest": "a498e715a137c4f3"
+    },
+    "kind:bossage": {
+      "n_stones": 65,
+      "n_surrounds": 23,
+      "digest": "bb0d606528a210fb"
+    },
+    "kind:rubble": {
+      "n_stones": 311,
+      "n_surrounds": 38,
+      "digest": "1d80b926306ecdbe"
+    },
+    "kind:dry_stone": {
+      "n_stones": 339,
+      "n_surrounds": 44,
+      "digest": "e250c5bd59a27180"
+    },
+    "kind:megablocks": {
+      "n_stones": 11,
+      "n_surrounds": 12,
+      "digest": "68d3135a16fcfc9d"
+    },
+    "kind:brick_stretcher": {
+      "n_stones": 1479,
+      "n_surrounds": 96,
+      "digest": "8a7e86fd56d8bfe3"
+    },
+    "kind:brick_english": {
+      "n_stones": 2182,
+      "n_surrounds": 96,
+      "digest": "aae25eaad013ecf0"
+    },
+    "kind:brick_flemish": {
+      "n_stones": 1919,
+      "n_surrounds": 96,
+      "digest": "52bf8621b8c4ea05"
+    },
+    "kind:brick_monk": {
+      "n_stones": 1777,
+      "n_surrounds": 96,
+      "digest": "5bf29ea5e0cd960a"
+    },
+    "kind:brick_garden": {
+      "n_stones": 1836,
+      "n_surrounds": 96,
+      "digest": "3dfecaccc59cf694"
+    },
+    "kind:banded": {
+      "n_stones": 577,
+      "n_surrounds": 56,
+      "digest": "7628c51f2a932bd2"
+    },
+    "kind:herringbone": {
+      "n_stones": 1778,
+      "n_surrounds": 50,
+      "digest": "5170cacf9f3e777d"
+    },
+    "kind:ashlar_broken": {
+      "n_stones": 190,
+      "n_surrounds": 29,
+      "digest": "1aa66674bfef46b5"
+    },
+    "kind:rubble_random": {
+      "n_stones": 1171,
+      "n_surrounds": 29,
+      "digest": "8a48bf9a9618fe3e"
+    },
+    "kind:polygonal": {
+      "n_stones": 133,
+      "n_surrounds": 20,
+      "digest": "f3f61f4d71a0daea"
+    },
+    "kind:cyclopean": {
+      "n_stones": 239,
+      "n_surrounds": 16,
+      "digest": "705af71602a0774a"
+    },
+    "kind:ishigaki": {
+      "n_stones": 178,
+      "n_surrounds": 23,
+      "digest": "626efbf6f2c0dc86"
+    },
+    "kind:reticulatum": {
+      "n_stones": 3481,
+      "n_surrounds": 126,
+      "digest": "6b03f66a4b73932f"
+    },
+    "kind:plinfa": {
+      "n_stones": 1429,
+      "n_surrounds": 118,
+      "digest": "423539ab379c6b8d"
+    },
+    "kind:flint": {
+      "n_stones": 5374,
+      "n_surrounds": 35,
+      "digest": "a5a0c8b7134632ca"
+    },
+    "kind:cobble_wall": {
+      "n_stones": 1322,
+      "n_surrounds": 29,
+      "digest": "6c42477672bd843c"
+    },
+    "kind:whitestone": {
+      "n_stones": 128,
+      "n_surrounds": 29,
+      "digest": "70fe70020a751441"
+    },
+    "castle:wall0:outer": {
+      "n_stones": 5589,
+      "n_surrounds": 144,
+      "digest": "a6363dd22050a960"
+    },
+    "castle:wall0:inner": {
+      "n_stones": 11431,
+      "n_surrounds": 176,
+      "digest": "08e8f37b2ed01539"
+    }
+  }
+}

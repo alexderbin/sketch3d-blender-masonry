@@ -1,0 +1,158 @@
+# Passport of the Constructions component (ARCHITECTURE.md). The steps masonry, roofing, paving, timber and
+# textures are functions of steps.py: plan — the project's Python, build — Blender over the previous step's
+# .blend (bl_stones.run, bl_roofing.run, bl_paving.run, bl_timber.run, textures/bl_textures.run). The input is
+# only the scene layers (core/layers.py) and the building's faces. The "textures" step has no `plan:` — its
+# plan is shared with masonry (constructions.yaml; masonry.resolve).
+component: constructions
+version: 1
+owner: component maintainers
+bench: masonry/bench/bench.py           # --blender — the contract (bl_contract.py)
+steps:
+  masonry:
+    section: constructions
+    kind: refines
+    reads: [buildings, cameras]
+    writes: [constructions]                 # blocks, rows, a slab, a body — by the wall faces (face roles are in core/contract/contract.py)
+    plan: steps.py:plan_masonry          # project Python: constructions.yaml (if absent — defaults from the keys) + packs.yaml → the plan (masonry.resolve)
+    build: steps.py:build_masonry       # Blender: bl_masonry.run_masonry → bl_stones.run(items, plan, coll, cams, fpx, work); the items are the scene's surfaces layer (surfaces.json)
+    code: [core/contract/contract.py]
+    profiles: {sketch: off, final: {detail: all}}   # stages: sketch — none (texture), preview — by cameras (cam), final — full blocks
+    keys: {detail: null, Tlo: null, Thi: null, Tfar: null, rows: null, plate: null, outer: null, inner: null, towers: null, seed: null, wall: null, walls: "0"}
+    scene_files: [constructions.yaml]       # the default constructions description goes into the run scene (it is read by roofing, paving, timber and textures)
+    values:
+      detail: [cam, all]
+      rows: bool
+      plate: bool
+      outer: "catalog:components/constructions/masonry/packs.yaml#packs"
+      inner: "catalog:components/constructions/masonry/packs.yaml#packs"
+      towers: ["catalog:components/constructions/masonry/packs.yaml#packs", "0", "no"]   # the tower pack; 0 | no — towers without masonry
+      Tlo: float
+      Thi: float
+      Tfar: float
+      seed: int
+      walls: str
+    description: {walls: "castle walls to receive masonry: \"0\" — the outer one, \"0,1\" — by numbers, all — all of them",
+               detail: "cam — level of detail by the scene's cameras; all — full blocks everywhere", rows: "the rows layer (the blend seam is not visible)", Tfar: "distance threshold, px per row (3): below it — no rows, only a slab with a map", plate: "the wall's base slab", seed: "layout seed", outer: "masonry pack of the outer walls",
+               inner: "masonry pack of the inner faces", towers: "masonry pack of the towers; \"0\" or \"no\" — towers without masonry", wall: "surface of solid walls (textures)", Tlo: "level threshold, lower", Thi: "level threshold, upper"}
+    hint: "masonry reads the building and the cameras; textures go after masonry"
+    cost: heavy
+    on_fail: stop
+  roofing:
+    section: constructions
+    kind: refines
+    reads: [buildings]
+    may_read: [cameras]
+    writes: [constructions]                 # coverings of the building's roofs: roof faces by the contract (sk_role = roof or the palette's roof colour)
+    plan: steps.py:plan_roofing          # project Python: the scene's constructions.yaml → "roofing:" (if absent — from the keys) + coverings.yaml (roofing.resolve)
+    build: steps.py:build_roofing       # Blender: roofing/bl_roofing.run — slopes, tent roofs, domes → tiles, lemekh shingles, sheets, ridges, hip ends, valleys, caps
+    profiles: {sketch: off, final: {detail: all}}
+    keys: {covering: null, roofing: null, towers: null, buildings: null, gates: null, tents: null, domes: null, detail: null, Tlo: null, Thi: null, Tfar: null, seed: null}
+    values:
+      covering: "catalog:components/constructions/roofing/coverings.yaml#kinds"
+      roofing: "catalog:components/constructions/roofing/coverings.yaml#kinds"
+      towers: "catalog:components/constructions/roofing/coverings.yaml#kinds"
+      buildings: "catalog:components/constructions/roofing/coverings.yaml#kinds"
+      gates: "catalog:components/constructions/roofing/coverings.yaml#kinds"
+      tents: "catalog:components/constructions/roofing/coverings.yaml#kinds"
+      domes: "catalog:components/constructions/roofing/coverings.yaml#kinds"
+      detail: [cam, all]
+      Tlo: float
+      Thi: float
+      Tfar: float
+      seed: int
+    description: {covering: "covering kind for all roofs (plain, beaver, slate, pantile, roman, copper_seam, boards, …)", roofing: "the former name of the key \"covering\"",
+               towers: "kind on tower roofs", buildings: "kind on the roofs of courtyard buildings", gates: "kind on the roofs of gates and walls",
+               tents: "kind on tent roofs (cones) — stronger than the part's", domes: "kind on domes: onion domes, cupolas, helmets (lemekh, copper_scale, copper_seam, gilded_seam) — stronger than the part's",
+               detail: "cam — tiles up close, a row as a strip at a distance; all — all tiles", Tlo: "threshold px per row: below it — a row as a strip", Thi: "threshold px per row: above it — all tiles",
+               Tfar: "distance threshold, px per row (2.5): below it — neither tiles nor strips, only a shell with the row pattern", seed: "layout seed"}
+    hint: "roofing goes after the building (roofs by the face contract); the kind is set by the covering, the part of the building and the shape (tent roofs, domes)"
+    cost: heavy
+    on_fail: stop
+  paving:
+    section: constructions
+    kind: refines
+    reads: [buildings, site]
+    may_read: [cameras]
+    writes: [constructions]                 # pavements and floors: building floors (faces with the role "floor"), the court and road of the occupancy layer, areas of the description
+    plan: steps.py:plan_paving           # project Python: the scene's constructions.yaml → "paving:" (if absent — from the keys) + paving.yaml (paving.resolve)
+    build: steps.py:build_paving        # Blender: paving/bl_paving.run — stones on the place's ground, a gravel bed; at a distance — a gravel bed with a pattern in the shader
+    profiles: {sketch: off, final: {detail: all}}
+    keys: {court: null, road: null, floor: null, areas: null, width: null, detail: null, Tlo: null, Thi: null, Tfar: null, seed: null, skip: null}
+    values:
+      court: "catalog:components/constructions/paving/paving.yaml#kinds"
+      road: "catalog:components/constructions/paving/paving.yaml#kinds"
+      floor: "catalog:components/constructions/paving/paving.yaml#kinds"
+      areas: "catalog:components/constructions/paving/paving.yaml#kinds"
+      width: float
+      detail: [cam, all]
+      Tlo: float
+      Thi: float
+      Tfar: float
+      seed: int
+      skip: str
+    description: {court: "paving kind of the court (the occupancy layer's yard; cobble, setts_large, flagstone, …)", road: "paving kind of the road (the occupancy layer's road)",
+               floor: "floor kind of the buildings (planks, floor_tiles, flagstone)", areas: "kind for description areas without their own kind",
+               width: "road width, m (4)", detail: "cam — stones up close, a patterned gravel bed at a distance; all — all stones",
+               Tlo: "threshold px per stone: below it — simple stones", Thi: "threshold px per stone", Tfar: "distance threshold, px per stone (4): below it — only a patterned gravel bed",
+               seed: "layout seed", skip: "parts without paving, comma-separated (court, road, floor, areas)"}
+    hint: "paving goes after the building (floors — by face role, the court and road — by the occupancy layer); the height follows the place's ground"
+    cost: heavy
+    on_fail: stop
+  timber:
+    section: constructions
+    kind: refines
+    reads: [buildings, site]
+    may_read: [cameras]
+    writes: [constructions]                 # wooden walls of buildings (half-timbering, log walls, boarding) and fences (palisade, wattle)
+    plan: steps.py:plan_timber           # project Python: the scene's constructions.yaml → "timber:" (if absent — from the keys) + timber.yaml (timber.resolve)
+    build: steps.py:build_timber        # Blender: timber/bl_timber.run — walls of buildings and of the occupancy layer's houses (an izba is a log house), openings follow the dark faces; fences from the description
+    profiles: {sketch: off, final: {detail: all}}
+    keys: {fachwerk: null, buildings: null, fences: null, detail: null, Tfar: null, seed: null}
+    values:
+      fachwerk: "catalog:components/constructions/timber/timber.yaml#kinds"
+      buildings: "catalog:components/constructions/timber/timber.yaml#kinds"
+      fences: "catalog:components/constructions/timber/timber.yaml#kinds"
+      detail: [cam, all]
+      Tfar: float
+      seed: int
+    description: {fachwerk: "the half-timbering kind for buildings marked in the plan (fachwerk, fachwerk_close, fachwerk_cross; none — without)",
+               buildings: "the kind for all buildings across the whole wall (log_oblo, log_lapa, boards)", fences: "default fence kind — for fences of the description without their own kind (palisade, wattle; the default is palisade)",
+               detail: "cam — half-timbering is not built at a distance (the building's bands), log walls as a strip; all — everything", Tfar: "distance threshold, px per element (2)",
+               seed: "seed"}
+    hint: "timber — after the building: the walls of buildings and izbas from the occupancy layer, windows from the dark faces"
+    cost: heavy
+    on_fail: stop
+  textures:
+    section: constructions
+    kind: refines
+    reads: [constructions]
+    may_read: [buildings]                   # the building's palette is the surfaces layer (core.layers)
+    writes: [constructions]                 # material on the elements: a scan surface by stone number (sk_stone), a solid one — a tile
+    build: steps.py:build_textures      # Blender: bl_textures.run(scene, description, palette, mass); the engine is core/surface/bl_surface.py (the core); a step-by-step build
+    keys: {detail: null, Tlo: null, Thi: null, rows: null, plate: null, outer: null, inner: null, towers: null, seed: null, wall: null}   # the same keys of the masonry description: the material pack is chosen by "wall", "outside" …
+    values:
+      detail: [cam, all]
+      rows: bool
+      plate: bool
+      outer: "catalog:components/constructions/masonry/packs.yaml#packs"
+      inner: "catalog:components/constructions/masonry/packs.yaml#packs"
+      towers: ["catalog:components/constructions/masonry/packs.yaml#packs", "0", "no"]   # the tower pack; 0 | no — towers without masonry
+      Tlo: float
+      Thi: float
+      seed: int
+    description: {detail: "cam — level of detail by the scene's cameras; all — full blocks everywhere", rows: "the rows layer (the blend seam is not visible)", plate: "the wall's base slab", seed: "layout seed", outer: "masonry pack of the outer walls",
+               inner: "masonry pack of the inner faces", towers: "masonry pack of the towers; \"0\" or \"no\" — towers without masonry", wall: "surface of solid walls (textures)", Tlo: "level threshold, lower", Thi: "level threshold, upper"}
+    hint: "there are usually no keys: wall materials come from the building description; the step goes after masonry"
+    code: [library/materials/surfaces.yaml]
+    profiles: {sketch: off}                # sketch — without texture
+    cost: heavy
+    on_fail: stop
+
+# component parts — services with their own folder, knowledge and reference (a component is a system of
+# services)
+services:
+  masonry: {dir: masonry, description: "wall masonry: stone layout by the plan, states, representation by camera"}
+  roofing: {dir: roofing, description: "roofs: tiles, slate, lemekh shingles, copper, iron, boards, thatch; slopes, tent roofs, domes"}
+  paving: {dir: paving, description: "paving: setts, pavements, floors by face role"}
+  timber: {dir: timber, description: "timber: half-timbering, log walls, boarding, palisade, wattle"}
+  textures: {dir: textures, description: "surfaces over masonry: a scan per block, a solid one — a tile (Core/surface)"}

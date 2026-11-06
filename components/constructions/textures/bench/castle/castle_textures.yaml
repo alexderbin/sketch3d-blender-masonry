@@ -1,0 +1,22 @@
+# Check of the construction substance on the castle (the "textures" step: masonry stone, roofing, paving, timber) — a
+# step-by-step assembly: the same castle as in the castle_rock sample (relief, building, camera), then masonry, roofing,
+# paving of the courtyard and the road, half-timbering of the houses, textures, daylight. Detail of the constructions —
+# all elements (detail: all): the close-ups are shot by bl_views.py from the control .blend of the "textures" step,
+# without a rebuild. Heavy — on a rented machine through guard (run.sh).
+# .venv/bin/python -m core.manager.pipeline components/constructions/textures/bench/castle/castle_textures.yaml --out out/textures/castle
+pipeline: castle_textures
+scene: bench/scenes/castle_rock
+profile: preview
+build: stepwise
+steps:
+  - relief: {preset: fortress_hill, seed: 7}
+  - building: {type: castle, culture: german, scale: medium, seed: 7}
+  - camera: {view: gate, azimuth: 200, elevation: 10, distance: 170, orbit: 8, res: 640x360}
+  - masonry: {detail: all}
+  - roofing: {covering: beaver, towers: slate, detail: all}
+  - paving: {court: cobble, road: setts_large, detail: all}
+  - timber: {fachwerk: fachwerk, detail: all}
+  - textures
+  - light: {time: day}
+outputs:
+  - frames: {video: false}

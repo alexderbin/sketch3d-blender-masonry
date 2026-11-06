@@ -1,0 +1,359 @@
+# Masonry knowledge: kinds of masonry — sets of real-life sizes, in meters. Read by
+# components/constructions/masonry/masonry.py (the project's Python; there is no YAML in Blender — the packs arrive in the
+# request JSON: masonry.py resolve / build).
+# Change a pack here, not in the code; a new pack is an entry under "packs:" (its generator kind is one of those below);
+# check — .venv/bin/python bench/masonry/bench.py (the reference bench/masonry/golden.json is rebuilt after a deliberate
+# change).
+#
+# Generators (kind): courses — courses; brick — brick with bond (course template and phase shift); banded — stone with
+# brick belts; herring — herringbone; skyline — random ashlar (Legakis horizon); cells — Voronoi cells (rubble without
+# courses, polygonal, cyclopean, ishigaki); grid45 — Roman lattice.
+# Framings (quoins, jambs, arch voussoirs, sill) exist in all packs, sized by their own pack (quoin, jamb, ring, voussoir).
+
+version: 1
+
+base:                       # shared by all packs; a pack overrides it with its own values
+  kind: courses
+  face: ashlar                # ashlar — dressed stone (the "field" stone), rubble — rubble stone
+  mat: stone                  # stone substance → "substances:" (tone)
+  course: [0.30, 0.42]        # course height, from–to
+  plinth: null                # plinth — the first course has this height
+  stone: [0.55, 1.15]         # stone length in a course
+  plinth_stone: null          # plinth stone length
+  lap: 0.16                   # bonding: a joint no closer than this to the joints of the course below
+  joint: 0.012                # joint
+  face_d: [0.22, 0.36]        # depth of a facing stone (into the wall)
+  bond_every: null            # header ties along the length, m
+  wave: [0.0, 0.0]            # wave of the course line (amplitude from–to, m)
+  tilt: 0.0                   # tilt of the header joints, m
+  jamb: [0.72, 0.40]          # opening jambs, "long-and-short"
+  quoin: [0.9, 0.5]           # corner quoins, "long-and-short"
+  putlog: null                # putlog holes
+  finish: flat                # face: flat | pillow | boss (rustication) | rough
+  cf: 0.014                   # face chamfer (no more than 7 % of the stone size)
+  pillow: 0.003               # bulge of the "pillow"
+  tint: 0.07                  # spread of stone tone
+  bed: 0.025                  # mortar is recessed from the stone face
+  live: 1.0                   # "liveliness" of hand laying: face shift ±6 mm, rotation ±1°, tilt ±0.7° (0 — ruler-straight)
+
+substances:                     # default tone (linear RGB); a building may supply its own (the style palette)
+  stone:    {stone: [0.52, 0.47, 0.40], mortar: [0.66, 0.63, 0.57]}
+  granite:  {stone: [0.46, 0.45, 0.43], mortar: [0.66, 0.63, 0.57]}
+  brick:    {stone: [0.52, 0.25, 0.16], mortar: [0.70, 0.67, 0.62]}
+  glazed:   {stone: [0.15, 0.12, 0.10], mortar: [0.70, 0.67, 0.62]}
+  tufa:     {stone: [0.64, 0.57, 0.41], mortar: [0.66, 0.63, 0.57]}
+  concrete: {stone: [0.37, 0.38, 0.39], mortar: [0.22, 0.22, 0.23]}
+  dry:   {mortar: [0.09, 0.09, 0.09]}   # masonry without mortar: the depth of the gaps is dark
+  plinfa:     {stone: [0.58, 0.33, 0.22], mortar: [0.74, 0.58, 0.52]}   # plinfa on tsemyanka (pink mortar with crushed brick)
+  flint:      {stone: [0.13, 0.13, 0.15], mortar: [0.72, 0.69, 0.62]}   # flint in lime mortar
+  river:      {stone: [0.43, 0.41, 0.37], mortar: [0.62, 0.59, 0.53]}   # river cobblestone
+  whitestone: {stone: [0.72, 0.68, 0.58], mortar: [0.76, 0.74, 0.68]}   # white stone (limestone of Vladimir-Suzdal Rus)
+
+parts:                        # pack per building part, if the building description did not set its own (masonry.yaml → masonry)
+  outer: ashlar             # outer side of the wall
+  inner: rubble             # courtyard side
+  towers: ashlar               # tower rings
+
+packs:
+  # ── courses: ashlar, rustication, rubble, dry-stone, megablocks
+  ashlar:
+    title: ashlar in courses
+    plinth: 0.52
+    plinth_stone: [0.9, 1.5]
+    bond_every: 1.7
+    wave: [0.004, 0.008]
+    tilt: 0.012
+    putlog: {every: [3, 5], step: [1.3, 2.3], w: [0.13, 0.21], plug: 0.6}
+  ashlar_fine:
+    title: ashlar with a thin joint
+    course: [0.42, 0.55]
+    stone: [0.9, 1.7]
+    lap: 0.25
+    joint: 0.005
+    wave: [0.002, 0.004]
+    tilt: 0.006
+    cf: 0.008
+    pillow: 0.0
+  bossage:
+    title: "\"pillow\" rustication"
+    course: [0.42, 0.62]
+    stone: [0.7, 1.4]
+    lap: 0.2
+    wave: [0.003, 0.006]
+    tilt: 0.01
+    finish: boss
+    cf: 0.012
+    boss: 0.06                # boss height
+    margin: 0.035             # smooth border
+  rubble:
+    title: rubble in courses
+    face: rubble
+    course: [0.20, 0.30]
+    stone: [0.25, 0.62]
+    lap: 0.08
+    joint: 0.03
+    face_d: [0.18, 0.30]
+    jamb: [0.60, 0.35]
+    shape: cut                # octagon with cut corners, less than full height
+    finish: rough
+    rough: 0.02
+    cf: 0.02
+    tint: 0.09
+    bed: 0.015
+  dry_stone:
+    title: dry-stone masonry
+    face: rubble
+    mat: granite
+    course: [0.15, 0.26]
+    stone: [0.25, 0.7]
+    lap: 0.1
+    joint: 0.006
+    face_d: [0.25, 0.4]
+    bond_every: 1.3
+    shape: cut
+    finish: rough
+    rough: 0.02
+    cf: 0.015
+    tint: 0.1
+    dry: true
+  megablocks:
+    title: megablocks
+    mat: concrete
+    course: [1.0, 1.5]
+    stone: [2.0, 3.8]
+    lap: 0.6
+    joint: 0.02
+    face_d: [0.6, 1.0]
+    jamb: [1.2, 0.8]
+    quoin: [2.4, 1.2]
+    ring: 0.8                 # arch ring thickness
+    voussoir: 0.8             # voussoir width
+    cf: 0.06
+    pillow: 0.0
+    tint: 0.04
+    live: 0.0                     # machine cutting
+
+  # ── brick: course template and phase shift; length = 2 widths + joint (otherwise the bond "drifts"), "monastic" format
+  brick_stretcher: &brick
+    title: "brick: stretcher bond"
+    kind: brick
+    bond: stretcher
+    brick: [0.28, 0.134, 0.085]   # length, width (header), height
+    mat: brick
+    dress_mat: brick              # framings are brick too
+    jamb: [0.28, 0.134]
+    quoin: [0.28, 0.134]
+    quoin_d: 0.134
+    ring: 0.28
+    voussoir: 0.1
+    cf: 0.005
+    pillow: 0.0
+    tint: 0.1
+    live: 0.0                     # brick is laid ruler-straight
+    diaper: null
+  brick_english:
+    <<: *brick
+    title: "brick: English bond"
+    bond: english
+  brick_flemish:
+    <<: *brick
+    title: "brick: Flemish bond"
+    bond: flemish
+  brick_monk:
+    <<: *brick
+    title: "brick: monk bond, diamonds"
+    bond: monk
+    diaper: 4                     # diamond of dark glazed headers: 2·4 half-periods × 2·4 courses
+  brick_garden:
+    <<: *brick
+    title: "brick: garden-wall bond (3 stretchers : 1 header)"
+    bond: garden
+
+  # ── courses of different kinds: belts, "herringbone"
+  banded:
+    title: "belts: stone + brick"
+    kind: banded
+    course: [0.18, 0.26]
+    stone: [0.25, 0.45]
+    lap: 0.1
+    joint: 0.025
+    wave: [0.002, 0.005]
+    tilt: 0.008
+    band_every: [0.9, 1.3]        # interval between brick belts, m
+    band_n: 4                     # courses in a belt
+    brick: [0.35, 0.3, 0.045]     # plinfa
+  herringbone:
+    title: «herringbone»
+    kind: herring
+    course: [0.16, 0.2]
+    lap: 0.08
+    joint: 0.015
+    face_d: [0.15, 0.25]
+    herring_w: 0.075              # tile thickness
+    lace_every: 4                 # every n-th course is a lacing course
+    lace_stone: [0.25, 0.5]
+    finish: rough
+    rough: 0.01
+
+  # ── without courses: the "horizon" (staggered), cells (rubble, polygonal, cyclopean, ishigaki — the last three dry)
+  ashlar_broken:
+    title: random ashlar
+    kind: skyline
+    unit: 0.11                    # small course module
+    heights: [2, 6]               # stone height in modules, from–to
+    stone: [0.3, 1.0]
+    joint: 0.01
+    tint: 0.08
+  rubble_random:
+    title: rubble without courses
+    kind: cells
+    face: rubble
+    size: [0.14, 0.38]            # cell diameter
+    relax: 1                      # Lloyd smoothing passes
+    eps: 0.025                    # contour simplification
+    min_area: 0.006
+    joint: 0.03
+    finish: rough
+    rough: 0.025
+    cf: 0.02
+    tint: 0.1
+    bed: 0.012
+  polygonal:
+    title: polygonal (Inca)
+    kind: cells
+    mat: granite
+    size: [0.45, 1.0]
+    relax: 2
+    eps: 0.035
+    min_area: 0.03
+    joint: 0.005
+    finish: pillow
+    pillow: 0.03
+    cf: 0.03
+    depth_k: 0.7                  # stone depth = diameter × k
+    course: [0.5, 0.7]            # framing courses
+    quoin: [1.2, 0.7]
+    dry: true
+  cyclopean:
+    title: cyclopean
+    kind: cells
+    mat: granite
+    size: [0.9, 1.7]
+    bottom_k: 1.3                 # larger at the bottom
+    relax: 1
+    eps: 0.06
+    min_area: 0.15
+    shrink: [2, 6]                # blocks are shrunk (cm) — gaps for small stone
+    fill: [0.12, 0.28]            # small stone in the gaps
+    joint: 0.02
+    finish: rough
+    rough: 0.06
+    cf: 0.03
+    depth_k: 0.8
+    course: [0.6, 0.9]
+    quoin: [1.6, 0.9]
+    jamb: [1.0, 0.6]
+    ring: 0.7
+    voussoir: 0.6
+    dry: true
+  ishigaki:
+    title: Japanese (nozura)
+    kind: cells
+    mat: granite
+    size: [0.5, 1.1]
+    bottom_k: 1.25
+    relax: 1
+    eps: 0.04
+    min_area: 0.08
+    shrink: [1, 4]
+    fill: [0.08, 0.18]
+    joint: 0.015
+    finish: rough
+    rough: 0.04
+    cf: 0.02
+    course: [0.45, 0.6]
+    quoin: [1.4, 0.7]
+    dry: true
+
+  # ── Roman lattice with brick belts (opus mixtum)
+  reticulatum:
+    title: Roman lattice
+    kind: grid45
+    mat: tufa
+    side: 0.1                     # side of the rhombus stone
+    band_every: [0.8, 1.1]
+    band_n: 3
+    brick: [0.3, 0.3, 0.04]
+    joint: 0.012
+    dress_mat: brick
+    course: [0.065, 0.075]        # framing courses are brick
+    quoin: [0.3, 0.15]
+    jamb: [0.3, 0.15]
+    ring: 0.3
+    voussoir: 0.1
+    cf: 0.006
+    pillow: 0.0
+
+  # ── medieval ones
+  plinfa:
+    <<: *brick
+    title: "plinfa on crushed-brick mortar (tsemyanka)"         # [s] Rus, Byzantium, 11th–12th c.: plinfa ~ 0.33 × 0.28 × 0.035, joint ≈ the thickness (4–5 cm)
+    brick: [0.33, 0.165, 0.035]
+    joint: 0.045
+    mat: plinfa
+    dress_mat: plinfa
+    jamb: [0.33, 0.165]
+    quoin: [0.33, 0.165]
+    ring: 0.33
+    voussoir: 0.08
+    arch_end: square              # brick is not dressed at an arch: straight end, wedge of tsemyanka
+    tint: 0.12
+    live: 0.4                     # hand-molded — uneven
+  flint:
+    title: "flint in mortar, corners of dressed stone"   # [p] England, Normandy: nodules 0.08–0.16, wide joint
+    kind: cells
+    face: rubble
+    mat: flint
+    dress_mat: stone
+    size: [0.08, 0.16]
+    relax: 1
+    eps: 0.012
+    min_area: 0.002
+    joint: 0.03
+    dress_course: [0.25, 0.32]    # framing courses (corner quoins, jambs)
+    quoin: [0.55, 0.32]
+    jamb: [0.45, 0.28]
+    finish: rough
+    rough: 0.015
+    cf: 0.01
+    tint: 0.14
+    bed: 0.012
+  cobble_wall:
+    title: "cobblestone in mortar"     # [p] river boulder 0.16–0.32, walls of barns, fences, plinths
+    kind: cells
+    face: rubble
+    mat: river
+    dress_mat: stone
+    size: [0.16, 0.32]
+    relax: 2
+    eps: 0.015
+    min_area: 0.008
+    joint: 0.04
+    dress_course: [0.28, 0.36]
+    quoin: [0.7, 0.4]
+    round: 1                      # rounded: cell corners are cut off (Chaikin)
+    finish: dome                  # face is a dome (two rings, smooth), 5 cm bulge for a 0.25 m stone
+    dome: 0.05
+    cf: 0.03
+    tint: 0.12
+    bed: 0.01
+  whitestone:
+    title: "white stone (dressed limestone)"   # [p] Vladimir, Suzdal 12th c.: course blocks 0.30–0.40, thin joint
+    mat: whitestone
+    course: [0.30, 0.40]
+    stone: [0.45, 1.0]
+    lap: 0.14
+    joint: 0.006
+    cf: 0.01
+    tint: 0.05
+    wave: [0.002, 0.004]

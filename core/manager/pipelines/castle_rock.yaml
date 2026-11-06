@@ -1,0 +1,16 @@
+# A sample stepwise build in a single Blender: a place from the catalog → light and sky (night) → camera and fly-around → frames.
+# Steps: relief → building (a castle on a hill, edits the relief) → camera and fly-around (target — the castle center) → masonry → textures → light (night) → frames.
+# .venv/bin/python -m core.manager.pipeline core/manager/pipelines/castle_rock.yaml [--profile preview] [--fresh] [--from <step>]
+pipeline: castle_rock
+scene: bench/scenes/castle_rock
+profile: preview   # sketch stage (stubs and Workbench); here — Eevee with 8 samples, as the references were rendered
+build: stepwise
+steps:
+  - relief: {preset: fortress_hill, seed: 7}
+  - building: {type: castle, culture: german, scale: medium, seed: 7}
+  - camera: {view: gate, azimuth: 200, elevation: 10, distance: 170, orbit: 8, res: 640x360}   # before light: changing the light does not touch the cameras
+  - masonry: {detail: cam}
+  - textures
+  - light: {time: night}      # after masonry and textures: changing the light rebuilds only light and frames
+outputs:
+  - frames: {video: true, fps: 4, samples: 8}

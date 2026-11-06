@@ -1,0 +1,48 @@
+# Knowledge of the levels: the grain of the eras, the fates when the ground rises, the hive.
+# Read by levels/epochs.py.
+eras:                     # the grain of an era: plot width, storeys, storey height, walls, roof, basements, clay tone
+  ancient:  {plot: [8.0, 13.0], floors: [1, 2], fh: 3.8, t: 0.75, roof: gable, pitch: 22, cellars: [0, 0], tone: 0.95, tint: [1.08, 0.86, 0.72], vaults: true}
+  medieval: {plot: [5.0, 8.0], floors: [2, 3], fh: 3.0, t: 0.6, roof: gable, pitch: 52, cellars: [0, 1], tone: 1.0, tint: [1.03, 0.98, 0.78], vaults: true}
+  modern:   {plot: [10.0, 15.0], floors: [4, 6], fh: 3.2, t: 0.45, roof: flat, cellars: [1, 2], tone: 1.04, tint: [0.93, 0.97, 1.04], vaults: false}
+  georgian: {plot: [7.0, 10.0], floors: [2, 4], fh: 3.4, t: 0.55, roof: gable, pitch: 32, cellars: [0, 0], tone: 1.02, tint: [0.92, 0.95, 1.06], vaults: false}
+soil:                     # layers in the section: nature and the era fills (the clay tint), an era's pavement — a thin layer along its streets
+  rock: [0.82, 0.80, 0.80]
+  fill: [[1.05, 0.90, 0.74], [1.10, 1.00, 0.82], [1.12, 1.06, 0.92]]
+  pave: 0.3
+temple:                   # the main building of a block by era: a temple → a church on its walls → the same church with a sunken yard
+  ancient:  {w: 12.0, d: 15.0, h: 9.0, podium: 1.6, pitch: 22}
+  medieval: {w: 13.0, d: 17.0, h: 11.0, podium: 0.3, pitch: 45}
+fate:                     # a building's fate when the ground has risen by d (m): d < 0.9·storey — keep it (entrance higher, a porch);
+  keep_below: 0.9         # otherwise — cut it down to the new ground (cut) or bury it (stumps in the layer); a temple — cut down and repeat
+  cut: 0.45
+renew: 0.7                # the share rebuilt per era and without a fill: a demolished building is cut down to the ground, its lower part becomes the new one's basement
+reuse: 0.55               # the new building stands on the old walls: the plot boundary clings to the old one within snap
+snap: 2.0
+sunk_court: 4.0           # an entrance that has sunk below the ground deeper than the porch — a sunken yard in front of it (the yard depth as at San Clemente)
+hive:                     # hive (hive.py): levels over time pushed to the limit — era 0 domes, rubble and ash, decks, zones by depth
+  width: 300.0            # the foot (m); the cut — a strip of depth across, the section face — y0
+  depth: 64.0
+  step: 13.0              # the shell step per tier on each side
+  deck: 5.0               # deck thickness
+  shell: 7.0              # shell thickness
+  domes: [[-78, 36], [8, 44], [92, 32]]   # era 0 domes: center x, radius (center y — the middle of the cut)
+  drum: 8.0
+  rubble: 18.0            # hive-bottom rubble inside the shell (buries the bottoms of the domes)
+  sump: {half: 16.0, floor: -10.0, water: -6.0}   # a flooded cave under the central shaft
+  ash: [[26, 110], [22, 90], [16, 70]]  # ash outside by era: height at the wall, slope length
+  street: [24.0, 32.0]    # the tier street along the cut (y), rows of plots on both sides
+  levels: [42, 50, 54, 38, 36, 36, 42]   # tier heights from the bottom up, starting at the first deck above the domes (m)
+  rank: [noble, hab_high, hab, hab_low, factory, ruined_factory, underhive]   # a tier's zone — by the rank from the top at the moment of the snapshot:
+                          # what used to be dwellings becomes a workshop as the hive grows, then a ruin (the Lexicanum cycle);
+                          # deeper — the underhive
+  shafts: [[-45, 22], [40, 20]]   # shafts through the tiers: center x, width (only where fully inside the tier); bridges along the street on the decks
+  heat_sink: 18.0         # the central shaft down to the bottom (into the cave)
+  spire: {towers: 9, h: [40, 170], needle: 230}
+  zones:                  # zone grain
+    underhive:      {kind: ruin, plot: [9, 18], fill: 0.9, tint: [1.07, 0.86, 0.74]}
+    ruined_factory: {kind: ruin_hall, plot: [26, 44], fill: 0.9, tint: [1.04, 0.90, 0.78]}
+    factory:        {kind: hall, plot: [30, 50], fill: 0.85, tint: [1.03, 0.97, 0.84]}
+    hab_low:        {kind: hab, plot: [10, 15], fill: 1.0, tint: [1.0, 0.97, 0.90]}
+    hab:            {kind: hab, plot: [12, 18], fill: 0.95, tint: [0.98, 0.98, 0.95]}
+    hab_high:       {kind: hab, plot: [15, 24], fill: 0.8, tint: [0.96, 0.98, 1.0]}
+    noble:          {kind: palace, plot: [24, 38], fill: 0.6, tint: [0.93, 0.98, 1.06]}

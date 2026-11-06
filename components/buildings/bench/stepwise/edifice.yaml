@@ -1,0 +1,16 @@
+# Step-by-step build example for an edifice (step "building", type "edifice"): a catalog place → ziggurat →
+# camera → light → frame.
+# .venv/bin/python -m core.manager.pipeline components/buildings/bench/stepwise/edifice.yaml [--out out/dev/runs/…] [--until building]
+# The camera target is explicit (target: the edifice center from the step's plan); without it Camera takes the
+# building center from the anchors — anchors.json, edifice.centre (written by the "building" step).
+pipeline: edifice_stepwise
+scene: bench/scenes/castle_rock
+profile: preview   # sketch stage (stubs and Workbench); here — Eevee with 8 samples, as the references were rendered
+build: stepwise
+steps:
+  - relief: {preset: fortress_hill, seed: 7}
+  - building: {type: edifice, kind: ziggurat, style: mesopotamian, seed: 1}
+  - camera: {view: wide, azimuth: 235, elevation: 18, distance: 340, target: "-90.7,-105.8", above: 34, res: 960x540}
+  - light: {time: sunset}
+outputs:
+  - frames: {video: false, samples: 8}

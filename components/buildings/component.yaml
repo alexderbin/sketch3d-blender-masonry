@@ -1,0 +1,86 @@
+# Passport of the "buildings" component. The component entry is buildings.py (plan, mass, passport).
+# One step — building: the command entry buildings.py make does both phases (the plan in project Python, the
+# mass by the type's builder in Blender, a separate process); the step entry is the plan/build of steps.py
+# (castle, temple, edifice, settlement, classics) into the run's shared .blend.
+# In the scene model the buildings section provides layers to neighbors (scene_files below, core/layers.py);
+# it has no description of its own (buildings.yaml).
+component: buildings
+version: 1
+owner: buildings maintainers
+bench: bench/all.py                    # --blender: couplings, fingerprints, castles 35, temples 38, edifices 56, settlements
+steps:
+  building:
+    section: buildings
+    kind: adds
+    reads: [site]
+    writes: [buildings, site]            # refines the place: the edited relief (terraces, moat, court) goes into the run's scene; objects with face attributes (sk_role, … — core/contract/contract.py)
+    scene_files: [relief.npz, location.json, relief_tex.png, relief_tex.json, relief_nrm.png, relief_far.png, relief_w.npz, surface.json, occupancy.json, anchors.json, influence.npz, surfaces.json]   # ground on the edited relief (the Site api) and layers for neighbors
+    gives: [building_plan, type]   # the building's plan folder is for its own steps and commands; neighbors get the scene layers (core.layers), not the plan
+    # entry 1 — command: buildings.py make = plan (intent and place → plan folder, no Blender) + mass (the type's
+    # builder in Blender: castles/bl_castle.py, temples/bl_temple.py, edifices/bl_edifice.py); plan alone (plan)
+    # and build alone (build <plan folder>) are entry commands, not manager steps; views, resolution and .blend
+    # are command arguments (views=, res=, blend=), not step knobs
+    # entry 2 — by steps
+    plan: steps.py:plan_building         # project Python: intent (type, site, purpose, era, culture, scale, mood, seed, at; knobs per type — steps.INTENT) + place → plan folder
+    build: steps.py:build_building      # Blender: the ground anew on the edited relief; the castle (bl_castle.build_castle) into "castle", the temple (bl_temple.build_temple) into "temple", the edifice (bl_edifice.build_edifice) into "edifice", the settlement (bl_ensemble.build_ensemble through the entry) — "streets", "houses", "walls", "tiers"
+    keys: {type: castle, site: null, purpose: null, era: null, culture: null, scale: null, mood: null, seed: null, at: null, approach: null,
+            style: null, kind: null, history: null, wealth: null, ruin: null, irregular: null, archetype: null, size: null, host: null,
+            power: null, trade: null, inequality: null, wind: null, centre: null}
+    values:
+      type: [castle, temple, edifice, settlement, classic]
+      style: str
+      kind: ["catalog:components/buildings/edifices/edifices.yaml#types", "catalog:components/buildings/classics/classics.yaml#kinds", all]
+      history: float
+      wealth: float
+      ruin: float
+      irregular: float
+      archetype: "catalog:components/buildings/ensembles/settlements.yaml#archetypes"
+      size: float
+      host: str
+      power: float
+      trade: float
+      inequality: float
+      wind: float
+      centre: point
+      site: "catalog:components/buildings/castles/castles.yaml#sites"
+      purpose: "catalog:components/buildings/castles/castles.yaml#purposes"
+      era: "catalog:components/buildings/castles/castles.yaml#eras"
+      culture: "catalog:components/buildings/castles/castles.yaml#cultures"
+      scale: "catalog:components/buildings/castles/castles.yaml#scales"
+      mood: "catalog:components/buildings/castles/castles.yaml#moods"
+      seed: int
+      at: point
+      approach: point   # castle: where the approach comes from — the main gate goes there; if absent — the road of the place or the gentlest edge
+    description: {type: "castle, temple, edifice, settlement or classic (all by steps); keys of a castle — site…mood, of a temple — style and biography, of an edifice — kind and style, of a settlement — archetype, of classics — kind",
+               archetype: "settlement (type \"settlement\"): polis, colony, subura, town, posad, castle_inside, village, hive — ensembles/settlements.yaml",
+               size: "settlement: diameter, m (by default from the archetype, no larger than the near plot of the place)",
+               host: "settlement: the plan folder of the host castle (posad, castle_inside); without it the castle plans itself",
+               style: "form language of the temple and the edifice: a family from style/styles.yaml#families or a blend a+b, a:0.6,b:0.4",
+               kind: "edifice kind (type \"edifice\"): ziggurat, stepped pyramid, temple-mountain, …",
+               history: "temple: construction duration 0–1 (campaigns and style change)", wealth: "temple: wealth 0–1; settlement — the wealth knob 0–1 (0.5 — as computed): the whole town richer or poorer", ruin: "temple: ruin 0–1",
+               power: "settlement: the power knob 0–1 — the number of minor centers and the radius of the centers (compounds); 0.5 — by area, as computed",
+               trade: "settlement: the trade knob 0–1 — the range of traffic along streets and of the nodes (shops, narrow houses); 0 — no trade, 1 — double",
+               inequality: "settlement: the inequality knob 0–1 — the wealth difference from the average: 0 — even, 1 — slums and palaces",
+               wind: "settlement: where the wind blows from, ° (0 — north, 270 — west): on level ground the windward side is richer",
+               centre: "settlement: \"x,y\" of the main center of power (a compound); without it — a landmark, the main square or high ground near the middle",
+               irregular: "temple: irregularity 0–1", site: "place on the relief (a platform)", purpose: "castle purpose", era: "era (tower spacing, wall height)", culture: "culture (a dictionary of forms)",
+               scale: "scale (court area)", mood: "character", seed: "plan seed", at: "castle center \"x,y\" in scene meters; without it — by the platform"}
+    hint: "the building reads the place (after the relief); edits the relief (terraces, moat) in the run's scene; the camera is placed after it"
+    code: [components/buildings/*/*.py, core/contract/contract.py]
+    cost: heavy
+    on_fail: stop
+
+# component parts — services with their own folder, knowledge and reference (a component is a system of
+# services)
+services:
+  base: {dir: base, description: "buildings core: masses, faces, roles"}
+  siting: {dir: siting, description: "building platform on the relief"}
+  style: {dir: style, description: "style genes and biography"}
+  space: {dir: space, description: "cell scheme and space checks"}
+  influences: {dir: influences, description: "influences: power, trade, wealth — corrections to plots and houses"}
+  castles: {dir: castles, description: "castles"}
+  temples: {dir: temples, description: "temples"}
+  edifices: {dir: edifices, description: "edifices"}
+  houses: {dir: houses, description: "houses"}
+  classics: {dir: classics, description: "order buildings (classics)"}
+  ensembles: {dir: ensembles, description: "settlements: streets, plots, archetypes"}

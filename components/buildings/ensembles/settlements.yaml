@@ -1,0 +1,189 @@
+# Settlements — knowledge of the "ensembles" part.
+# An archetype = parameters of the shared layers: streets → blocks → plots → house program → checks. There is no
+# per-archetype code.
+# Sizes are in meters; [a, b] — a range (chosen by seed); street widths — by rank: artery > street > lane > passage.
+
+ranks: [artery, street, lane, passage]   # order: who takes the facade first, where the shops are, where buildings are taller
+
+# Influences (power, trade, wealth) are part of the core ../influences/ (knowledge: influences.yaml).
+# An archetype may set its own knobs:
+# influences: {power: 0.5, trade: 0.5, wealth: 0.5, inequality: 0.5, wind: 270} — 0.5, and no key at all,
+# mean "as computed".
+
+archetypes:
+  polis:
+    what: "Greek polis: a Hippodamian grid (by the cardinal directions; on a slope — along the contour lines), an acropolis on a hill (propylon, temples, altar), a theatre in the slope, an agora at the foot with U-shaped stoas, a bouleuterion and a small temple by the agora, a palaestra by the wall, houses with a yard"
+    exemplars: [Priene, Miletus, Athens, Olynthus]
+    size: 360
+    boundary: {kind: wall, shape: polyline, irregularity: 0.12}   # Greek wall — in straight segments, towers at the corners
+    streets:
+      kind: grid
+      city_block: [[86, 36], [47, 35]]  # Olynthus (2 rows of 5 houses), Priene (2 × 4)
+      width: {artery: 7.0, street: 5.0, passage: 1.4}
+      axes: {u: 1, v: 0}              # main streets through the center: along the long side of a block (u) and across it (v)
+      orientation: hillside              # long streets follow the contour lines (Priene); a slope gentler than 5 % — by the cardinal directions (Miletus)
+      distortion: 0.0
+    stairs: 0.12                   # street slope; above it — steps (the cross streets of Priene)
+    acropolis: {projection: 8.0, theatre: 1.0}   # a hill 8 m above the place's median is an acropolis; the theatre is in its slope (radius × 1.0)
+    squares: [{kind: agora, n_city_blocks: 2, where: foot}]
+    sanctuary: {where: height, n_city_blocks: 1}   # without a hill — a temenos in a block (peripteros and altar)
+    landmarks: [{kind: theatre}, {kind: stoa, where: agora}, {kind: bouleuterion, where: at_agora}, {kind: palaestra, where: edge}]
+    plots: {kind: rows, facade: [16.5, 18.0], passage: 1.4}
+    houses: {court_greek: 1.0}
+    storeys: {center: [1, 2], edge: [1, 2]}
+    pavement: [0.56, 0.51, 0.43]     # trampled earth and crushed stone
+    density: {GSI: [0.35, 0.75], FSI: [0.4, 1.3], streets: [0.12, 0.32]}
+
+  colony:
+    what: "Roman colony (Timgad, castrum): a square with rounded corners, cardo and decumanus, a forum at the crossing, 70-foot blocks"
+    exemplars: [Timgad, Ostia (castrum), Aosta]
+    size: 355
+    boundary: {kind: wall, shape: castrum, irregularity: 0.0}
+    streets:
+      kind: grid
+      city_block: [[21, 21], [24, 21]]  # 70 × 70 Roman feet
+      width: {artery: 10.0, street: 5.0, lane: 3.0}
+      axes: {u: 1, v: 1}              # decumanus and cardo
+      ring: 5.0                    # street along the wall (intervallum)
+      orientation: light               # by the cardinal directions ± a little
+      distortion: 0.0
+    stairs: 0.12
+    squares: [{kind: forum, n_city_blocks: 4, where: center}]
+    plots: {kind: whole, split: [1, 2], frac_division: 0.4}
+    houses: {domus: 0.55, insula: 0.45}
+    storeys: {center: [2, 3], edge: [1, 2]}
+    pavement: [0.33, 0.33, 0.35]     # basalt slabs
+    density: {GSI: [0.45, 0.8], FSI: [0.7, 2.2], streets: [0.25, 0.45]}   # 21 m blocks — many streets (Timgad)
+
+  subura:
+    what: "Roman slum (Subura): an organic layout in the lowland between hills, narrow lanes and stairs, insulae of 4–6 storeys, the yard fills up with buildings"
+    exemplars: [Subura, Ostia (insulae), Naples (Spanish Quarters)]
+    size: 300
+    boundary: {kind: edge, shape: circle, irregularity: 0.25}
+    streets:
+      kind: organic
+      city_block: 42                    # average Voronoi block
+      chaos: 0.85
+      width: {artery: 5.0, street: 3.6, lane: 2.4, passage: 1.3}
+      lanes: 1100                 # a larger block is cut by a lane
+      gate: 4                      # arterial exits to the edge
+    stairs: 0.10
+    squares: [{kind: crossroads, n_city_blocks: 0}]
+    plots: {kind: built_up, facade: [6.0, 14.0], depth: [12.0, 24.0], passage: 1.3}
+    houses: {insula: 0.86, domus: 0.04, shack: 0.10}
+    storeys: {center: [4, 6], edge: [3, 5]}
+    limit_height: 20.7              # 70 Roman feet (Augustus)
+    pavement: [0.36, 0.34, 0.33]
+    density: {GSI: [0.42, 0.92], FSI: [1.7, 5.5], streets: [0.08, 0.28]}   # the measure is an estimate: a stream in the lowland and well-like small courts lower the GSI
+
+  town:
+    what: "medieval town: Voronoi blocks, a wall, gates, streets from the gates to the market, a cathedral by the square, burgage plots"
+    exemplars: [Rothenburg, York]
+    size: 360
+    boundary: {kind: wall, shape: voronoi, irregularity: 0.0}
+    streets:
+      kind: organic
+      city_block: 62
+      chaos: 0.55
+      width: {artery: 7.0, street: 5.0, lane: 2.8}
+      lanes: 3600
+      gate: 3
+    stairs: 0.14
+    squares: [{kind: market, n_city_blocks: 1, where: center}]
+    plots: {kind: strips, facade: [5.5, 10.5], depth: [20.0, 38.0]}
+    houses: {burgage: 0.93, shack: 0.07}
+    storeys: {center: [3, 4], edge: [2, 3]}
+    pavement: [0.43, 0.40, 0.36]     # cobblestone
+    density: {GSI: [0.3, 0.7], FSI: [0.75, 2.6], streets: [0.12, 0.3]}   # with gardens inside the blocks, and water
+
+  posad:
+    what: "a posad around a castle: streets grow from the castle gate along the approach road, a setback from the moat, houses with yards"
+    exemplars: [Conwy, Carcassonne (lower town), Russian posads]
+    size: 360
+    boundary: {kind: edge, shape: circle, irregularity: 0.2}
+    owner: {type: castle, offset: 28.0}   # field of fire by the walls
+    streets:
+      kind: growth
+      step: 22.0
+      branching: 0.32
+      turn: 18                    # degrees per step
+      snap: 9.0
+      slope: 2.5                     # slope cost: roads follow the contour lines
+      width: {artery: 6.0, street: 4.5, lane: 3.0}
+      "off": gate                     # where they grow from: the owner's gates, the edges of the place
+      roads: 1                       # and roads from afar
+      n_segments: 160
+    stairs: 0.16
+    squares: [{kind: trade, n_city_blocks: 0, where: gate}]
+    plots: {kind: strips, facade: [8.0, 14.0], depth: [16.0, 30.0], empty: 0.05}
+    houses: {izba: 0.55, burgage: 0.3, shack: 0.15}
+    storeys: {center: [2, 2], edge: [1, 2]}
+    pavement: [0.42, 0.36, 0.27]
+    density: {GSI: [0.1, 0.45], FSI: [0.12, 0.9], streets: [0.08, 0.3]}   # by the posad fabric (plots and streets)
+
+  castle_inside:
+    what: "lanes inside a castle: alleys from the gate across the yard, lean-tos by the curtain wall, the middle of the yard is free"
+    exemplars: [Carcassonne (La Cité), Mont-Saint-Michel, Spiš Castle]
+    owner: {type: castle, where: courts, off_walls: 0.0, free: 0.3, intent: {scale: royal}}   # a town within walls — a large castle
+    streets:
+      kind: growth
+      step: 12.0
+      branching: 0.45
+      turn: 25
+      snap: 5.0
+      slope: 1.5
+      width: {street: 4.0, lane: 2.6}
+      "off": gate
+      n_segments: 60
+    stairs: 0.18
+    plots: {kind: strips, facade: [5.0, 9.0], depth: [6.0, 12.0], at_walls: 7.0}
+    houses: {annex: 0.45, burgage: 0.55}
+    storeys: {center: [2, 3], edge: [1, 2]}
+    pavement: [0.45, 0.43, 0.40]
+    density: {GSI: [0.15, 0.6], FSI: [0.2, 1.6], streets: [0.05, 0.35]}
+
+  village:
+    what: "a village on the terrain: a road and branches along the contour lines, farmyards with a house and a shed, vegetable gardens"
+    exemplars: [street village, mountain hamlet (Emilien 2012)]
+    size: 360
+    boundary: {kind: edge, shape: circle, irregularity: 0.3}
+    streets:
+      kind: growth
+      step: 26.0
+      branching: 0.22
+      turn: 14
+      snap: 11.0
+      slope: 3.0
+      width: {street: 5.0, lane: 3.2}
+      "off": edges                       # roads enter from the edges of the place
+      roads: 2
+      n_segments: 70
+    stairs: 0.2
+    squares: []
+    plots: {kind: farmsteads, facade: [18.0, 32.0], depth: [26.0, 48.0], empty: 0.18}
+    houses: {rural: 0.85, shack: 0.15}
+    storeys: {center: [1, 2], edge: [1, 1]}
+    pavement: [0.44, 0.37, 0.27]     # dirt road
+    density: {GSI: [0.04, 0.3], FSI: [0.04, 0.45], streets: [0.03, 0.26]}   # by the village fabric
+
+  hive:
+    what: "hive city: a megastructure in tiers; on a tier — a grid of transit routes and hub blocks up to the ceiling; shafts through the tiers, bridges over the shafts"
+    exemplars: [Hive Primus (Necromunda), Kowloon, Coruscant]
+    size: 420
+    boundary: {kind: shell, shape: octagon, irregularity: 0.0}
+    tiers: {count: 4, height: 36.0, slab: 4.0}
+    streets:
+      kind: grid
+      city_block: [[56, 56], [64, 48]]
+      width: {artery: 22.0, street: 11.0, lane: 5.0}
+      axes: {u: 1, v: 1}
+      orientation: 0
+      distortion: 0.0
+    shafts: {count: [2, 3], n_city_blocks: 2}   # 2 × 2 blocks all the way through; streets inside the shaft are bridges
+    stairs: 1.0
+    squares: [{kind: parade, n_city_blocks: 1, where: center}]
+    plots: {kind: blocks, split: [1, 3], gap: 3.0}
+    houses: {hub: 1.0}
+    storeys: {storey: 3.6}               # hub block — up to the tier ceiling
+    pavement: [0.30, 0.30, 0.32]
+    density: {GSI: [0.3, 0.85], FSI: [3.0, 16.0], streets: [0.15, 0.55]}   # by the tier area without shafts (a shaft is not tier ground); streets — transit 22 and 11 m

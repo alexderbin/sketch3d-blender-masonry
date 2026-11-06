@@ -1,0 +1,16 @@
+# Step-by-step build example for a settlement (step "building", type "settlement"): a catalog place → a
+# medieval town → camera → light → frame.
+# .venv/bin/python -m core.manager.pipeline components/buildings/bench/stepwise/settlement.yaml [--out out/dev/runs/…] [--until building]
+# The town center is the place center (0, 0); the camera target is explicit (target); without it Camera takes
+# the center from the anchors — anchors.json, town.centre (written by the "building" step).
+pipeline: settlement_stepwise
+scene: bench/scenes/castle_rock
+profile: preview   # sketch stage (stubs and Workbench); here — Eevee with 8 samples, as the references were rendered
+build: stepwise
+steps:
+  - relief: {preset: river_crossing, seed: 2}
+  - building: {type: settlement, archetype: town, seed: 1}
+  - camera: {view: wide, azimuth: 215, elevation: 34, distance: 300, target: "0,0", above: 6, res: 960x540}
+  - light: {time: day}
+outputs:
+  - frames: {video: false, samples: 8}

@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "imprints": {
+    "cobble:court": {
+      "n_stones": 2156,
+      "digest": "1d0506cd2af6e03c"
+    },
+    "cobble:road": {
+      "n_stones": 2084,
+      "digest": "19ab813cd6031ead"
+    },
+    "setts_small:court": {
+      "n_stones": 1886,
+      "digest": "312d3e1619ee345d"
+    },
+    "setts_small:road": {
+      "n_stones": 1860,
+      "digest": "5d34b1c9de8ca79d"
+    },
+    "setts_large:court": {
+      "n_stones": 616,
+      "digest": "bd64122966a94c9a"
+    },
+    "setts_large:road": {
+      "n_stones": 604,
+      "digest": "fb431d7b1f59d33d"
+    },
+    "flagstone:court": {
+      "n_stones": 89,
+      "digest": "3e372461676bbdd3"
+    },
+    "flagstone:road": {
+      "n_stones": 105,
+      "digest": "ae2f75e96d61c141"
+    },
+    "flagstone_crazy:court": {
+      "n_stones": 126,
+      "digest": "36ea2652479f25c7"
+    },
+    "flagstone_crazy:road": {
+      "n_stones": 132,
+      "digest": "0c8e0e553d6303ca"
+    },
+    "brick_herringbone:court": {
+      "n_stones": 1285,
+      "digest": "e4d048af8e323714"
+    },
+    "brick_herringbone:road": {
+      "n_stones": 1291,
+      "digest": "d0a3a81caf1712db"
+    },
+    "brick_basket:court": {
+      "n_stones": 1200,
+      "digest": "174ced9c50c42e9e"
+    },
+    "brick_basket:road": {
+      "n_stones": 1295,
+      "digest": "abeb24ae9a1ca5c7"
+    },
+    "wood_pavement:court": {
+      "n_stones": 21,
+      "digest": "105c4b5818752087"
+    },
+    "wood_pavement:road": {
+      "n_stones": 32,
+      "digest": "33bd2f97b3643636"
+    },
+    "planks:court": {
+      "n_stones": 27,
+      "digest": "9965ee9a01177583"
+    },
+    "planks:road": {
+      "n_stones": 25,
+      "digest": "45a3f294bab35b82"
+    },
+    "floor_tiles:court": {
+      "n_stones": 1449,
+      "digest": "fe3544902d2086f3"
+    },
+    "floor_tiles:road": {
+      "n_stones": 1480,
+      "digest": "825cab768e63cfbf"
+    },
+    "floor_tiles_diag:court": {
+      "n_stones": 1480,
+      "digest": "5b1ea2b88a501771"
+    },
+    "floor_tiles_diag:road": {
+      "n_stones": 1522,
+      "digest": "d2beebb5a1e18758"
+    }
+  }
+}
